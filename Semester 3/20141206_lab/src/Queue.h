@@ -12,7 +12,7 @@
 #include <string>
 #include "Data.h"
 
-/* virtuall functions a re functions which are allowed to be overwritten by the derived class */
+/* virtual functions a re functions which are allowed to be overwritten by the derived class */
 class Queue {
 
 protected:
@@ -23,9 +23,10 @@ protected:
 	inline int at(int i) const {
 		return (start + i) % capacity;
 	}
+	virtual void print(std::ostream &os) const;
 
 public:
-	explicit Queue(int cp);
+	Queue(int cp);
 	Queue(const Queue& queue);
 	virtual ~Queue(void);
 
@@ -41,6 +42,7 @@ public:
 		return !operator ==(q);
 	}
 
+	/* no class member */
 	friend std::ostream& operator<<(std::ostream & os, const Queue & s);
 };
 #endif /* QUEUE_H_ */
