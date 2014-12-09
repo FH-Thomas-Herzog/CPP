@@ -2,12 +2,15 @@
  * edge.cpp
  *
  *  Created on: Dec 8, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
+ *
+ *      This class contains the graph implementation of the graph.h specification.
  */
 #include "graph.h"
 #include <iostream>
 #include <ostream>
 #include <algorithm>
+#include <cassert>
 
 using namespace std;
 
@@ -16,17 +19,33 @@ namespace graph {
 	// Constructor and Destructor                             //
 	////////////////////////////////////////////////////////////
 	Graph::Graph(const int maxSize) :
-			maxSize(maxSize) {
+			Graph(maxSize, false) {
+	}
+
+	Graph::Graph(const int maxSize, bool log) :
+			maxSize(maxSize), log(log) {
+
+		/* log constructor call */
+		if (log) {
+			cout << "constructor (" << maxSize << ", " << log << ") called"
+					<< endl << flush;
+		}
+		/* validate maxSize */
+		if (maxSize <= 0) {
+			this->maxSize = 10;
+			cout << "invalid maxSize !!! default set to '10'" << endl << flush;
+
+		}
 
 		/* Init first dimension */
-		matrix = (double**) malloc(maxSize * sizeof(double**));
+		matrix = (double**) malloc(this->maxSize * sizeof(double**));
 		if (matrix == nullptr) {
 			exit(EXIT_FAILURE);
 		} /* if */
 
 		/* Init second dimension */
-		for (int i = 0; i < maxSize; ++i) {
-			matrix[i] = (double*) malloc(maxSize * sizeof(double*));
+		for (int i = 0; i < this->maxSize; ++i) {
+			matrix[i] = (double*) malloc(this->maxSize * sizeof(double*));
 			if (matrix == nullptr) {
 				exit(EXIT_FAILURE);
 			} /* if */
@@ -36,16 +55,23 @@ namespace graph {
 		clearEdges();
 
 		/* Init the nodes vector */
-		nodes.reserve(maxSize);
+		nodes.reserve(this->maxSize);
 	}
 
 	Graph::~Graph() {
-		clearEdges();
+		/* log destructor call */
+		if (log) {
+			cout << "destructor () called." << endl << flush;
+		}
+
+		/* delete vertex nodes */
+		clear();
+
+		/* delete matrix */
 		for (int i = 0; i < maxSize; i++) {
 			free(matrix[i]);
 			matrix[i] = nullptr;
 		} /* for */
-
 		free(matrix);
 		matrix = nullptr;
 	}
@@ -54,13 +80,13 @@ namespace graph {
 	// Private methods                                        //
 	////////////////////////////////////////////////////////////
 	int Graph::getIdxForVertex(const Vertex* node) const {
-		int idx = -1;
+		size_t idx = -1;
 
 		if (!nodes.empty()) {
 			idx = 0;
 			while ((idx < nodes.size()) && (nodes[idx] != node)) {
 				idx++;
-			}
+			} /* while */
 			idx = (idx == nodes.size()) ? -1 : idx;
 		} /* if */
 
@@ -75,7 +101,7 @@ namespace graph {
 
 		if ((find(visited->begin(), visited->end(), node) == visited->end())) {
 			/* get first connected vertex index */
-			int colIdx = 0;
+			size_t colIdx = 0;
 			int rowIdx = getIdxForVertex(node);
 			while ((!invalid) && (colIdx < nodes.size())) {
 				/* visit next child */
@@ -96,33 +122,38 @@ namespace graph {
 
 	void Graph::deepTraversePrint(Vertex* node,
 			vector<Vertex*>* visited) const {
-		/* add to call stack */
-		visited->push_back(node);
 
 		/* anchor for already visited */
 		if ((find(visited->begin(), visited->end(), node) == visited->end())) {
+			/* add to call stack */
+			visited->push_back(node);
+
+			/* print node */
+			cout << "Visited: " << *node << endl << flush;
+
 			/* get first connected vertex index */
 			int rowIdx = getIdxForVertex(node);
-			for (int i = 0; i < nodes.size(); ++i) {
+			for (size_t i = 0; i < nodes.size(); ++i) {
 				/* visit next child */
 				if (matrix[rowIdx][i] != 0) {
 					deepTraversePrint(nodes[i], visited);
 				} /* if */
 			} /* while */
-			cout << "Visited: " << *node << endl << flush;
-		} /* if */
 
-		/* remove from call stack */
-		visited->pop_back();
+			/* remove from call stack */
+			visited->pop_back();
+
+		} /* if */
 	}
 
 	void Graph::breathTraversePrint(Vertex* node,
 			vector<Vertex*>* visited) const {
-		/* add to call stack */
-		visited->push_back(node);
 
 		/* anchor for already visited */
 		if ((find(visited->begin(), visited->end(), node) == visited->end())) {
+
+			/* add to call stack */
+			visited->push_back(node);
 
 			/* print visited */
 			cout << "Parent: " << *node << endl << flush;
@@ -130,7 +161,7 @@ namespace graph {
 			/* get first connected vertex index */
 			int rowIdx = getIdxForVertex(node);
 			vector<Vertex*> toVisitVector;
-			for (int i = 0; i < nodes.size(); ++i) {
+			for (size_t i = 0; i < nodes.size(); ++i) {
 				/* visit next child */
 				if (matrix[rowIdx][i] != 0) {
 					Vertex* curNode = nodes[i];
@@ -147,13 +178,13 @@ namespace graph {
 
 			/* clear stack */
 			toVisitVector.clear();
-		}
 
-		/* remove from call stack */
-		visited->pop_back();
+			/* remove from call stack */
+			visited->pop_back();
+		}
 	}
 
-	bool Graph::isValidVertex(const Vertex* node) const {
+	bool Graph::isManagedVertex(const Vertex* node) const {
 		/* start is null */
 		if (node == nullptr) {
 			cout << "start vertex is null !!! Cannot print graph on null vertex"
@@ -174,12 +205,24 @@ namespace graph {
 	// Public methods                                         //
 	////////////////////////////////////////////////////////////
 	void Graph::addVertex(Vertex* node) {
-		/* Add if not already present */
+		/* null node*/
+		if (node == nullptr) {
+			cout << "cannot add null vertex node !!!" << endl << flush;
+			return;
+		}
+		/* node already  present in vector (pointer address) */
 		if (find(nodes.begin(), nodes.end(), node) != nodes.end()) {
 			cout << "vertex already present !!! Adding aborted" << endl
 					<< flush;
-		} else {
-			cout << "Vertex node added !!! node.name: " << node->name << endl;
+			return;
+		}
+		/* container already full */
+		else if (nodes.size() == size_t(maxSize)) {
+			cout << "maxSize exceeded !!!" << endl << flush;
+			return;
+		}
+		/* add node */
+		else {
 			nodes.push_back(node);
 		} /* if */
 	}
@@ -188,20 +231,45 @@ namespace graph {
 			double weight) {
 		int rowIdx, colIdx;
 
-		rowIdx = this->getIdxForVertex(startNode);
-		colIdx = this->getIdxForVertex(endNode);
+		/* null vertex */
+		if ((startNode == nullptr) || ((endNode == nullptr))) {
+			cout << "start and end node are not allowed to be null !!!" << endl
+					<< flush;
+			return;
+		}
+		/* no vertex node present */
+		else if (nodes.size() == 0) {
+			cout << "no vertex nodes present !!!" << endl << flush;
 
-		/* Check if vertex nodes are hold by backed container */
+			return;
+		}
+		/* invalid weight */
+		else if (weight <= 0) {
+			cout << "invalid weight !!! 0 < weight < DOUBLE_MAX";
+
+			return;
+		} /* if */
+
+		/* get intended indices */
+		rowIdx = getIdxForVertex(startNode);
+		colIdx = getIdxForVertex(endNode);
+
+		/* vertex instance not managed */
 		if ((rowIdx < 0) || (colIdx < 0)) {
 			cout << "Vertex instance not hold by backed container !!! start="
 					<< startNode->name << " | end=" << endNode->name << endl
 					<< flush;
-		} else {
+
+			return;
+		}
+		/* add edge */
+		else {
 			matrix[rowIdx][colIdx] = weight;
 		} /* if */
 	}
 
 	void Graph::clearEdges() {
+		/* delete all edge weights */
 		for (int i = 0; i < maxSize; i++) {
 			for (int j = 0; j < maxSize; j++) {
 				matrix[i][j] = 0;
@@ -210,37 +278,52 @@ namespace graph {
 	}
 
 	void Graph::clear() {
+		/* remove all edges */
 		clearEdges();
 
+		/* remove all vertex nodes */
 		for (auto it = nodes.begin(); it != nodes.end(); it++) {
 			delete (*it);
 		} /* for */
 
+		/* empty vector */
 		nodes.clear();
 	}
 
 	void Graph::printDepthFirst(const Vertex* start) const {
-		if (isValidVertex(start)) {
+		/* is vertex instance managed */
+		if (isManagedVertex(start)) {
+
 			/* prepare call stack */
 			vector<Vertex*> visited;
 
 			/* start recursion */
 			deepTraversePrint(nodes[getIdxForVertex(start)], &visited);
 		} /* if */
+
 	}
 
 	void Graph::printBreadthFirst(const Vertex* start) const {
-		if (isValidVertex(start)) {
+		/* is vertex instance managed */
+		if (isManagedVertex(start)) {
+
 			/* prepare call stack */
 			vector<Vertex*> visited;
 
 			/* start recursion */
 			breathTraversePrint(nodes[getIdxForVertex(start)], &visited);
 		} /* if */
+
 	}
 
 	bool Graph::hasCycles() const {
-		int i = 0;
+		/* vertex node presents */
+		if (nodes.size() == 0) {
+			cout << "cannot determine cycles on empty graph" << endl << flush;
+			return false;
+		}
+
+		size_t i = 0;
 		bool cyclic = false;
 
 		/* Walk through all nodes  */
@@ -256,15 +339,17 @@ namespace graph {
 		return cyclic;
 	}
 
-	////////////////////////////////////////////////////////////
-	// friend methods                                         //
-	////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// friend methods                                         //
+////////////////////////////////////////////////////////////
 	ostream& operator<<(ostream& os, const Graph& graph) {
 		int i = 0;
+		/* introduce graph printing */
 		os << "print graph:" << endl;
+		/* iterate via present vertex nodes in the graph */
 		for (auto it = graph.nodes.begin(); it != graph.nodes.end(); it++) {
-			os << "node: " << (*it)->name << endl;
-			for (int j = 0; j < graph.nodes.size(); ++j) {
+			os << i << ". node: " << (*it)->name << endl;
+			for (size_t j = 0; j < graph.nodes.size(); ++j) {
 				if (graph.matrix[i][j] != 0) {
 					os << "     related node: " << (**it) << "("
 							<< graph.matrix[i][j] << ")" << endl;

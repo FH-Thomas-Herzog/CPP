@@ -2,7 +2,9 @@
  * graph.h
  *
  *  Created on: Dec 5, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
+ *
+ *      This header file specifies the graph related classes.
  */
 
 #ifndef GRAPH_H_
@@ -10,12 +12,18 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
+#include <sstream>
+#include <ostream>
 
 using namespace std;
 
 namespace graph {
 	/**
 	 * This class represents the graph nodes.
+	 *
+	 * Therefore that this class is considered to produce final instances,
+	 * the implementation of this class is provided inline.
 	 */
 	class Vertex {
 
@@ -43,7 +51,10 @@ namespace graph {
 	};
 
 	/**
-	 * This class represents the graph
+	 * This class represents the graph.
+	 *
+	 * This class specifies the graph which shall be implemented with an
+	 * adjazanzmatrix.
 	 */
 	class Graph {
 
@@ -121,18 +132,22 @@ namespace graph {
 			 * @return
 			 * 		true if the vertex node is valid, false otherwise
 			 */
-			bool isValidVertex(const Vertex* node) const;
+			bool isManagedVertex(const Vertex* node) const;
 
 		public:
 			////////////////////////////////////////////////////////////
 			// Public members                                         //
 			////////////////////////////////////////////////////////////
-			const int maxSize;
+			int maxSize;
+
+			bool log = false;
 
 			////////////////////////////////////////////////////////////
 			// Constructor and Destructor                             //
 			////////////////////////////////////////////////////////////
 			Graph(const int maxSize);
+
+			Graph(const int maxSize, const bool log);
 
 			~Graph();
 

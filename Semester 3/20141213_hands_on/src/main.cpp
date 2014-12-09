@@ -12,7 +12,7 @@
 using namespace std;
 using namespace graph;
 
-int main(int argc, char** argv) {
+int _main(int argc, char** argv) {
 	Graph* graph = new Graph(10);
 	Vertex* v1 = new Vertex("node_1");
 	Vertex* v2 = new Vertex("node_2");
