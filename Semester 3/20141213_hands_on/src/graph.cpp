@@ -96,10 +96,10 @@ namespace graph {
 	bool Graph::hasCycles(Vertex* node, vector<Vertex*>* visited) const {
 		bool invalid = false;
 
-		/* add to call stack */
-		visited->push_back(node);
-
 		if ((find(visited->begin(), visited->end(), node) == visited->end())) {
+			/* add to call stack */
+			visited->push_back(node);
+
 			/* get first connected vertex index */
 			size_t colIdx = 0;
 			int rowIdx = getIdxForVertex(node);
@@ -110,12 +110,13 @@ namespace graph {
 				} /* if */
 				colIdx++;
 			} /* while */
+
+			/* remove from call stack */
+			visited->pop_back();
 		} else {
 			invalid = true;
 		} /* if */
 
-		/* remove from call stack */
-		visited->pop_back();
 
 		return invalid;
 	}
@@ -351,7 +352,7 @@ namespace graph {
 			os << i << ". node: " << (*it)->name << endl;
 			for (size_t j = 0; j < graph.nodes.size(); ++j) {
 				if (graph.matrix[i][j] != 0) {
-					os << "     related node: " << (**it) << "("
+					os << "     related node: " << (*graph.nodes[j]) << "("
 							<< graph.matrix[i][j] << ")" << endl;
 				} /* if */
 			} /* for */

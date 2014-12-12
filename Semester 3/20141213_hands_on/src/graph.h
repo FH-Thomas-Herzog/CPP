@@ -66,6 +66,7 @@ namespace graph {
 			 * The matrix containing the edge weight information
 			 */
 			double** matrix;
+
 			/**
 			 * The vector containing all placed graph vertex nodes
 			 */
@@ -138,17 +139,40 @@ namespace graph {
 			////////////////////////////////////////////////////////////
 			// Public members                                         //
 			////////////////////////////////////////////////////////////
+			/**
+			 * The graph node max size. More nodes cannot be handled.
+			 */
 			int maxSize;
 
+			/**
+			 * Flag which indicates that loggin is intended.
+			 */
 			bool log = false;
 
 			////////////////////////////////////////////////////////////
 			// Constructor and Destructor                             //
 			////////////////////////////////////////////////////////////
+			/**
+			 * Constructor for productive usage.
+			 *
+			 * @param
+			 * 		maxSize the max size of graph nodes which this graph can handle.
+			 */
 			Graph(const int maxSize);
 
+			/**
+			 * Constructor for test usage if logging is intended
+			 *
+			 * @param
+			 * 		log indicates if logging is intended
+			 * @param
+			 * 		maxSize the max size of graph nodes which this graph can handle.
+			 */
 			Graph(const int maxSize, const bool log);
 
+			/**
+			 * Default destructor which cleans up all held resources.
+			 */
 			~Graph();
 
 			////////////////////////////////////////////////////////////

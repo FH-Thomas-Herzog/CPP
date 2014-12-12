@@ -17,10 +17,9 @@ int main(int argc, char** argv) {
 	Vertex* nullVertex = nullptr;
 	Vertex* unmanagedVertex = new Vertex("unmanaged vertex node");
 
-	///////////////////////////////////////////////////7
+	////////////////////////////////////////////////////
 	// invalid argument tests                         //
-	///////////////////////////////////////////////////7
-
+	////////////////////////////////////////////////////
 	/*case 1: */
 	cout << "Case 1.:  maxSize == 0" << endl << flush;
 	Graph* case1_graph = new Graph(0);
@@ -87,6 +86,9 @@ int main(int argc, char** argv) {
 	graph->clear();
 	case10_1_vertex = nullptr;
 
+	////////////////////////////////////////////////////
+	// valid tests                                    //
+	////////////////////////////////////////////////////
 	/* case 11: */
 	cout << endl << "Case 11.:  operator<<" << endl << flush;
 	Vertex* case11_1_vertex = new Vertex("case11_1_vertex");
@@ -95,36 +97,64 @@ int main(int argc, char** argv) {
 	graph->addVertex(case11_1_vertex);
 	graph->addVertex(case11_2_vertex);
 	graph->addVertex(case11_3_vertex);
-	cout << *graph << endl << flush;
+	cout << *graph << flush;
+	graph->clear();
 
 	/* case 12, 13, 14: */
+	cout << endl << "Case 13 - 14:  prepared graph after vertex/aedge adding" << endl << flush;
 	Vertex* case12_1_vertex = new Vertex("case12_1_vertex");
 	Vertex* case12_2_vertex = new Vertex("case12_2_vertex");
 	Vertex* case12_3_vertex = new Vertex("case12_3_vertex");
 	graph->addVertex(case12_1_vertex);
 	graph->addVertex(case12_2_vertex);
 	graph->addVertex(case12_3_vertex);
+	cout << endl << "After Vertex addition (operator<<)" << endl << *graph << flush;
 
 	graph->addEdge(case12_1_vertex, case12_1_vertex, 1);
 	graph->addEdge(case12_2_vertex, case12_3_vertex, 1);
 	graph->addEdge(case12_1_vertex, case12_3_vertex, 1);
 	graph->addEdge(case12_3_vertex, case12_1_vertex, 1);
-	cout << endl << flush;
+	cout << endl << "After Edge addition (operator<<)" << endl << *graph << flush;
 
 	/* case 12: */
-	cout << endl << "Case 12.:  printDepthFirst with cycles" << endl << flush;
+	cout << endl << "Case 12.:  printDepthFirst(case12_1_vertex)" << endl << flush;
 	graph->printDepthFirst(case12_1_vertex);
 
 	/* case 13: */
-	cout << endl << "Case 13.:  printBreadthFirst with cycles" << endl << flush;
+	cout << endl << "Case 13.:  printDepthFirst(case12_2_vertex)" << endl << flush;
+	graph->printDepthFirst(case12_2_vertex);
+
+	/* case 13: */
+	cout << endl << "Case 13.:  printBreadthFirst(case12_1_vertex)" << endl << flush;
 	graph->printBreadthFirst(case12_1_vertex);
 
-	/* case 114: */
-	cout << endl << "Case 14.:  hasCycles == true" << endl << flush;
+	/* case 14: */
+	cout << endl << "Case 14.:  printBreadthFirst(case12_2_vertex)" << endl << flush;
+	graph->printBreadthFirst(case12_2_vertex);
+
+	/* case 15: */
+	cout << endl << "Case 15.:  former graph hasCycles == true" << endl << flush;
 	assert(graph->hasCycles());
+	graph->clear();
+
+	/* case 16: */
+	cout << endl << "Case 16.:  hasCycles == false" << endl << flush;
+	Vertex* case16_1_vertex = new Vertex("case16_1_vertex");
+	Vertex* case16_2_vertex = new Vertex("case16_2_vertex");
+	Vertex* case16_3_vertex = new Vertex("case16_3_vertex");
+	graph->addVertex(case16_1_vertex);
+	graph->addVertex(case16_2_vertex);
+	graph->addVertex(case16_3_vertex);
+	cout << endl << "Added vertex (operator<<)" << endl << *graph << flush;
+	graph->addEdge(case16_1_vertex, case16_2_vertex, 1);
+	graph->addEdge(case16_1_vertex, case16_3_vertex, 1);
+	graph->addEdge(case16_2_vertex, case16_3_vertex, 1);
+	cout << endl << "Added Edge (operator<<)" << endl << *graph << flush;
+	assert(!graph->hasCycles());
 
 	// clear
 	graph->clear();
+	delete graph;
 
 	cout << "" << endl << flush;
 }
