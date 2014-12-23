@@ -1,0 +1,7 @@
+<testsuites>
+	<testsuite name="TreeTests" tests="3">
+		<testcase classname="TreeTests" name="test_insertChild_null_parent"/>
+		<testcase classname="TreeTests" name="test_insertChild_null_child"/>
+		<testcase classname="TreeTests" name="test_insertChild_unmanaged_parent"/>
+	</testsuite>
+</testsuites>

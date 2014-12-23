@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1418387468 source:/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20141213_hands_on/src/graph.cpp
+	"graph.h"
+	<iostream>
+	<ostream>
+	<algorithm>
+	<cassert>
+
+1418384700 /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20141213_hands_on/src/graph.h
+	<string>
+	<vector>
+	<iostream>
+	<sstream>
+	<ostream>
+
+1418387347 source:/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20141213_hands_on/src/graph_tests.cpp
+	<string>
+	<iostream>
+	<cassert>
+	"graph.h"
+
