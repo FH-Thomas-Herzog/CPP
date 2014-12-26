@@ -31,8 +31,7 @@ class IntNode: public Node {
 			Register("IntNode", "Node");
 		}
 
-		virtual inline ~IntNode() :
-				~Node() {
+		virtual inline ~IntNode() {
 		}
 
 		////////////////////////////////////////////////////////////

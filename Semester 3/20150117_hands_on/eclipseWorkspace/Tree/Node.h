@@ -27,11 +27,11 @@ class Node: public Object {
 		 * The first direct child reference
 		 */
 		Node *firstChild;
+
 		/**
 		 * The next direct neighbor reference
 		 */
 		Node *nextSibling;
-
 	public:
 		////////////////////////////////////////////////////////////
 		// Constructor and Destructor                             //
@@ -64,6 +64,25 @@ class Node: public Object {
 				cout << "deleting nextSibling" << flush << endl;
 				delete nextSibling;
 			} /* if */
+		}
+
+		/**
+		 * This constructor copies the held nodes which causes that the whole subtree
+		 * held by this node is copied.
+		 * Therefore that this is a tree node this is no problem,
+		 * because recursions are not allowed here.
+		 *
+		 * @param
+		 * 		node: the node to be copied
+		 */
+		inline Node(const Node& node) {
+			if (node.getFirstChild() != nullptr) {
+				firstChild = new Node(*node.getFirstChild());
+			}
+			if (node.getNextSbiling() != nullptr) {
+				nextSibling = new Node(*node.getNextSbiling());
+			}
+			Register("Node", "Object");
 		}
 
 		////////////////////////////////////////////////////////////
@@ -142,7 +161,7 @@ class Node: public Object {
 		}
 
 		////////////////////////////////////////////////////////////
-		// Friends                                                //
+		// operator                                               //
 		////////////////////////////////////////////////////////////
 		/**
 		 * The friend method for the << operator.

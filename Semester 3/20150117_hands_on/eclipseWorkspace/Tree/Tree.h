@@ -12,13 +12,10 @@
 #include "Node.h"
 #include "MLObject.h"
 
-using namespace std;
-using namespace ML;
-
 /**
  * This class represents the tree which is able to handle all derivations of the Node class.
  */
-class Tree: public Object {
+class Tree: public ML::Object {
 	private:
 		////////////////////////////////////////////////////////////
 		// Private Members                                        //
@@ -28,6 +25,7 @@ class Tree: public Object {
 		 * Will be handled by the instance itself and cannot be modified from the caller.
 		 */
 		Node* root;
+
 		/**
 		 * The current size of the tree.
 		 * Means the node count.
@@ -43,18 +41,80 @@ class Tree: public Object {
 		 * @param
 		 * 		parent: the node to be checked if managed by this tree.
 		 */
-		bool isManagedNode(const Node* node);
+		bool isManagedNode(const Node* node) const;
+
+		/**
+		 * Counts the nodes of this subtree including the root node.
+		 *
+		 * @param
+		 * 		node: the node to count hold nodes
+		 * @return
+		 * 		the count of nodes in the subtree inclugind the root.
+		 */
+		int countNodes(const Node* node) const;
+
+		/**
+		 * Gets the parent if the parent has the node referenced by its first child field.
+		 *
+		 * @param
+		 * 		parent: the subtree to search the neighbor of the given node
+		 * @param
+		 * 		node: the node to search parent for
+		 */
+		Node* getParentNode(Node* parent, const Node* node) const;
+
+		/**
+		 * Gets the former neighbor if the parent has the node referenced by its next sibling field.
+		 *
+		 * @param
+		 * 		parent: the subtree to search the neighbor of the given node
+		 * @param
+		 * 		node: the node to search former neighbor for
+		 */
+		Node* getFormerNeighbour(Node* parent, const Node* node) const;
+
+		/**
+		 * Inits this tree.
+		 */
+		inline void init() {
+			root = createRootNode();
+			size = 1;
+		}
+
+		/**
+		 * Creates the root node.
+		 */
+		virtual inline Node* createRootNode() {
+			return new Node();
+		}
 
 	public:
-		////////////////////////////////////////////////////////////
-		// Constructor and Destructor                             //
-		////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Constructor and Destructor                             //
+////////////////////////////////////////////////////////////
 		/**
 		 * Default constructor which creates a new root node for this tree.
 		 */
 		inline Tree() :
-				root(new Node()), size(0) {
+				root(new Node()), size(1) {
 			Register("Tree", "Object");
+		}
+
+		inline Tree(Node & root) :
+				root(&root), size(1) {
+			Register("Tree", "Object");
+		}
+
+		/**
+		 * Copies the whole tree held by the root node by copying the root node.
+		 * The held nodes copy their held referenced nodes and so the whole tree is copied.
+		 *
+		 * @param
+		 * 		other: the tree to be copied.
+		 */
+		inline Tree(const Tree & other) :
+				size(other.getSize()) {
+			root = new Node(other.getRoot());
 		}
 
 		/**
@@ -68,9 +128,9 @@ class Tree: public Object {
 			}
 		}
 
-		////////////////////////////////////////////////////////////
-		// Getter and Setter                                      //
-		////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Getter and Setter                                      //
+////////////////////////////////////////////////////////////
 		/**
 		 * Getter method for the root node.
 		 *
@@ -87,9 +147,9 @@ class Tree: public Object {
 			return size;
 		}
 
-		////////////////////////////////////////////////////////////
-		// Tree Manipulation                                      //
-		////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Tree Manipulation                                      //
+////////////////////////////////////////////////////////////
 		/**
 		 * Inserts a child node for the given parent if the parent is a managed node and the child is not null.
 		 *
@@ -120,9 +180,9 @@ class Tree: public Object {
 		 */
 		virtual void deleteElements();
 
-		////////////////////////////////////////////////////////////
-		// Utils                                                  //
-		////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Utils                                                  //
+////////////////////////////////////////////////////////////
 		/**
 		 * Prints this tree and all of its held nodes.
 		 *
@@ -131,9 +191,9 @@ class Tree: public Object {
 		 */
 		virtual void print(ostream & os) const;
 
-		////////////////////////////////////////////////////////////
-		// Friends                                                //
-		////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Operators                                              //
+////////////////////////////////////////////////////////////
 		/**
 		 * The friend method which handles the operator <<.
 		 *
@@ -142,9 +202,24 @@ class Tree: public Object {
 		 * @param
 		 * 		tree: the tree part of this operation
 		 */
-		inline friend ostream& operator<<(ostream & os, const Tree & tree) {
+		inline friend std::ostream& operator<<(std::ostream & os,
+				const Tree & tree) {
 			tree.print(os);
 			return os;
+		}
+
+		/**
+		 * Assigns the tree to the current Tree instance by referencing the same root node which holds the tree.
+		 *
+		 * @param
+		 * 		other: the tree to be assigned
+		 */
+		inline Tree & operator=(const Tree & other) {
+			if (this != &other) {
+				root = other.getRoot();
+				size = other.getSize();
+			}
+			return *this;
 		}
 };
 
