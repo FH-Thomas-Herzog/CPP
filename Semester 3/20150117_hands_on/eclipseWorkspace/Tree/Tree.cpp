@@ -7,10 +7,44 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include <map>
 #include "Tree.h"
 #include "Node.h"
 
 using namespace std;
+using namespace ML;
+
+/**
+ * Builds a map which holds the level as the key and a vector which contains
+ * all nodes which have a first child set.
+ * No its possible to get all nodes of a level via their parents.
+ */
+static void buildLeveledMap(Node* node, int level,
+		map<int, vector<Node*>> & resultMap) {
+
+	/* Only if the node is null or has first child */
+	if ((node != nullptr) && (node->getFirstChild())) {
+		vector<Node*> parents;
+		Node* next = node->getFirstChild();
+		/* get all nodes with first child set */
+		while (next != nullptr) {
+			if (next->getFirstChild() != nullptr) {
+				parents.push_back(next);
+			} /* if */
+			next = next->getNextSbiling();
+		} /* while */
+
+		/* crawl deeper into tree if nodes were found */
+		if (parents.size() > 0) {
+			resultMap.insert(pair<int, vector<Node*>>(level, parents));
+			level++;
+			for (unsigned int i = 0; i < parents.size(); i++) {
+				buildLeveledMap(parents[i], level, resultMap);
+			} /* for */
+		} /* if */
+	} /* if */
+} /* buildLeveledMap */
 
 ////////////////////////////////////////////////////////////
 // Private Utils                                          //
@@ -29,9 +63,9 @@ bool Tree::isManagedNode(const Node* node) const {
 			next = child->getNextSbiling();
 			while ((next != nullptr) && ((!(siblingResult = (next == node))))) {
 				next = next->getNextSbiling();
-			}
+			} /* while */
 			child = child->getFirstChild();
-		}
+		} /* if */
 	} /* if */
 
 	return childResult || siblingResult;
@@ -154,7 +188,7 @@ void Tree::deleteSubTree(Node* node) {
 			/* Cut from sibling list if found there */
 			else if ((tmp = getFormerNeighbour(root, node)) != nullptr) {
 				tmp->setNextSibling(tmp->getNextSbiling()->getNextSbiling());
-			}
+			} /* if */
 			/* need to remove reference because otherwise would be deleted along with the node */
 			node->setNextSibling(nullptr);
 		}/* if */
@@ -184,17 +218,52 @@ void Tree::clear() {
 // Utils                                                  //
 ////////////////////////////////////////////////////////////
 void Tree::print(ostream & os) const {
-	cout << "##################################################" << endl;
-	cout << "node count: " << size << endl;
-	cout << "##################################################" << endl;
-	os << root->AsString() << "(root) - ";
+	Node* node = root;
+	vector<Node*> firstLevel;
+	map<int, vector<Node*>> leveledMap;
 
-	if (root->getFirstChild() != nullptr) {
-		root->getFirstChild()->print(os);
-	} /* if */
+	/* header including root node */
+	os << "##################################################" << endl;
+	os << "node count: " << size << endl;
+	os << "##################################################" << endl;
+	os << "Level: 0" << endl;
+	os << "Parent: (root has not parent)" << endl;
+	os << "Nodes: " << *root << endl << endl;
 
-	if (root->getNextSbiling() != nullptr) {
-		root->getNextSbiling()->print(os);
-	} /* if */
+	/* build root map for each level under root */
+	node = root;
+	firstLevel.push_back(root);
+	leveledMap.insert(pair<int, vector<Node*>>(1, firstLevel));
+	buildLeveledMap(node, 2, leveledMap);
+
+	/* iterate over each level */
+	map<int, vector<Node*>>::iterator it = leveledMap.begin();
+	while (it != leveledMap.end()) {
+		os << "-----------------------------------------------------" << endl;
+		os << "Level: " << it->first << endl;
+		os << "-----------------------------------------------------" << endl;
+
+		/* print all nodes and their parents of the current level */
+		vector<Node*>::iterator parentIterator = it->second.begin();
+		while (parentIterator != it->second.end()) {
+			os << "Parent: " << **parentIterator << endl;
+			os << "Nodes: ";
+			node = (*parentIterator)->getFirstChild();
+			while (node != nullptr) {
+				os << *node;
+				if (node->getNextSbiling() != nullptr) {
+					os << " - ";
+				} /* if */
+				node = node->getNextSbiling();
+			} /* while */
+			os << endl;
+			os << "-----------------------------------------------------"
+					<< endl;
+			parentIterator++;
+		} /* while */
+
+		os << endl << flush;
+		it++;
+	} /* while */
 } /* Tree::print */
 

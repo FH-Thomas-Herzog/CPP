@@ -9,16 +9,14 @@
 #define NODE_H_
 
 #include "MLObject.h"
+#include "MetaInfo.h"
 #include <sstream>
-
-using namespace std;
-using namespace ML;
 
 /**
  * This class is the base node which can be used to be handled in a tree.
  * This class provides all necessary methods which a tree node needs.
  */
-class Node: public Object {
+class Node: public ML::Object {
 	private:
 		////////////////////////////////////////////////////////////
 		// Private members                                        //
@@ -56,12 +54,10 @@ class Node: public Object {
 		 */
 		virtual inline ~Node() {
 			if (firstChild != nullptr) {
-				cout << "deleting firstChild" << flush << endl;
 				delete firstChild;
 			} /* if */
 
 			if (nextSibling != nullptr) {
-				cout << "deleting nextSibling" << flush << endl;
 				delete nextSibling;
 			} /* if */
 		}
@@ -75,14 +71,14 @@ class Node: public Object {
 		 * @param
 		 * 		node: the node to be copied
 		 */
-		inline Node(const Node& node) {
-			if (node.getFirstChild() != nullptr) {
-				firstChild = new Node(*node.getFirstChild());
+		inline Node(const Node& other) :
+				Node(nullptr, nullptr) {
+			if (other.getFirstChild() != nullptr) {
+				setFirstChild(other.getFirstChild()->clone());
 			}
-			if (node.getNextSbiling() != nullptr) {
-				nextSibling = new Node(*node.getNextSbiling());
+			if (other.getNextSbiling() != nullptr) {
+				setNextSibling(other.getNextSbiling()->clone());
 			}
-			Register("Node", "Object");
 		}
 
 		////////////////////////////////////////////////////////////
@@ -110,8 +106,9 @@ class Node: public Object {
 		 */
 		virtual inline void setFirstChild(Node* firstChild) {
 			if (this == firstChild) {
-				cout << "Node is not allowed to reference itself on firstChild"
-						<< flush << endl;
+				std::cout
+						<< "Node is not allowed to reference itself on firstChild"
+						<< std::flush << std::endl;
 			} else {
 				this->firstChild = firstChild;
 			} /* if */
@@ -126,8 +123,9 @@ class Node: public Object {
 		 */
 		virtual inline void setNextSibling(Node* nextSibling) {
 			if (this == nextSibling) {
-				cout << "Node is not allowed to reference itself on nextSibling"
-						<< flush << endl;
+				std::cout
+						<< "Node is not allowed to reference itself on nextSibling"
+						<< std::flush << std::endl;
 			} else {
 				this->nextSibling = nextSibling;
 			} /* if */
@@ -143,21 +141,12 @@ class Node: public Object {
 		 * @param
 		 * 		ostram: the ostram to put printed text on
 		 */
-		virtual inline void print(ostream & os) const {
-			os << AsString() << " - ";
-			if (nextSibling != nullptr) {
-				os << nextSibling->AsString() << " - ";
-				if (nextSibling->getNextSbiling()) {
-					nextSibling->getNextSbiling()->print(os);
-				} /* if */
-			} /* if */
-			if (firstChild != nullptr) {
-				os << firstChild->AsString() << " - ";
-				if (firstChild->getFirstChild() != nullptr) {
-					firstChild->getFirstChild()->print(os);
-				} /* if */
-			} /* if */
-			os << flush << endl;
+		virtual inline void print(std::ostream & os) const {
+			os << AsString();
+		}
+
+		virtual inline Node* clone() const {
+			return new Node(*this);
 		}
 
 		////////////////////////////////////////////////////////////
@@ -172,7 +161,8 @@ class Node: public Object {
 		 * @param
 		 *  	node: the node part of the operation
 		 */
-		inline friend ostream& operator<<(ostream & os, const Node & node) {
+		inline friend std::ostream& operator<<(std::ostream & os,
+				const Node & node) {
 			node.print(os);
 			return os;
 		}

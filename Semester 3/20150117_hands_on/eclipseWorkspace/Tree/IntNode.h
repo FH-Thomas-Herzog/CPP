@@ -10,10 +10,9 @@
 
 #include <ostream>
 #include <string>
+#include <sstream>
 #include "Node.h"
-
-using namespace std;
-using namespace ML;
+#include "MetaInfo.h"
 
 class IntNode: public Node {
 	private:
@@ -26,9 +25,32 @@ class IntNode: public Node {
 		////////////////////////////////////////////////////////////
 		// Constructor and Destructor                             //
 		////////////////////////////////////////////////////////////
+		/**
+		 * Constructor which takes value as the argument
+		 *
+		 * @param
+		 * 		value: teh value to be hold by this IntNode
+		 */
 		inline IntNode(int value) :
-				value(value), Node(nullptr, nullptr) {
+				value(value) {
 			Register("IntNode", "Node");
+		}
+
+		/**
+		 * Copy constructor which clones the IntNode deeply.
+		 * All references are cloned to, so the whole subtree will be copied.
+		 *
+		 * @param
+		 * 		other: the node to be copied deeply
+		 */
+		inline IntNode(const IntNode & other) :
+				IntNode(other.getValue()) {
+			if (other.getFirstChild() != nullptr) {
+				setFirstChild(other.getFirstChild()->clone());
+			}
+			if (other.getNextSbiling() != nullptr) {
+				setNextSibling(other.getNextSbiling()->clone());
+			}
 		}
 
 		virtual inline ~IntNode() {
@@ -43,6 +65,19 @@ class IntNode: public Node {
 
 		virtual inline void setValue(int value) {
 			this->value = value;
+		}
+
+		virtual inline std::string AsString() const {
+			std::stringstream ss;
+			ss << "IntNode(" << value << ")" << std::flush;
+			return ss.str();
+		}
+
+		////////////////////////////////////////////////////////////
+		// Utils                                                  //
+		////////////////////////////////////////////////////////////
+		virtual inline IntNode* clone() const {
+			return new IntNode(*this);
 		}
 };
 
