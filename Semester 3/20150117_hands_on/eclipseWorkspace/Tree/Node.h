@@ -17,7 +17,7 @@
  * This class provides all necessary methods which a tree node needs.
  */
 class Node: public ML::Object {
-	private:
+	protected:
 		////////////////////////////////////////////////////////////
 		// Private members                                        //
 		////////////////////////////////////////////////////////////
@@ -72,13 +72,14 @@ class Node: public ML::Object {
 		 * 		node: the node to be copied
 		 */
 		inline Node(const Node& other) :
-				Node(nullptr, nullptr) {
+				firstChild(nullptr), nextSibling(nullptr) {
 			if (other.getFirstChild() != nullptr) {
 				setFirstChild(other.getFirstChild()->clone());
 			}
-			if (other.getNextSbiling() != nullptr) {
-				setNextSibling(other.getNextSbiling()->clone());
+			if (other.getNextSibling() != nullptr) {
+				setNextSibling(other.getNextSibling()->clone());
 			}
+			Register("Node", "Object");
 		}
 
 		////////////////////////////////////////////////////////////
@@ -93,7 +94,7 @@ class Node: public ML::Object {
 		/**
 		 * Getter method for the first next neighbor references
 		 */
-		virtual inline Node* getNextSbiling() const {
+		virtual inline Node* getNextSibling() const {
 			return nextSibling;
 		}
 

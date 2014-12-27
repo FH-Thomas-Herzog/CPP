@@ -6,27 +6,27 @@ using namespace ML;
 
 cute::suite make_suite_TreeTests() {
 	cute::suite s;
-//	s.push_back(CUTE(test_insertChild_null_parent));
-//	s.push_back(CUTE(test_insertChild_null_child));
-//	s.push_back(CUTE(test_insertChild_unmanaged_parent));
-//	s.push_back(CUTE(test_clear));
-//	s.push_back(CUTE(test_deleteElements));
-//	s.push_back(CUTE(test_insertChild_null_child));
-//	s.push_back(CUTE(test_insertChild_unmanaged_parent));
-//	s.push_back(CUTE(test_deleteElements));
-//	s.push_back(CUTE(test_clear));
-//	s.push_back(CUTE(test_deleteSubtree_child));
-//	s.push_back(CUTE(test_deleteSubtree_root));
-//	s.push_back(CUTE(test_deleteSubtree_sibling));
-//	s.push_back(CUTE(test_tree_example));
-//	s.push_back(CUTE(test_print_example));
+	s.push_back(CUTE(test_insertChild_null_parent));
+	s.push_back(CUTE(test_insertChild_null_child));
+	s.push_back(CUTE(test_insertChild_unmanaged_parent));
+	s.push_back(CUTE(test_clear));
+	s.push_back(CUTE(test_deleteElements));
+	s.push_back(CUTE(test_insertChild_null_child));
+	s.push_back(CUTE(test_insertChild_unmanaged_parent));
+	s.push_back(CUTE(test_deleteElements));
+	s.push_back(CUTE(test_clear));
+	s.push_back(CUTE(test_deleteSubtree_child));
+	s.push_back(CUTE(test_deleteSubtree_root));
+	s.push_back(CUTE(test_deleteSubtree_sibling));
+	s.push_back(CUTE(test_tree_example));
+	s.push_back(CUTE(test_print_example));
 	s.push_back(CUTE(test_copy_constructor));
 	s.push_back(CUTE(test_assign_operator));
 	return s;
 }
 
 void test_insertChild_null_parent() {
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	Node* child = new Node();
 	tree->insertChild(nullptr, child);
 
@@ -39,7 +39,7 @@ void test_insertChild_null_parent() {
 }
 
 void test_insertChild_null_child() {
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	Node* parent = new Node();
 	tree->insertChild(parent, nullptr);
 
@@ -52,7 +52,7 @@ void test_insertChild_null_child() {
 }
 
 void test_insertChild_unmanaged_parent() {
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	Node* parent = new Node();
 	Node* child = new Node();
 	tree->insertChild(parent, child);
@@ -67,7 +67,7 @@ void test_insertChild_unmanaged_parent() {
 }
 
 void test_clear() {
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	tree->insertChild(tree->getRoot(), new Node());
 	tree->insertChild(tree->getRoot(), new Node());
 	tree->insertChild(tree->getRoot(), new Node());
@@ -83,7 +83,7 @@ void test_clear() {
 }
 
 void test_deleteElements() {
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	tree->insertChild(tree->getRoot(), new Node());
 	tree->insertChild(tree->getRoot(), new Node());
 	tree->insertChild(tree->getRoot(), new Node());
@@ -100,7 +100,7 @@ void test_deleteElements() {
 }
 
 void test_deleteSubtree_root() {
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	Node* subParent = new Node();
 	tree->insertChild(tree->getRoot(), new Node());
 	tree->insertChild(tree->getRoot(), subParent);
@@ -116,7 +116,7 @@ void test_deleteSubtree_root() {
 	WriteMetaInfo(cout);
 }
 void test_deleteSubtree_child() {
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	Node* l1 = new Node();
 	Node* l2 = new Node();
 	Node* l3 = new Node();
@@ -137,7 +137,7 @@ void test_deleteSubtree_child() {
 
 void test_deleteSubtree_sibling() {
 
-	Tree* tree = new Tree();
+	Tree* tree = new Tree((*new Node()));
 	Node* subParent = new Node();
 	tree->insertChild(tree->getRoot(), new Node());
 	tree->insertChild(tree->getRoot(), subParent);
@@ -226,12 +226,15 @@ void test_copy_constructor() {
 
 	cout << "Copying tree and deleting original" << endl;
 	Tree* copied = new Tree(*tree);
+
 	delete tree;
 
 	cout
 			<< "Copied tree: (Deep copy no references are shared between instances)"
 			<< endl;
 	cout << *copied;
+
+	delete copied;
 
 	WriteMetaInfo(cout);
 }
@@ -262,9 +265,12 @@ void test_assign_operator() {
 	referenced = *tree;
 
 	cout << "Adding new node on referenced tree" << endl << endl;
-	referenced.insertChild(tree->getRoot(), new IntNode(666));
-
+	referenced.insertChild(referenced.getRoot(), new IntNode(-1));
 	cout << "Original tree:" << endl << *tree << endl << endl;
-	cout << "Referenced tree: " << endl << referenced << endl;
+	cout << "Referenced tree: " << endl << referenced << endl << flush;
+
+	delete tree;
+
 	WriteMetaInfo(cout);
+
 }

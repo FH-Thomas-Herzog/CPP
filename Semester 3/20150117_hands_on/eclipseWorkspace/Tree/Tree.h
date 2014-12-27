@@ -16,7 +16,7 @@
  * This class represents the tree which is able to handle all derivations of the Node class.
  */
 class Tree: public ML::Object {
-	private:
+	protected:
 		////////////////////////////////////////////////////////////
 		// Private Members                                        //
 		////////////////////////////////////////////////////////////
@@ -32,6 +32,7 @@ class Tree: public ML::Object {
 		 */
 		int size;
 
+	private:
 		////////////////////////////////////////////////////////////
 		// Private Utils                                          //
 		////////////////////////////////////////////////////////////
@@ -96,12 +97,18 @@ class Tree: public ML::Object {
 		 * Default constructor which creates a new root node for this tree.
 		 */
 		inline Tree() :
-				root(new Node()), size(1) {
-			Register("Tree", "Object");
+				Tree(nullptr) {
 		}
 
 		inline Tree(Node & root) :
-				root(&root), size(1) {
+				Tree(&root) {
+		}
+
+		inline Tree(Node* root) :
+				root(root) {
+			if (root != nullptr) {
+				size = countNodes(root);
+			}
 			Register("Tree", "Object");
 		}
 
@@ -114,7 +121,10 @@ class Tree: public ML::Object {
 		 */
 		inline Tree(const Tree & other) :
 				size(other.getSize()) {
-			root = other.getRoot()->clone();
+			if (other.getRoot() != nullptr) {
+				root = other.getRoot()->clone();
+			}
+			Register("Tree", "Object");
 		}
 
 		/**
@@ -138,6 +148,23 @@ class Tree: public ML::Object {
 		 */
 		virtual inline Node* getRoot() const {
 			return root;
+		}
+
+		/**
+		 * Setter for root node.
+		 *
+		 * @param
+		 * 		node: the node acting as the root node.
+		 */
+		virtual inline void setRoot(Node* node) {
+			if ((node == nullptr) || (node->getNextSibling() != nullptr)) {
+				std::cout
+						<< "root node must node be null and must not have next sibling set !!!"
+						<< std::endl;
+			} else {
+				root = node;
+				size = countNodes(root);
+			}
 		}
 
 		/**

@@ -32,7 +32,7 @@ static void buildLeveledMap(Node* node, int level,
 			if (next->getFirstChild() != nullptr) {
 				parents.push_back(next);
 			} /* if */
-			next = next->getNextSbiling();
+			next = next->getNextSibling();
 		} /* while */
 
 		/* crawl deeper into tree if nodes were found */
@@ -60,9 +60,9 @@ bool Tree::isManagedNode(const Node* node) const {
 		while ((child != nullptr) && (!siblingResult)
 				&& (!(childResult = (child == node)))) {
 			siblingResult = false;
-			next = child->getNextSbiling();
+			next = child->getNextSibling();
 			while ((next != nullptr) && ((!(siblingResult = (next == node))))) {
-				next = next->getNextSbiling();
+				next = next->getNextSibling();
 			} /* while */
 			child = child->getFirstChild();
 		} /* if */
@@ -76,9 +76,9 @@ int Tree::countNodes(const Node* node) const {
 
 	if (node != nullptr) {
 		result++;
-		Node* tmp = node->getNextSbiling();
+		Node* tmp = node->getNextSibling();
 		while (tmp != nullptr) {
-			tmp = tmp->getNextSbiling();
+			tmp = tmp->getNextSibling();
 			result++;
 		} /* while */
 		return result + countNodes(node->getFirstChild());
@@ -93,10 +93,10 @@ Node* Tree::getParentNode(Node* subTreeRoot, const Node* node) const {
 
 	if ((subTreeRoot != nullptr) && (node != nullptr)) {
 		result = (subTreeRoot->getFirstChild() == node) ? subTreeRoot : nullptr;
-		next = subTreeRoot->getNextSbiling();
+		next = subTreeRoot->getNextSibling();
 		while ((next != nullptr) && (result == nullptr)) {
 			result = getParentNode(next->getFirstChild(), node);
-			next = next->getNextSbiling();
+			next = next->getNextSibling();
 		} /* while */
 		if (result == nullptr) {
 			result = getParentNode(subTreeRoot->getFirstChild(), node);
@@ -111,10 +111,10 @@ Node* Tree::getFormerNeighbour(Node* parent, const Node* node) const {
 
 	if ((parent != nullptr) && (node != nullptr)) {
 		Node* pre = parent;
-		Node* cur = parent->getNextSbiling();
+		Node* cur = parent->getNextSibling();
 		while ((cur != nullptr) && (cur != node)) {
 			pre = cur;
-			cur = cur->getNextSbiling();
+			cur = cur->getNextSibling();
 		} /* while */
 		result =
 				(cur == node) ?
@@ -128,6 +128,13 @@ Node* Tree::getFormerNeighbour(Node* parent, const Node* node) const {
 // Tree Manipulation                                      //
 ////////////////////////////////////////////////////////////
 void Tree::insertChild(Node* parent, Node* child) {
+	/* Check if root is defined */
+	if (root == nullptr) {
+		cout
+				<< "Cannot add child on empty tree !!! At least the root node must be defined !!!"
+				<< endl << flush;
+	}
+
 	/* Check for nullptr nodes */
 	if ((parent == nullptr) || (child == nullptr)) {
 		cout << "Parent and child not are not allowed to be null" << endl
@@ -158,7 +165,6 @@ void Tree::insertChild(Node* parent, Node* child) {
 	/* insert as new first child and move current first child to next sibling of new first child */
 	else {
 		child->setNextSibling(parent->getFirstChild());
-		child->setFirstChild(parent->getFirstChild()->getFirstChild());
 		parent->setFirstChild(child);
 	} /* if */
 
@@ -183,11 +189,11 @@ void Tree::deleteSubTree(Node* node) {
 		else {
 			/* cut from first child list if found here */
 			if ((tmp = getParentNode(root, node)) != nullptr) {
-				tmp->setFirstChild(node->getNextSbiling());
+				tmp->setFirstChild(node->getNextSibling());
 			}
 			/* Cut from sibling list if found there */
 			else if ((tmp = getFormerNeighbour(root, node)) != nullptr) {
-				tmp->setNextSibling(tmp->getNextSbiling()->getNextSbiling());
+				tmp->setNextSibling(tmp->getNextSibling()->getNextSibling());
 			} /* if */
 			/* need to remove reference because otherwise would be deleted along with the node */
 			node->setNextSibling(nullptr);
@@ -251,10 +257,10 @@ void Tree::print(ostream & os) const {
 			node = (*parentIterator)->getFirstChild();
 			while (node != nullptr) {
 				os << *node;
-				if (node->getNextSbiling() != nullptr) {
+				if (node->getNextSibling() != nullptr) {
 					os << " - ";
 				} /* if */
-				node = node->getNextSbiling();
+				node = node->getNextSibling();
 			} /* while */
 			os << endl;
 			os << "-----------------------------------------------------"

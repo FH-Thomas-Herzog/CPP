@@ -32,7 +32,7 @@ class IntNode: public Node {
 		 * 		value: teh value to be hold by this IntNode
 		 */
 		inline IntNode(int value) :
-				value(value) {
+				Node(), value(value) {
 			Register("IntNode", "Node");
 		}
 
@@ -44,13 +44,8 @@ class IntNode: public Node {
 		 * 		other: the node to be copied deeply
 		 */
 		inline IntNode(const IntNode & other) :
-				IntNode(other.getValue()) {
-			if (other.getFirstChild() != nullptr) {
-				setFirstChild(other.getFirstChild()->clone());
-			}
-			if (other.getNextSbiling() != nullptr) {
-				setNextSibling(other.getNextSbiling()->clone());
-			}
+				Node(other), value(other.getValue()) {
+			Register("IntNode", "Node");
 		}
 
 		virtual inline ~IntNode() {
