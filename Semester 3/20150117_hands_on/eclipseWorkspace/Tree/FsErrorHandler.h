@@ -35,17 +35,17 @@ enum class FsErrorType {
 /**
  * Singleton error message handler which provides the error messages for the specified errors.
  */
-class FsMessageHandler {
+class FsErrorHandler {
 	private:
 		static bool createdFlag;
-		static FsMessageHandler* instance;
+		static FsErrorHandler* instance;
 		std::map<FsErrorType, std::string> errorMessages;
 
-		inline FsMessageHandler() {
+		inline FsErrorHandler() {
 		}
-		inline FsMessageHandler(const FsMessageHandler & other) {
+		inline FsErrorHandler(const FsErrorHandler & other) {
 		}
-		inline FsMessageHandler & operator =(const FsMessageHandler & other) {
+		inline FsErrorHandler & operator =(const FsErrorHandler & other) {
 		}
 
 		inline void initMessages() {
@@ -69,14 +69,14 @@ class FsMessageHandler {
 							"Cannot walk path which contains files"));
 		}
 	public:
-		~FsMessageHandler() {
+		~FsErrorHandler() {
 			createdFlag = false;
 			instance = nullptr;
 		}
 
-		static inline FsMessageHandler* getInstance() {
+		static inline FsErrorHandler* getInstance() {
 			if (!createdFlag) {
-				instance = new FsMessageHandler();
+				instance = new FsErrorHandler();
 				createdFlag = true;
 				return instance;
 			} else {

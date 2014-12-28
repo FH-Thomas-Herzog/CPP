@@ -30,6 +30,7 @@ class Node: public ML::Object {
 		 * The next direct neighbor reference
 		 */
 		Node *nextSibling;
+
 	public:
 		////////////////////////////////////////////////////////////
 		// Constructor and Destructor                             //
@@ -170,5 +171,19 @@ class Node: public ML::Object {
 			node.print(os);
 			return os;
 		}
+
+//		/**
+//		 * Assigns the node to the current Node instance by referencing the same members.
+//		 *
+//		 * @param
+//		 * 		other: the tree to be assigned
+//		 */
+//		inline Node & operator=(const Node & other) {
+//			if (this != &other) {
+//				firstChild = other.firstChild;
+//				nextSibling = other.nextSibling;
+//			}
+//			return *this;
+//		}
 };
 #endif /* NODE_H_ */

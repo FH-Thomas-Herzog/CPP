@@ -13,7 +13,7 @@
 
 class FsNode: public Node {
 	protected:
-		std::string name;
+		const std::string name;
 
 	public:
 		/**
@@ -21,7 +21,7 @@ class FsNode: public Node {
 		 */
 		FsNode() = delete;
 
-		inline FsNode(std::string name) :
+		inline FsNode(const std::string name) :
 				Node(), name(name) {
 			Register("FsNode", "Object");
 		}
@@ -58,5 +58,22 @@ class FsNode: public Node {
 		virtual inline FsNode* getNextSibling() const {
 			return (FsNode*) Node::getNextSibling();
 		}
+
+//		////////////////////////////////////////////////////////////
+//		// operator                                               //
+//		////////////////////////////////////////////////////////////
+//		/**
+//		 * Assigns the node to the current Node instance by referencing the same members.
+//		 *
+//		 * @param
+//		 * 		other: the tree to be assigned
+//		 */
+//		inline FsNode & operator=(const FsNode & other) {
+//			if (this != &other) {
+//				Node::operator =(other);
+//				name = other.name;
+//			}
+//			return *this;
+//		}
 };
 #endif /* FSNODE_H_ */

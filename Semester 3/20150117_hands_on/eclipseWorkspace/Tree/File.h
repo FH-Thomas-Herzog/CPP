@@ -17,7 +17,7 @@ class File: public FsNode {
 
 	public:
 
-		inline File(std::string filename) :
+		inline File(const std::string filename) :
 				FsNode::FsNode(name) {
 		}
 

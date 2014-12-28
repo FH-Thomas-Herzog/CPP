@@ -18,5 +18,4 @@ cute::suite make_suite_FileSystemTests() {
 
 void test_file_system_example() {
 	FileSystem* fs = new FileSystem();
-
 }

@@ -18,7 +18,7 @@
 class Tree: public ML::Object {
 	protected:
 		////////////////////////////////////////////////////////////
-		// Private Members                                        //
+		// protected Members                                      //
 		////////////////////////////////////////////////////////////
 		/**
 		 * The root node of this tree.

@@ -15,10 +15,9 @@ class Directory: public FsNode {
 	private:
 
 	public:
-		virtual inline std::string AsString() {
-			std::stringstream ss;
-			ss << "Directory('" << name << "')";
-			return ss.str();
+
+		inline Directory(const std::string & name) :
+				FsNode(name) {
 		}
 
 		inline Directory(const Directory & other) :
@@ -30,6 +29,11 @@ class Directory: public FsNode {
 
 		virtual inline Directory* clone() const {
 			return new Directory(*this);
+		}
+		virtual inline std::string AsString() {
+			std::stringstream ss;
+			ss << "Directory('" << name << "')";
+			return ss.str();
 		}
 };
 
