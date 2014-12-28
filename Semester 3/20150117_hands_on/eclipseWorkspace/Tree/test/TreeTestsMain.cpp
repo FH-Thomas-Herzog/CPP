@@ -7,7 +7,7 @@
 
 using namespace cute;
 
-void runSuite(int argc, char const *argv[]) {
+static void runSuite(int argc, char const *argv[]) {
 	suite s;
 	xml_file_opener xmlfile(argc, argv);
 	xml_listener<ide_listener<> > lis(xmlfile.out);

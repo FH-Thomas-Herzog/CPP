@@ -124,7 +124,10 @@ class Tree: public ML::Object {
 			if (other.getRoot() != nullptr) {
 				root = other.getRoot()->clone();
 			}
-			Register("Tree", "Object");
+			/* Only register if other is instance of Tree */
+			if (other.Class().compare("Tree")) {
+				Register("Tree", "Object");
+			}
 		}
 
 		/**

@@ -79,7 +79,10 @@ class Node: public ML::Object {
 			if (other.getNextSibling() != nullptr) {
 				setNextSibling(other.getNextSibling()->clone());
 			}
-			Register("Node", "Object");
+			/* Only register if instance of Node */
+			if (other.Class().compare("Node")) {
+				Register("Node", "Object");
+			}
 		}
 
 		////////////////////////////////////////////////////////////

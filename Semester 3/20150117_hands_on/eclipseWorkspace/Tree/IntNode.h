@@ -45,7 +45,10 @@ class IntNode: public Node {
 		 */
 		inline IntNode(const IntNode & other) :
 				Node(other), value(other.getValue()) {
-			Register("IntNode", "Node");
+			/* Only register if instance of IntNode */
+			if (other.Class().compare("IntNode")) {
+				Register("IntNode", "Node");
+			}
 		}
 
 		virtual inline ~IntNode() {
