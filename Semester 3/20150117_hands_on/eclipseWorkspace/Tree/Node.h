@@ -10,7 +10,9 @@
 
 #include "MLObject.h"
 #include "MetaInfo.h"
-#include <sstream>
+
+#define NODE_CLASS "Node"
+#define OBJECT_CLASS "Object"
 
 /**
  * This class is the base node which can be used to be handled in a tree.
@@ -18,17 +20,8 @@
  */
 class Node: public ML::Object {
 	protected:
-		////////////////////////////////////////////////////////////
-		// Private members                                        //
-		////////////////////////////////////////////////////////////
-		/**
-		 * The first direct child reference
-		 */
 		Node *firstChild;
 
-		/**
-		 * The next direct neighbor reference
-		 */
 		Node *nextSibling;
 
 	public:
@@ -46,22 +39,14 @@ class Node: public ML::Object {
 		explicit inline Node(Node *firstChild = nullptr, Node *nextSibling =
 				nullptr) :
 				firstChild(nullptr), nextSibling(nullptr) {
-			Register("Node", "Object");
+			Register(NODE_CLASS, OBJECT_CLASS);
 		}
 
 		/**
 		 * Destructor which deletes the held references if they are not null.
 		 * Their references nodes will be deleted same as here when their destructor gets called.
 		 */
-		virtual inline ~Node() {
-			if (firstChild != nullptr) {
-				delete firstChild;
-			} /* if */
-
-			if (nextSibling != nullptr) {
-				delete nextSibling;
-			} /* if */
-		}
+		virtual ~Node();
 
 		/**
 		 * This constructor copies the held nodes which causes that the whole subtree
@@ -72,19 +57,7 @@ class Node: public ML::Object {
 		 * @param
 		 * 		node: the node to be copied
 		 */
-		inline Node(const Node& other) :
-				firstChild(nullptr), nextSibling(nullptr) {
-			if (other.getFirstChild() != nullptr) {
-				setFirstChild(other.getFirstChild()->clone());
-			}
-			if (other.getNextSibling() != nullptr) {
-				setNextSibling(other.getNextSibling()->clone());
-			}
-			/* Only register if instance of Node */
-			if (other.Class().compare("Node")) {
-				Register("Node", "Object");
-			}
-		}
+		Node(const Node& other);
 
 		////////////////////////////////////////////////////////////
 		// Getter and Setter                                      //
@@ -92,15 +65,11 @@ class Node: public ML::Object {
 		/**
 		 * Getter method for the first child references
 		 */
-		virtual inline Node* getFirstChild() const {
-			return firstChild;
-		}
+		virtual Node* getFirstChild() const;
 		/**
 		 * Getter method for the first next neighbor references
 		 */
-		virtual inline Node* getNextSibling() const {
-			return nextSibling;
-		}
+		virtual Node* getNextSibling() const;
 
 		/**
 		 * Sets the first child references.
@@ -109,15 +78,7 @@ class Node: public ML::Object {
 		 * @param
 		 * 		firstChild: the new first child node reference
 		 */
-		virtual inline void setFirstChild(Node* firstChild) {
-			if (this == firstChild) {
-				std::cout
-						<< "Node is not allowed to reference itself on firstChild"
-						<< std::flush << std::endl;
-			} else {
-				this->firstChild = firstChild;
-			} /* if */
-		}
+		virtual void setFirstChild(Node* firstChild);
 
 		/**
 		 * Sets the next neighbor references.
@@ -126,15 +87,7 @@ class Node: public ML::Object {
 		 * @param
 		 * 		nextSibling: the new nextSibling rreference
 		 */
-		virtual inline void setNextSibling(Node* nextSibling) {
-			if (this == nextSibling) {
-				std::cout
-						<< "Node is not allowed to reference itself on nextSibling"
-						<< std::flush << std::endl;
-			} else {
-				this->nextSibling = nextSibling;
-			} /* if */
-		}
+		virtual void setNextSibling(Node* nextSibling);
 
 		////////////////////////////////////////////////////////////
 		// Utils                                                  //
@@ -146,13 +99,9 @@ class Node: public ML::Object {
 		 * @param
 		 * 		ostram: the ostram to put printed text on
 		 */
-		virtual inline void print(std::ostream & os) const {
-			os << AsString();
-		}
+		virtual void print(std::ostream & os) const;
 
-		virtual inline Node* clone() const {
-			return new Node(*this);
-		}
+		virtual Node* clone() const;
 
 		////////////////////////////////////////////////////////////
 		// operator                                               //
@@ -166,11 +115,7 @@ class Node: public ML::Object {
 		 * @param
 		 *  	node: the node part of the operation
 		 */
-		inline friend std::ostream& operator<<(std::ostream & os,
-				const Node & node) {
-			node.print(os);
-			return os;
-		}
+		friend std::ostream& operator<<(std::ostream & os, const Node & node);
 
 //		/**
 //		 * Assigns the node to the current Node instance by referencing the same members.
@@ -178,7 +123,7 @@ class Node: public ML::Object {
 //		 * @param
 //		 * 		other: the tree to be assigned
 //		 */
-//		inline Node & operator=(const Node & other) {
+//		 Node & operator=(const Node & other) {
 //			if (this != &other) {
 //				firstChild = other.firstChild;
 //				nextSibling = other.nextSibling;

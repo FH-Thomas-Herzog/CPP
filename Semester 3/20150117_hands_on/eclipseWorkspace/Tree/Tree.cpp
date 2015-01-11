@@ -15,11 +15,9 @@
 using namespace std;
 using namespace ML;
 
-/**
- * Builds a map which holds the level as the key and a vector which contains
- * all nodes which have a first child set.
- * No its possible to get all nodes of a level via their parents.
- */
+////////////////////////////////////////////////////////////
+// Private Utils                                          //
+////////////////////////////////////////////////////////////
 static void buildLeveledMap(Node* node, int level,
 		map<int, vector<Node*>> & resultMap) {
 
@@ -44,11 +42,8 @@ static void buildLeveledMap(Node* node, int level,
 			} /* for */
 		} /* if */
 	} /* if */
-} /* buildLeveledMap */
+} /* Tree::buildLeveledMap */
 
-////////////////////////////////////////////////////////////
-// Private Utils                                          //
-////////////////////////////////////////////////////////////
 bool Tree::isManagedNode(const Node* node) const {
 	bool childResult = false;
 	bool siblingResult = false;
@@ -123,6 +118,67 @@ Node* Tree::getFormerNeighbour(Node* parent, const Node* node) const {
 
 	return result;
 } /* Tree::getFormerNeighbour */
+
+////////////////////////////////////////////////////////////
+// Constructor and Destructor                             //
+////////////////////////////////////////////////////////////
+Tree::Tree() :
+		Tree(nullptr) {
+} /* Tree::Tree */
+
+Tree::Tree(Node & root) :
+		Tree(&root) {
+} /* Tree::Tree */
+
+Tree::Tree(Node* root) :
+		root(root) {
+	if (root != nullptr) {
+		size = countNodes(root);
+	}
+	Register(TREE_CLASS, OBJECT_CLASS);
+} /* Tree::Tree */
+
+Tree::Tree(const Tree & other) :
+		size(other.getSize()) {
+	if (other.getRoot() != nullptr) {
+		root = other.getRoot()->clone();
+	}
+	Register(TREE_CLASS, OBJECT_CLASS);
+} /* Tree::Tree */
+
+Tree::~Tree() {
+	if (root != nullptr) {
+		delete root;
+	}
+} /* Tree::~Tree */
+
+////////////////////////////////////////////////////////////
+// Getter and Setter                                      //
+////////////////////////////////////////////////////////////
+Node* Tree::getRoot() const {
+	return root;
+} /* Tree::getRoot */
+
+void Tree::setRoot(Node* node) {
+	/* check for valid new root node */
+	if ((node == nullptr) || (node->getNextSibling() != nullptr)) {
+		cout
+				<< "root node must not be null and must not have next sibling set !!!"
+				<< endl;
+		return;
+	}
+	/* if current root node is not null delete it */
+	else if (root != nullptr) {
+		deleteElements();
+	}
+	/* set new root node */
+	clear();
+
+} /* Tree::setRoot */
+
+int Tree::getSize() const {
+	return size;
+} /* Tree::getSize */
 
 ////////////////////////////////////////////////////////////
 // Tree Manipulation                                      //
@@ -205,7 +261,7 @@ void Tree::deleteSubTree(Node* node) {
 
 		/* re initialize if it is root */
 		if (isRoot) {
-			init();
+			clear();
 		} else {
 			size = countNodes(root);
 		}/* if */
@@ -217,7 +273,8 @@ void Tree::deleteElements() {
 } /* Tree::deleteElements */
 
 void Tree::clear() {
-	init();
+	root = new Node();
+	size = 1;
 } /* Tree::clear */
 
 ////////////////////////////////////////////////////////////
@@ -273,3 +330,18 @@ void Tree::print(ostream & os) const {
 	} /* while */
 } /* Tree::print */
 
+////////////////////////////////////////////////////////////
+// Operators                                              //
+////////////////////////////////////////////////////////////
+ostream& operator<<(ostream & os, const Tree & tree) {
+	tree.print(os);
+	return os;
+} /* operator<< */
+
+Tree & Tree::operator=(const Tree & other) {
+	if (this != &other) {
+		root = other.getRoot();
+		size = other.getSize();
+	}
+	return *this;
+} /* Tree::operator= */

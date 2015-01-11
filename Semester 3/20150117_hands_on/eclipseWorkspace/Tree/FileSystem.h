@@ -22,13 +22,13 @@
 #define FILE_SEPARATOR   "/"
 #endif
 
+#define FILESYSTEM_CLASS "FileSystem"
 /**
  * This struct is used to hold information about the walked path.
  */
 typedef struct WalkResult {
 		FsErrorType error = FsErrorType::NONE;
-		FsNode* errorNode = nullptr;
-		std::vector<FsNode*> walkedNodes;
+		FsNode* lastVisitedNode;
 } WalkResult;
 
 /**
@@ -48,62 +48,119 @@ class FileSystem: public Tree {
 		////////////////////////////////////////////////////////////
 		// private utils                                          //
 		////////////////////////////////////////////////////////////
+		/**
+		 * This method validates if the given path is a valid one and only contains directories.
+		 * If the path is invalid an error code will be set.
+		 * The result struct will contain the references to the last visited node.
+		 *
+		 * @param
+		 * 		path: the path to be validated
+		 * @return
+		 * 		the result struct which contains information about the path and a reference to the last visited node
+		 */
 		WalkResult validatePath(const std::string & path) const;
 
+		/**
+		 * This method recursively walks the given full path.
+		 * If the path is invalid a error code is set for later evaluation.
+		 * The reference to last visited node is set.
+		 *
+		 * @param
+		 * 		currentNode: the node to search for the direct child with the path part set as name
+		 * @param
+		 * 		fullPath: a vector containing the full path split by the file separator
+		 * @param
+		 * 		result: the result where the error code and last node are set.
+		 */
 		void walkPath(const FsNode* currentNode,
 				std::vector<std::string> & fullPath, WalkResult & result) const;
 
-		FsNode* getChildByName(const FsNode* node, const std::string & name) const;
+		FsNode* getChildByName(const FsNode* node,
+				const std::string & name) const;
+
+		/**
+		 * Deletes the given child from the parent safely.
+		 *
+		 * @param
+		 * 		parent: the parent node to delete child from
+		 * @param
+		 * 		child:t he child to be deleted from the parent safely
+		 *
+		 */
+		void deleteFsNode(FsNode* parent, FsNode* child);
 
 		////////////////////////////////////////////////////////////
 		// hidden former public methods                           //
 		// for type safety (Node* -> Directory*)                  //
 		// not allowed to be called by outside caller             //
+		//                                                        //
+		// see parent class for method doc                        //
 		////////////////////////////////////////////////////////////
-		virtual inline void deleteSubTree(FsNode* node) {
-			Tree::deleteSubTree(node);
-		}
+		void deleteSubTree(FsNode* node);
 
-		virtual inline void setRoot(Directory* node) {
-			// FileSystem root cannot be defined from caller is always root path ""
-			std::cout
-					<< "Root is not allowed to be set on a FileSystem instance !!! "
-					<< std::endl << std::flush;
-		}
+		void setRoot(Directory* node);
 
-		virtual inline void insertChild(Directory* parent, FsNode* child) {
-			Tree::insertChild(parent, child);
-		}
+		void insertChild(Directory* parent, FsNode* child);
 
-		virtual inline FsNode* getRoot() const {
-			return (FsNode*) Tree::getRoot();
-		}
+		FsNode* getRoot() const;
 
 	public:
-		inline FileSystem() :
-				Tree::Tree((*new FsNode(""))) {
-			Register("FileSystem", "Tree");
-		}
+		////////////////////////////////////////////////////////////
+		// Constructor and Destructor                             //
+		////////////////////////////////////////////////////////////
+		FileSystem();
 
-		inline FileSystem(const FileSystem & other) :
-				Tree::Tree(other) {
-			/* Only register if other is instance of FileSystem */
-			if (other.Class().compare("FileSystem")) {
-				Register("FileSystem", "Tree");
-			}
-		}
+		FileSystem(const FileSystem & other);
 
+		////////////////////////////////////////////////////////////
+		// public visible methods                                 //
+		////////////////////////////////////////////////////////////
+		/**
+		 * Touches a file and creates one if the file does not exist
+		 *
+		 * @param
+		 * 		path: the path to the file
+		 * 	param
+		 * 		filename: the name of the file to be touched
+		 */
 		virtual void touch(const std::string & path,
 				const std::string & filename);
 
+		/**
+		 * Creates a directory.
+		 *
+		 * @param
+		 * 		path: the path under which the directory shall be created
+		 * @param
+		 * 		dirname: the name of the directory to be created
+		 */
 		virtual void mkdir(const std::string & path,
 				const std::string & dirname);
 
+		/**
+		 * Removes a file from the given path.
+		 *
+		 * @param
+		 * 		path: the path where the file resides
+		 * @param
+		 * 		filename: the name of the file to be deleted
+		 */
 		virtual void rm(const std::string & path, const std::string & filename);
 
+		/**
+		 * Removes a directory from the given path.
+		 *
+		 * @param
+		 * 		path: the path where the directory resides
+		 * @param
+		 * 		filename: the name of the file to be deleted
+		 */
 		virtual void rmdir(const std::string & path,
 				const std::string & dirname);
 
+		/**
+		 * List all of the content of the file system
+		 */
 		virtual void ls() const;
 };
 

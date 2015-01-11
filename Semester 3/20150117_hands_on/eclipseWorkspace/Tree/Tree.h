@@ -12,40 +12,34 @@
 #include "Node.h"
 #include "MLObject.h"
 
+#define TREE_CLASS "Tree"
+
 /**
  * This class represents the tree which is able to handle all derivations of the Node class.
  */
 class Tree: public ML::Object {
 	protected:
-		////////////////////////////////////////////////////////////
-		// protected Members                                      //
-		////////////////////////////////////////////////////////////
-		/**
-		 * The root node of this tree.
-		 * Will be handled by the instance itself and cannot be modified from the caller.
-		 */
 		Node* root;
 
-		/**
-		 * The current size of the tree.
-		 * Means the node count.
-		 */
 		int size;
 
 	private:
 		////////////////////////////////////////////////////////////
-		// Private Utils                                          //
+		// Private utils method                                   //
 		////////////////////////////////////////////////////////////
 		/**
 		 * Answers the question if the parent node is handled by this tree instance.
+		 * This is done by comparing the pointer addresses.
 		 *
 		 * @param
 		 * 		parent: the node to be checked if managed by this tree.
+		 * @return
+		 * 		true if the node is managed, false otherwise
 		 */
 		bool isManagedNode(const Node* node) const;
 
 		/**
-		 * Counts the nodes of this subtree including the root node.
+		 * Counts the nodes of this subtree including the given parent node.
 		 *
 		 * @param
 		 * 		node: the node to count hold nodes
@@ -55,14 +49,15 @@ class Tree: public ML::Object {
 		int countNodes(const Node* node) const;
 
 		/**
-		 * Gets the parent if the parent has the node referenced by its first child field.
+		 * Gets the parent node of the given node.
+		 * The given subTreeRoot represents the tree or subtree to search for the node and its parent
 		 *
 		 * @param
-		 * 		parent: the subtree to search the neighbor of the given node
+		 * 		subTreeRoot: the subtree to search the neighbor of the given node
 		 * @param
 		 * 		node: the node to search parent for
 		 */
-		Node* getParentNode(Node* parent, const Node* node) const;
+		Node* getParentNode(Node* subTreeRoot, const Node* node) const;
 
 		/**
 		 * Gets the former neighbor if the parent has the node referenced by its next sibling field.
@@ -74,21 +69,6 @@ class Tree: public ML::Object {
 		 */
 		Node* getFormerNeighbour(Node* parent, const Node* node) const;
 
-		/**
-		 * Inits this tree.
-		 */
-		inline void init() {
-			root = createRootNode();
-			size = 1;
-		}
-
-		/**
-		 * Creates the root node.
-		 */
-		virtual inline Node* createRootNode() {
-			return new Node();
-		}
-
 	public:
 		////////////////////////////////////////////////////////////
 		// Constructor and Destructor                             //
@@ -96,21 +76,18 @@ class Tree: public ML::Object {
 		/**
 		 * Default constructor which creates a new root node for this tree.
 		 */
-		inline Tree() :
-				Tree(nullptr) {
-		}
+		Tree();
 
-		inline Tree(Node & root) :
-				Tree(&root) {
-		}
+		/**
+		 * Copy constructor for this class
+		 */
+		Tree(Node & root);
 
-		inline Tree(Node* root) :
-				root(root) {
-			if (root != nullptr) {
-				size = countNodes(root);
-			}
-			Register("Tree", "Object");
-		}
+		/**
+		 * Creates a tree with the given node as root.
+		 * If the root node is null then a root must be set via setRoot otherwise no children can be inserted.
+		 */
+		Tree(Node* root);
 
 		/**
 		 * Copies the whole tree held by the root node by copying the root node.
@@ -119,27 +96,13 @@ class Tree: public ML::Object {
 		 * @param
 		 * 		other: the tree to be copied.
 		 */
-		inline Tree(const Tree & other) :
-				size(other.getSize()) {
-			if (other.getRoot() != nullptr) {
-				root = other.getRoot()->clone();
-			}
-			/* Only register if other is instance of Tree */
-			if (other.Class().compare("Tree")) {
-				Register("Tree", "Object");
-			}
-		}
+		Tree(const Tree & other);
 
 		/**
-		 * The default destructor which deltes its root.
-		 * The referenced nodes of the root node will be deleted in the destructor
-		 * of the root node same with their descendants.
+		 * The deconstructor of this class.
+		 * The nodes are deleted via cascade which starts at the root node.
 		 */
-		virtual inline ~Tree() {
-			if (root != nullptr) {
-				delete root;
-			}
-		}
+		~Tree();
 
 		////////////////////////////////////////////////////////////
 		// Getter and Setter                                      //
@@ -149,9 +112,7 @@ class Tree: public ML::Object {
 		 *
 		 * @return the root node.
 		 */
-		virtual inline Node* getRoot() const {
-			return root;
-		}
+		virtual Node* getRoot() const;
 
 		/**
 		 * Setter for root node.
@@ -159,23 +120,12 @@ class Tree: public ML::Object {
 		 * @param
 		 * 		node: the node acting as the root node.
 		 */
-		virtual inline void setRoot(Node* node) {
-			if ((node == nullptr) || (node->getNextSibling() != nullptr)) {
-				std::cout
-						<< "root node must node be null and must not have next sibling set !!!"
-						<< std::endl;
-			} else {
-				root = node;
-				size = countNodes(root);
-			}
-		}
+		virtual void setRoot(Node* node);
 
 		/**
 		 * The getter for the current size of the tree.
 		 */
-		virtual inline int getSize() const {
-			return size;
-		}
+		virtual int getSize() const;
 
 		////////////////////////////////////////////////////////////
 		// Tree Manipulation                                      //
@@ -232,11 +182,7 @@ class Tree: public ML::Object {
 		 * @param
 		 * 		tree: the tree part of this operation
 		 */
-		inline friend std::ostream& operator<<(std::ostream & os,
-				const Tree & tree) {
-			tree.print(os);
-			return os;
-		}
+		friend std::ostream& operator<<(std::ostream & os, const Tree & tree);
 
 		/**
 		 * Assigns the tree to the current Tree instance by referencing the same root node which holds the tree.
@@ -244,13 +190,7 @@ class Tree: public ML::Object {
 		 * @param
 		 * 		other: the tree to be assigned
 		 */
-		inline Tree & operator=(const Tree & other) {
-			if (this != &other) {
-				root = other.getRoot();
-				size = other.getSize();
-			}
-			return *this;
-		}
+		Tree & operator=(const Tree & other);
 };
 
 #endif /* TREE_H_ */

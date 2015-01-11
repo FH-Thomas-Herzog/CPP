@@ -8,45 +8,28 @@
 #ifndef FILE_H_
 #define FILE_H_
 
-#include <string>
-#include <sstream>
 #include "FSNode.h"
 
+#define FILE_CLASS "File"
+
 class File: public FsNode {
-	private:
+	protected:
+
+		Node* getFirstChild();
+
+		void setFirstChild(Node* node);
+
+		virtual File* clone() const;
 
 	public:
 
-		inline File(const std::string filename) :
-				FsNode::FsNode(name) {
-		}
+		File(const std::string filename);
 
-		inline File(const File & other) :
-				FsNode::FsNode(other) {
-		}
+		File(const File & other);
 
-		virtual inline ~File() {
-		}
+		virtual ~File();
 
-		inline Node* getFirstChild() {
-			return nullptr;
-		}
-
-		inline void setFirstChild(Node* node) {
-			// Do nothing here
-			std::cout << "File does not allow setting of a first child"
-					<< std::endl;
-		}
-
-		virtual inline std::string AsString() {
-			std::stringstream ss;
-			ss << "File('" << name << "')";
-			return ss.str();
-		}
-
-		virtual inline File* clone() const {
-			return new File(*this);
-		}
+		virtual std::string AsString();
 };
 
 #endif /* FILE_H_ */

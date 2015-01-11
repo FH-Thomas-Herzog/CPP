@@ -8,56 +8,33 @@
 #ifndef FSNODE_H_
 #define FSNODE_H_
 
-#include <string>
 #include "Node.h"
+
+#define FS_NODE_CLASS "FsNode"
 
 class FsNode: public Node {
 	protected:
 		const std::string name;
 
 	public:
-		/**
-		 * Never use default empty constructor because fs node must always have a name.
-		 */
+
 		FsNode() = delete;
 
-		inline FsNode(const std::string name) :
-				Node(), name(name) {
-			Register("FsNode", "Object");
-		}
+		FsNode(const std::string name);
 
-		inline FsNode(const FsNode & other) :
-				Node::Node(other), name("copy_of_" + name) {
-			/* Only register if instance of FsNode */
-			if (other.Class().compare("FsNode")) {
-				Register("FsNode", "Node");
-			}
-		}
+		FsNode(const FsNode & other);
 
-		virtual inline ~FsNode() {
-		}
+		virtual ~FsNode();
 
-		virtual inline std::string AsString() {
-			std::stringstream ss;
-			ss << "FsNode('" << name << "')";
-			return ss.str();
-		}
+		virtual std::string AsString();
 
-		virtual inline FsNode* clone() const {
-			return new FsNode(*this);
-		}
+		virtual FsNode* clone() const;
 
-		virtual inline std::string getName() const {
-			return name;
-		}
+		virtual std::string getName() const;
 
-		virtual inline FsNode* getFirstChild() const {
-			return (FsNode*) Node::getFirstChild();
-		}
+		virtual FsNode* getFirstChild() const;
 
-		virtual inline FsNode* getNextSibling() const {
-			return (FsNode*) Node::getNextSibling();
-		}
+		virtual FsNode* getNextSibling() const;
 
 //		////////////////////////////////////////////////////////////
 //		// operator                                               //
@@ -68,7 +45,7 @@ class FsNode: public Node {
 //		 * @param
 //		 * 		other: the tree to be assigned
 //		 */
-//		inline FsNode & operator=(const FsNode & other) {
+//		 FsNode & operator=(const FsNode & other) {
 //			if (this != &other) {
 //				Node::operator =(other);
 //				name = other.name;

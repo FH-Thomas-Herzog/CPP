@@ -21,7 +21,7 @@ enum class FsErrorType {
 	/* Given path contains files which cannot be walked as directories */
 	PATH_CONTAIN_FILES = 1,
 	/* Path contains directories which do not exist */
-	INCOMPLETE_PATH = 2,
+	INVALID_PATH = 2,
 	/* File does not exist under intended location */
 	FILE_NOT_FOUND = 3,
 	/* directory does not exist under intended location */
@@ -42,10 +42,7 @@ class FsErrorHandler {
 		std::map<FsErrorType, std::string> errorMessages;
 
 		inline FsErrorHandler() {
-		}
-		inline FsErrorHandler(const FsErrorHandler & other) {
-		}
-		inline FsErrorHandler & operator =(const FsErrorHandler & other) {
+			initMessages();
 		}
 
 		inline void initMessages() {
@@ -61,8 +58,8 @@ class FsErrorHandler {
 							FsErrorType::FILE_NOT_FOUND, "File not found"));
 			errorMessages.insert(
 					std::pair<FsErrorType, std::string>(
-							FsErrorType::INCOMPLETE_PATH,
-							"Cannot walk incomplete path"));
+							FsErrorType::INVALID_PATH,
+							"Given path is invalid !!!"));
 			errorMessages.insert(
 					std::pair<FsErrorType, std::string>(
 							FsErrorType::PATH_CONTAIN_FILES,

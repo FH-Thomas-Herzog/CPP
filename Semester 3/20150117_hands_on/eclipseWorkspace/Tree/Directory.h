@@ -8,33 +8,38 @@
 #ifndef DIRECTORY_H_
 #define DIRECTORY_H_
 
-#include <string>
 #include "FSNode.h"
+
+#define DIRECTORY_CLASS "Directory"
 
 class Directory: public FsNode {
 	private:
 
 	public:
 
-		inline Directory(const std::string & name) :
-				FsNode(name) {
-		}
+		Directory() = delete;
 
-		inline Directory(const Directory & other) :
-				FsNode::FsNode(other) {
-		}
+		Directory(const std::string & name);
 
-		virtual inline ~Directory() {
-		}
+		Directory(const Directory & other);
 
-		virtual inline Directory* clone() const {
-			return new Directory(*this);
-		}
-		virtual inline std::string AsString() {
-			std::stringstream ss;
-			ss << "Directory('" << name << "')";
-			return ss.str();
-		}
+		virtual ~Directory();
+
+		virtual Directory* clone() const;
+
+		virtual std::string AsString() const;
+
+		////////////////////////////////////////////////////////////
+		// Utils                                                  //
+		////////////////////////////////////////////////////////////
+		/**
+		 * Prints the directory and all of its referenced nodes.
+		 * Means the subtree held by this node will be printed.
+		 *
+		 * @param
+		 * 		ostram: the ostram to put printed text on
+		 */
+		virtual void print(std::ostream & os) const;
 };
 
 #endif /* DIRECTORY_H_ */

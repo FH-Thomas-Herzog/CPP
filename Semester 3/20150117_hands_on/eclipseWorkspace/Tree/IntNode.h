@@ -8,11 +8,9 @@
 #ifndef INTNODE_H_
 #define INTNODE_H_
 
-#include <ostream>
-#include <string>
-#include <sstream>
 #include "Node.h"
-#include "MetaInfo.h"
+
+#define INT_NODE_CLASS "IntNode"
 
 class IntNode: public Node {
 	private:
@@ -21,6 +19,12 @@ class IntNode: public Node {
 		////////////////////////////////////////////////////////////
 		int value;
 
+	protected:
+
+		////////////////////////////////////////////////////////////
+		// Utils                                                  //
+		////////////////////////////////////////////////////////////
+		virtual IntNode* clone() const;
 	public:
 		////////////////////////////////////////////////////////////
 		// Constructor and Destructor                             //
@@ -31,10 +35,7 @@ class IntNode: public Node {
 		 * @param
 		 * 		value: teh value to be hold by this IntNode
 		 */
-		inline IntNode(int value) :
-				Node(), value(value) {
-			Register("IntNode", "Node");
-		}
+		IntNode(int value);
 
 		/**
 		 * Copy constructor which clones the IntNode deeply.
@@ -43,40 +44,18 @@ class IntNode: public Node {
 		 * @param
 		 * 		other: the node to be copied deeply
 		 */
-		inline IntNode(const IntNode & other) :
-				Node(other), value(other.getValue()) {
-			/* Only register if instance of IntNode */
-			if (other.Class().compare("IntNode")) {
-				Register("IntNode", "Node");
-			}
-		}
+		IntNode(const IntNode & other);
 
-		virtual inline ~IntNode() {
-		}
+		virtual ~IntNode();
 
 		////////////////////////////////////////////////////////////
 		// Getter and Setter                                      //
 		////////////////////////////////////////////////////////////
-		virtual inline int getValue() const {
-			return value;
-		}
+		virtual int getValue() const;
 
-		virtual inline void setValue(int value) {
-			this->value = value;
-		}
+		virtual void setValue(int value);
 
-		virtual inline std::string AsString() const {
-			std::stringstream ss;
-			ss << "IntNode(" << value << ")" << std::flush;
-			return ss.str();
-		}
-
-		////////////////////////////////////////////////////////////
-		// Utils                                                  //
-		////////////////////////////////////////////////////////////
-		virtual inline IntNode* clone() const {
-			return new IntNode(*this);
-		}
+		virtual std::string AsString() const;
 };
 
 #endif /* INTNODE_H_ */

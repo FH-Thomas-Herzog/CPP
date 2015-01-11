@@ -4,15 +4,30 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../Directory.cpp \
+../File.cpp \
 ../FileSystem.cpp \
+../FsNode.cpp \
+../IntNode.cpp \
+../Node.cpp \
 ../Tree.cpp 
 
 OBJS += \
+./Directory.o \
+./File.o \
 ./FileSystem.o \
+./FsNode.o \
+./IntNode.o \
+./Node.o \
 ./Tree.o 
 
 CPP_DEPS += \
+./Directory.d \
+./File.d \
 ./FileSystem.d \
+./FsNode.d \
+./IntNode.d \
+./Node.d \
 ./Tree.d 
 
 
