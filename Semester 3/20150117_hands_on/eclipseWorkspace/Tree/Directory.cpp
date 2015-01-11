@@ -40,13 +40,6 @@ string Directory::AsString() const {
 ////////////////////////////////////////////////////////////
 // Utils                                                  //
 ////////////////////////////////////////////////////////////
-/**
- * Prints the directory and all of its referenced nodes.
- * Means the subtree held by this node will be printed.
- *
- * @param
- * 		ostram: the ostram to put printed text on
- */
 void Directory::print(ostream & os) const {
 	os << AsString();
 }

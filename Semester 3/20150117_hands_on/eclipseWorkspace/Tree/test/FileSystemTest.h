@@ -17,6 +17,37 @@
 
 cute::suite make_suite_FileSystemTests();
 
-void test_file_system_example();
+////////////////////////////////////////////////////////////
+// mkdir tests                                            //
+////////////////////////////////////////////////////////////
+void test_mkdir_invalid_path();
+
+void test_mkdir_path_contain_files();
+
+void test_mkdir_valid();
+
+////////////////////////////////////////////////////////////
+// touch tests                                            //
+////////////////////////////////////////////////////////////
+void test_touch_invalid_path();
+
+void test_touch_path_contain_files();
+
+void test_touch_valid_new();
+
+void test_touch_valid_existing();
+
+////////////////////////////////////////////////////////////
+// rm tests                                               //
+////////////////////////////////////////////////////////////
+void test_rm_invalid_path();
+
+void test_rm_path_contain_files();
+
+void test_rm_not_found();
+
+void test_rm_directory();
+
+void test_rm_valid();
 
 #endif /* FILESYSTEMTEST_H_ */

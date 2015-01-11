@@ -102,7 +102,7 @@ class FileSystem: public Tree {
 
 		void insertChild(Directory* parent, FsNode* child);
 
-		FsNode* getRoot() const;
+		Directory* getRoot() const;
 
 	public:
 		////////////////////////////////////////////////////////////

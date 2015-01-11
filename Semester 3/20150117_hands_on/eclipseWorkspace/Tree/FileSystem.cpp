@@ -43,6 +43,9 @@ WalkResult FileSystem::validatePath(const std::string & path) const {
 	/* walk the path and validate if all of the node exist */
 	walkPath(node, fullPath, result);
 
+	/* clean up */
+	delete tmp;
+
 	return result;
 } /* FileSystem::validatePath */
 
@@ -53,10 +56,10 @@ void FileSystem::walkPath(const FsNode* currentNode, vector<string> & fullPath,
 		fullPath.pop_back();
 
 		FsNode* node = getChildByName(currentNode, part);
-		result.lastVisitedNode = node;
 
 		/* partial location found */
 		if (node != nullptr) {
+			result.lastVisitedNode = node;
 			/* Found but no directory */
 			if (!node->Class().compare(DIRECTORY_CLASS) == 0) {
 				result.error = FsErrorType::PATH_CONTAIN_FILES;
@@ -66,7 +69,7 @@ void FileSystem::walkPath(const FsNode* currentNode, vector<string> & fullPath,
 				walkPath(node, fullPath, result);
 			}
 		}
-		/* partial location invalid */
+		/* path invalid */
 		else {
 			result.error = FsErrorType::INVALID_PATH;
 		}
@@ -90,19 +93,25 @@ FsNode* FileSystem::getChildByName(const FsNode* node,
 void FileSystem::deleteFsNode(FsNode* parent, FsNode* child) {
 	FsNode* prev = nullptr;
 	FsNode* node = parent->getFirstChild();
+	/* get previous from child sibling */
 	while ((node != nullptr) && (node != child)) {
 		prev = node;
 		node = node->getNextSibling();
 	}
+	/* first child is supposed to be deleted */
 	if (prev == nullptr) {
 		parent->setFirstChild(node->getNextSibling());
-	} else {
+	}
+	/* remove child safely */
+	else {
 		prev->setNextSibling(node->getNextSibling());
 	}
+	/* delete child */
 	delete child;
 } /* FileSystem::deleteFsNode */
 
 void FileSystem::deleteSubTree(FsNode* node) {
+	/* delegate to parent class */
 	Tree::deleteSubTree(node);
 } /* FileSystem::deleteSubTree */
 
@@ -113,11 +122,13 @@ void FileSystem::setRoot(Directory* node) {
 } /* FileSystem::setRoot */
 
 void FileSystem::insertChild(Directory* parent, FsNode* child) {
+	/* delegate to parent child class */
 	Tree::insertChild(parent, child);
 } /* FileSystem::insertChild */
 
-FsNode* FileSystem::getRoot() const {
-	return (FsNode*) Tree::getRoot();
+Directory* FileSystem::getRoot() const {
+	/* it safe to cast brutally because can only be instanceof Directory */
+	return (Directory*) Tree::getRoot();
 } /* FileSystem::getRoot */
 
 ////////////////////////////////////////////////////////////
@@ -135,21 +146,25 @@ FileSystem::FileSystem(const FileSystem & other) :
 
 void FileSystem::touch(const string & path, const string & filename) {
 	WalkResult result = validatePath(path);
-	/* Path invalid */
+	/* Error occured */
 	if (result.error != FsErrorType::NONE) {
-		cout << FsErrorHandler::getInstance()->getMessage(result.error) << endl
+		string lastNodeName =
+				(result.lastVisitedNode != nullptr) ?
+						result.lastVisitedNode->getName() : "not available";
+		cout << FsErrorHandler::getInstance()->getMessage(result.error)
+				<< " (last visited node: " << lastNodeName << ")" << endl
 				<< flush;
-	} else {
-		FsNode* node = result.lastVisitedNode; //getChildByName(result.walkedNodes.back(), filename);
-		if (node == nullptr) {
-			insertChild((Directory*) result.lastVisitedNode,
-					new File(filename));
-			cout << "touched newly created file '" << filename << "'" << endl
-					<< flush;
-		} else {
-			cout << "touched existing file '" << filename << "'" << endl
-					<< flush;
-		}
+	}
+	/* if file exists */
+	else if (getChildByName(result.lastVisitedNode, filename) != nullptr) {
+		cout << "Touch existing file '" << filename << "'" << endl << flush;
+	}
+	/* create new file */
+	else {
+		insertChild(dynamic_cast<Directory*>(result.lastVisitedNode),
+				new File(filename));
+		cout << "touched newly created file '" << filename << "'" << endl
+				<< flush;
 	}
 } /* FileSystem::touch */
 
@@ -157,17 +172,16 @@ void FileSystem::mkdir(const string & path, const string & dirname) {
 	WalkResult result = validatePath(path);
 	/* Path invalid */
 	if (result.error != FsErrorType::NONE) {
-		cout << FsErrorHandler::getInstance()->getMessage(result.error) << endl
+		string lastNodeName =
+				(result.lastVisitedNode != nullptr) ?
+						result.lastVisitedNode->getName() : "not available";
+		cout << FsErrorHandler::getInstance()->getMessage(result.error)
+				<< " (last visited node: " << lastNodeName << ")" << endl
 				<< flush;
 	} else {
-		FsNode* node = result.lastVisitedNode; //getChildByName(result.walkedNodes.back(), dirname);
-		if (node != nullptr) {
-			insertChild((Directory*) result.lastVisitedNode,
-					new Directory(dirname));
-			cout << "directory created '" << dirname << "'" << endl << flush;
-		} else {
-			cout << "directory already exists !!!";
-		}
+		insertChild(dynamic_cast<Directory*>(result.lastVisitedNode),
+				new Directory(dirname));
+		cout << "directory created '" << dirname << "'" << endl << flush;
 	}
 } /* FileSystem::mkdir */
 

@@ -21,6 +21,18 @@ class File: public FsNode {
 
 		virtual File* clone() const;
 
+		////////////////////////////////////////////////////////////
+		// Utils                                                  //
+		////////////////////////////////////////////////////////////
+		/**
+		 * Prints the directory and all of its referenced nodes.
+		 * Means the subtree held by this node will be printed.
+		 *
+		 * @param
+		 * 		ostram: the ostram to put printed text on
+		 */
+		virtual void print(std::ostream & os) const;
+
 	public:
 
 		File(const std::string filename);
@@ -29,7 +41,7 @@ class File: public FsNode {
 
 		virtual ~File();
 
-		virtual std::string AsString();
+		virtual std::string AsString() const;
 };
 
 #endif /* FILE_H_ */

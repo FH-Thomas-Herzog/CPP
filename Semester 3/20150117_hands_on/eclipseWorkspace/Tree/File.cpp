@@ -16,7 +16,7 @@ using namespace ML;
 // Constructor and Destructor                             //
 ////////////////////////////////////////////////////////////
 File::File(const string filename) :
-		FsNode::FsNode(name) {
+		FsNode::FsNode(filename) {
 	Register(FILE_CLASS, FS_NODE_CLASS);
 }
 
@@ -43,7 +43,7 @@ void File::setFirstChild(Node* node) {
 ////////////////////////////////////////////////////////////
 // Utils                                                  //
 ////////////////////////////////////////////////////////////
-string File::AsString() {
+string File::AsString() const{
 	stringstream ss;
 	ss << "File('" << name << "')";
 	return ss.str();
@@ -51,4 +51,8 @@ string File::AsString() {
 
 File* File::clone() const {
 	return new File(*this);
+}
+
+void File::print(ostream & os) const {
+	os << AsString();
 }
