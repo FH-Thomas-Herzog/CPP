@@ -1,8 +1,9 @@
 /*
  * FileSystem.h
+ * This is the FileSystem specification
  *
  *  Created on: Dec 27, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef FILESYSTEM_H_
@@ -23,12 +24,14 @@
 #endif
 
 #define FILESYSTEM_CLASS "FileSystem"
+
 /**
  * This struct is used to hold information about the walked path.
  */
 typedef struct WalkResult {
 		FsErrorType error = FsErrorType::NONE;
 		FsNode* lastVisitedNode;
+		std::string childNodeName;
 } WalkResult;
 
 /**
@@ -50,15 +53,19 @@ class FileSystem: public Tree {
 		////////////////////////////////////////////////////////////
 		/**
 		 * This method validates if the given path is a valid one and only contains directories.
+		 * If the childName contains a path to it will append the path to the path which is used for the resolving.
 		 * If the path is invalid an error code will be set.
 		 * The result struct will contain the references to the last visited node.
+		 * The result will get the childName set.
 		 *
 		 * @param
 		 * 		path: the path to be validated
+		 * @param
+		 * 		childName: the name of the child
 		 * @return
 		 * 		the result struct which contains information about the path and a reference to the last visited node
 		 */
-		WalkResult validatePath(const std::string & path) const;
+		WalkResult validatePath(const std::string & path, const std::string childName) const;
 
 		/**
 		 * This method recursively walks the given full path.
@@ -75,6 +82,16 @@ class FileSystem: public Tree {
 		void walkPath(const FsNode* currentNode,
 				std::vector<std::string> & fullPath, WalkResult & result) const;
 
+		/**
+		 * Gets the direct of the given parent which defines the given name
+		 *
+		 * @param
+		 * 		node: the parent node to be searched on
+		 * @param
+		 * 		name: the name of the searched child
+		 * @return
+		 * 		the found node, null otherwise
+		 */
 		FsNode* getChildByName(const FsNode* node,
 				const std::string & name) const;
 
@@ -111,6 +128,8 @@ class FileSystem: public Tree {
 		FileSystem();
 
 		FileSystem(const FileSystem & other);
+
+		virtual ~FileSystem();
 
 		////////////////////////////////////////////////////////////
 		// public visible methods                                 //

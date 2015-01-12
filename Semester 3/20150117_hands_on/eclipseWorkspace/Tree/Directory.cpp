@@ -1,8 +1,9 @@
 /*
  * Directory.cpp
+ * This is the implementation of the Directory specification
  *
  *  Created on: Jan 11, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 #include <sstream>
 #include "Directory.h"
@@ -10,36 +11,36 @@
 using namespace std;
 using namespace ML;
 
+////////////////////////////////////////////////////////////
+// Constructor and Destructor                             //
+////////////////////////////////////////////////////////////
 Directory::Directory(const string & name) :
 		FsNode(name) {
-	/* avoid multiple registration */
 	Register(DIRECTORY_CLASS, FS_NODE_CLASS);
-}
+} /* Directory::Directory */
 
 Directory::Directory(const Directory & other) :
 		FsNode::FsNode(other) {
 	/* avoid multiple registration */
-	if (other.Class().compare(DIRECTORY_CLASS) == 0) {
-		Register(DIRECTORY_CLASS, FS_NODE_CLASS);
-	}
-}
+	Register(DIRECTORY_CLASS, FS_NODE_CLASS);
+} /* Directory::Directory */
 
 Directory::~Directory() {
-}
+} /* Directory::~Directory */
 
+////////////////////////////////////////////////////////////
+// Utils                                                  //
+////////////////////////////////////////////////////////////
 Directory* Directory::clone() const {
 	return new Directory(*this);
-}
+} /* Directory::clone */
 
 string Directory::AsString() const {
 	stringstream ss;
 	ss << "Directory('" << name << "')";
 	return ss.str();
-}
+} /* Directory::AsString */
 
-////////////////////////////////////////////////////////////
-// Utils                                                  //
-////////////////////////////////////////////////////////////
 void Directory::print(ostream & os) const {
 	os << AsString();
-}
+} /* Directory::print */

@@ -1,8 +1,9 @@
 /*
  * Node.h
+ * This is the specification of the IntNode
  *
  *  Created on: Dec 23, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef NODE_H_
@@ -29,7 +30,7 @@ class Node: public ML::Object {
 		// Constructor and Destructor                             //
 		////////////////////////////////////////////////////////////
 		/**
-		 * Default constructor which registers this instance in the mini lib.
+		 * Default constructor which sets the first child and next sibling to null.
 		 *
 		 * @param
 		 * 		firstChild: nullptr for the first child reference
@@ -63,11 +64,18 @@ class Node: public ML::Object {
 		// Getter and Setter                                      //
 		////////////////////////////////////////////////////////////
 		/**
-		 * Getter method for the first child references
+		 * Getter method for the first child references.
+		 *
+		 * @return
+		 * 		the first child reference
 		 */
 		virtual Node* getFirstChild() const;
+
 		/**
-		 * Getter method for the first next neighbor references
+		 * Getter method for the first next neighbor references.
+		 *
+		 * @return
+		 * 		the next sibling reference
 		 */
 		virtual Node* getNextSibling() const;
 
@@ -85,7 +93,7 @@ class Node: public ML::Object {
 		 * The caller is responsible for handling the instance lifecycle of the former referenced node.
 		 *
 		 * @param
-		 * 		nextSibling: the new nextSibling rreference
+		 * 		nextSibling: the new nextSibling reference
 		 */
 		virtual void setNextSibling(Node* nextSibling);
 
@@ -101,6 +109,12 @@ class Node: public ML::Object {
 		 */
 		virtual void print(std::ostream & os) const;
 
+		/**
+		 * This method clones this node by copying the held references of this node.
+		 *
+		 * @return
+		 * 		A deep copy of this node
+		 */
 		virtual Node* clone() const;
 
 		////////////////////////////////////////////////////////////
@@ -110,25 +124,11 @@ class Node: public ML::Object {
 		 * The friend method for the << operator.
 		 *
 		 * @param
-		 * 		os: the ostream instace to print result on
+		 * 		os: the ostream instance to print result on
 		 *
 		 * @param
 		 *  	node: the node part of the operation
 		 */
 		friend std::ostream& operator<<(std::ostream & os, const Node & node);
-
-//		/**
-//		 * Assigns the node to the current Node instance by referencing the same members.
-//		 *
-//		 * @param
-//		 * 		other: the tree to be assigned
-//		 */
-//		 Node & operator=(const Node & other) {
-//			if (this != &other) {
-//				firstChild = other.firstChild;
-//				nextSibling = other.nextSibling;
-//			}
-//			return *this;
-//		}
 };
 #endif /* NODE_H_ */

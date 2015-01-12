@@ -1,8 +1,9 @@
 /*
  * Node.cpp
+ * This is the implementation of the IntNode specification.
  *
  *  Created on: Jan 11, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 #include "MLObject.h"
 #include "MetaInfo.h"
@@ -22,7 +23,7 @@ Node::~Node() {
 	if (nextSibling != nullptr) {
 		delete nextSibling;
 	} /* if */
-}
+} /* Node::~Node */
 
 Node::Node(const Node& other) :
 		firstChild(nullptr), nextSibling(nullptr) {
@@ -33,18 +34,18 @@ Node::Node(const Node& other) :
 		setNextSibling(other.getNextSibling()->clone());
 	}
 	Register(NODE_CLASS, OBJECT_CLASS);
-}
+} /* Node::Node */
 
 ////////////////////////////////////////////////////////////
 // Getter and Setter                                      //
 ////////////////////////////////////////////////////////////
 Node* Node::getFirstChild() const {
 	return firstChild;
-}
+} /* Node::getFirstChild */
 
 Node* Node::getNextSibling() const {
 	return nextSibling;
-}
+} /* Node::getNextSibling */
 
 void Node::setFirstChild(Node* firstChild) {
 	if (this == firstChild) {
@@ -53,7 +54,7 @@ void Node::setFirstChild(Node* firstChild) {
 	} else {
 		this->firstChild = firstChild;
 	} /* if */
-}
+} /* Node::setFirstChild */
 
 void Node::setNextSibling(Node* nextSibling) {
 	if (this == nextSibling) {
@@ -62,18 +63,18 @@ void Node::setNextSibling(Node* nextSibling) {
 	} else {
 		this->nextSibling = nextSibling;
 	} /* if */
-}
+} /* Node::setNextSibling */
 
 ////////////////////////////////////////////////////////////
 // Utils                                                  //
 ////////////////////////////////////////////////////////////
 void Node::print(ostream & os) const {
 	os << AsString();
-}
+} /* Node::print */
 
 Node* Node::clone() const {
 	return new Node(*this);
-}
+} /* Node::clone */
 
 ////////////////////////////////////////////////////////////
 // operator                                               //
@@ -81,18 +82,4 @@ Node* Node::clone() const {
 ostream& operator<<(ostream & os, const Node & node) {
 	node.print(os);
 	return os;
-}
-
-//		/**
-//		 * Assigns the node to the current Node instance by referencing the same members.
-//		 *
-//		 * @param
-//		 * 		other: the tree to be assigned
-//		 */
-//		inline Node & operator=(const Node & other) {
-//			if (this != &other) {
-//				firstChild = other.firstChild;
-//				nextSibling = other.nextSibling;
-//			}
-//			return *this;
-//		}
+} /* operator<< */

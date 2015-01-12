@@ -1,8 +1,8 @@
 /*
  * Tree.cpp
- *
+ * The implementation of the Tree specification.
  *  Created on: Dec 23, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #include <string>
@@ -134,6 +134,8 @@ Tree::Tree(Node* root) :
 		root(root) {
 	if (root != nullptr) {
 		size = countNodes(root);
+	}else {
+		clear();
 	}
 	Register(TREE_CLASS, OBJECT_CLASS);
 } /* Tree::Tree */
@@ -319,9 +321,6 @@ void Tree::print(ostream & os) const {
 				} /* if */
 				node = node->getNextSibling();
 			} /* while */
-			os << endl;
-			os << "-----------------------------------------------------"
-					<< endl;
 			parentIterator++;
 		} /* while */
 

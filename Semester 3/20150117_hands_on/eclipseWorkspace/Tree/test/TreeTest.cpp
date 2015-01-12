@@ -34,8 +34,6 @@ void test_insertChild_null_parent() {
 
 	delete child;
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_insertChild_null_child() {
@@ -47,8 +45,6 @@ void test_insertChild_null_child() {
 
 	delete parent;
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_insertChild_unmanaged_parent() {
@@ -62,8 +58,6 @@ void test_insertChild_unmanaged_parent() {
 	delete parent;
 	delete child;
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_clear() {
@@ -78,8 +72,6 @@ void test_clear() {
 	ASSERT_EQUAL(1, tree->getSize());
 	delete root;
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_deleteElements() {
@@ -95,8 +87,6 @@ void test_deleteElements() {
 
 	ASSERT_EQUAL(1, tree->getSize());
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_deleteSubtree_root() {
@@ -112,8 +102,6 @@ void test_deleteSubtree_root() {
 	tree->deleteSubTree(tree->getRoot());
 	ASSERT_EQUAL(1, tree->getSize());
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 void test_deleteSubtree_child() {
 	Tree* tree = new Tree((*new Node()));
@@ -131,8 +119,6 @@ void test_deleteSubtree_child() {
 	tree->deleteSubTree(l2);
 	ASSERT_EQUAL(2, tree->getSize());
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_deleteSubtree_sibling() {
@@ -149,8 +135,6 @@ void test_deleteSubtree_sibling() {
 	tree->deleteSubTree(subParent);
 	ASSERT_EQUAL(3, tree->getSize());
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_tree_example() {
@@ -172,8 +156,6 @@ void test_tree_example() {
 	tree->insertChild(n3, new IntNode(10));
 
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_print_example() {
@@ -198,8 +180,6 @@ void test_print_example() {
 	cout << *tree << endl << flush;
 
 	delete tree;
-
-	WriteMetaInfo(cout);
 }
 
 void test_copy_constructor() {
@@ -235,8 +215,6 @@ void test_copy_constructor() {
 	cout << *copied;
 
 	delete copied;
-
-	WriteMetaInfo(cout);
 }
 
 void test_assign_operator() {
@@ -270,7 +248,5 @@ void test_assign_operator() {
 	cout << "Referenced tree: " << endl << referenced << endl << flush;
 
 	delete tree;
-
-	WriteMetaInfo(cout);
 
 }

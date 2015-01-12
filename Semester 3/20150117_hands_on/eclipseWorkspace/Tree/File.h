@@ -1,8 +1,9 @@
 /*
  * File.h
+ * This is the specification of the File
  *
  *  Created on: Dec 27, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef FILE_H_
@@ -12,36 +13,83 @@
 
 #define FILE_CLASS "File"
 
+/**
+ * This class represents a file in the file system.
+ */
 class File: public FsNode {
-	protected:
+public:
 
-		Node* getFirstChild();
+	////////////////////////////////////////////////////////////
+	// Constructor and Destructor                             //
+	////////////////////////////////////////////////////////////
+	/**
+	 * This class is not allowed to be instantiated via an empty constructor
+	 */
+	File() = delete;
 
-		void setFirstChild(Node* node);
+	/**
+	 * Constructs an instance with a name
+	 */
+	File(const std::string filename);
 
-		virtual File* clone() const;
+	/**
+	 * Copy constructor which performs a deep copy
+	 */
+	File(const File & other);
 
-		////////////////////////////////////////////////////////////
-		// Utils                                                  //
-		////////////////////////////////////////////////////////////
-		/**
-		 * Prints the directory and all of its referenced nodes.
-		 * Means the subtree held by this node will be printed.
-		 *
-		 * @param
-		 * 		ostram: the ostram to put printed text on
-		 */
-		virtual void print(std::ostream & os) const;
+	/**
+	 * Destructor which does nothing.
+	 * Deletion is performed via Node constructor
+	 */
+	virtual ~File();
 
-	public:
+	////////////////////////////////////////////////////////////
+	// Getter and Setter                                      //
+	////////////////////////////////////////////////////////////
+	/**
+	 * Getter method for the first child references which will
+	 * always return null, because File cannot define a first child.
+	 *
+	 * @return
+	 * 		the first child reference
+	 */
+	virtual FsNode* getFirstChild() const;
 
-		File(const std::string filename);
+	/**
+	 * Does nothin gbecuase file is not allowed to define a first child.
+	 *
+	 * @param
+	 * 		firstChild: the new first child node reference
+	 */
+	virtual void setFirstChild(FsNode* firstChild);
 
-		File(const File & other);
+	////////////////////////////////////////////////////////////
+	// Utils                                                  //
+	////////////////////////////////////////////////////////////
+	/**
+	 * Performs a deep copy of this instance.
+	 *
+	 * @return
+	 * 		the copied instance
+	 */
+	virtual File* clone() const;
 
-		virtual ~File();
+	/**
+	 * Prints the directory and all of its referenced nodes.
+	 * Means the subtree held by this node will be printed.
+	 *
+	 * @param
+	 * 		ostram: the ostram to put printed text on
+	 */
+	virtual void print(std::ostream & os) const;
 
-		virtual std::string AsString() const;
+	/**
+	 * Returns the string representation of this class
+	 *
+	 * @return
+	 * 		the string representation of this class
+	 */
+	virtual std::string AsString() const;
 };
 
 #endif /* FILE_H_ */

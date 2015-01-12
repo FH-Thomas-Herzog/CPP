@@ -38,19 +38,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: Trees
+all: Tree
 
 # Tool invocations
-Trees: $(OBJS) $(USER_OBJS)
+Tree: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Trees" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) Trees
+	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) Tree
 	-@echo ' '
 
 .PHONY: all clean dependents
