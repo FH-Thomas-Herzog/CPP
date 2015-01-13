@@ -1,0 +1,1620 @@
+19:04:20 **** Clean-only build of configuration Debug for project Tree ****
+make clean 
+rm -rf  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o  ./test/FileSystemTest.d ./test/TreeTest.d ./test/TreeTestsMain.d  ./Directory.d ./File.d ./FileSystem.d ./FsNode.d ./IntNode.d ./Node.d ./Tree.d  Trees
+ 
+19:04:21 **** Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building file: ../test/TreeTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTest.d" -MT"test/TreeTest.d" -o "test/TreeTest.o" "../test/TreeTest.cpp"
+Finished building: ../test/TreeTest.cpp
+ 
+Building file: ../test/TreeTestsMain.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTestsMain.d" -MT"test/TreeTestsMain.d" -o "test/TreeTestsMain.o" "../test/TreeTestsMain.cpp"
+Finished building: ../test/TreeTestsMain.cpp
+ 
+Building file: ../Directory.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Directory.d" -MT"Directory.d" -o "Directory.o" "../Directory.cpp"
+Finished building: ../Directory.cpp
+ 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+Finished building: ../File.cpp
+ 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building file: ../FsNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FsNode.d" -MT"FsNode.d" -o "FsNode.o" "../FsNode.cpp"
+Finished building: ../FsNode.cpp
+ 
+Building file: ../IntNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"IntNode.d" -MT"IntNode.d" -o "IntNode.o" "../IntNode.cpp"
+Finished building: ../IntNode.cpp
+ 
+Building file: ../Node.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Node.d" -MT"Node.d" -o "Node.o" "../Node.cpp"
+Finished building: ../Node.cpp
+ 
+Building file: ../Tree.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Tree.d" -MT"Tree.d" -o "Tree.o" "../Tree.cpp"
+Finished building: ../Tree.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:07:22 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building file: ../test/TreeTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTest.d" -MT"test/TreeTest.d" -o "test/TreeTest.o" "../test/TreeTest.cpp"
+Finished building: ../test/TreeTest.cpp
+ 
+Building file: ../test/TreeTestsMain.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTestsMain.d" -MT"test/TreeTestsMain.d" -o "test/TreeTestsMain.o" "../test/TreeTestsMain.cpp"
+Finished building: ../test/TreeTestsMain.cpp
+ 
+Building file: ../Directory.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Directory.d" -MT"Directory.d" -o "Directory.o" "../Directory.cpp"
+Finished building: ../Directory.cpp
+ 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+Finished building: ../File.cpp
+ 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building file: ../FsNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FsNode.d" -MT"FsNode.d" -o "FsNode.o" "../FsNode.cpp"
+Finished building: ../FsNode.cpp
+ 
+Building file: ../IntNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"IntNode.d" -MT"IntNode.d" -o "IntNode.o" "../IntNode.cpp"
+Finished building: ../IntNode.cpp
+ 
+Building file: ../Node.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Node.d" -MT"Node.d" -o "Node.o" "../Node.cpp"
+Finished building: ../Node.cpp
+ 
+Building file: ../Tree.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Tree.d" -MT"Tree.d" -o "Tree.o" "../Tree.cpp"
+Finished building: ../Tree.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:07:51 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building file: ../test/TreeTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTest.d" -MT"test/TreeTest.d" -o "test/TreeTest.o" "../test/TreeTest.cpp"
+Finished building: ../test/TreeTest.cpp
+ 
+Building file: ../test/TreeTestsMain.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTestsMain.d" -MT"test/TreeTestsMain.d" -o "test/TreeTestsMain.o" "../test/TreeTestsMain.cpp"
+Finished building: ../test/TreeTestsMain.cpp
+ 
+Building file: ../Directory.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Directory.d" -MT"Directory.d" -o "Directory.o" "../Directory.cpp"
+Finished building: ../Directory.cpp
+ 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+Finished building: ../File.cpp
+ 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building file: ../FsNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FsNode.d" -MT"FsNode.d" -o "FsNode.o" "../FsNode.cpp"
+Finished building: ../FsNode.cpp
+ 
+Building file: ../IntNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"IntNode.d" -MT"IntNode.d" -o "IntNode.o" "../IntNode.cpp"
+Finished building: ../IntNode.cpp
+ 
+Building file: ../Node.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Node.d" -MT"Node.d" -o "Node.o" "../Node.cpp"
+Finished building: ../Node.cpp
+ 
+Building file: ../Tree.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Tree.d" -MT"Tree.d" -o "Tree.o" "../Tree.cpp"
+Finished building: ../Tree.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:08:28 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:10:10 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:10:56 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:11:27 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:14:45 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:15:21 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:15:52 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:16:33 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:17:04 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:17:28 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:18:17 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:19:30 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:27:02 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:27:56 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:28:07 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:29:07 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:30:52 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:33:48 **** Clean-only build of configuration Debug for project CuteTests ****
+make clean 
+rm -rf  ./src/Test.o ./src/Trees.o  ./src/Test.d ./src/Trees.d  CuteTests
+ 
+19:33:49 **** Build of configuration Debug for project CuteTests ****
+make all 
+Building file: ../src/Test.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Test.d" -MT"src/Test.d" -o "src/Test.o" "../src/Test.cpp"
+In file included from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind/bind.hpp:29:0,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind.hpp:22,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute_determine_library.h:37,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute_test.h:23,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute_suite.h:22,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute.h:29,
+                 from ../src/Test.cpp:1:
+/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind/arg.hpp: In constructor ‘boost::arg<I>::arg(const T&)’:
+/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind/arg.hpp:37:22: warning: typedef ‘T_must_be_placeholder’ locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+Finished building: ../src/Test.cpp
+ 
+Building file: ../src/Trees.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Trees.d" -MT"src/Trees.d" -o "src/Trees.o" "../src/Trees.cpp"
+In file included from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind/bind.hpp:29:0,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind.hpp:22,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute_determine_library.h:37,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute_test.h:23,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute_suite.h:22,
+                 from /mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/cute/cute.h:29,
+                 from ../src/Trees.cpp:1:
+/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind/arg.hpp: In constructor ‘boost::arg<I>::arg(const T&)’:
+/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_hands_on/eclipseWorkspace/CuteTests/boost/boost/bind/arg.hpp:37:22: warning: typedef ‘T_must_be_placeholder’ locally defined but not used [-Wunused-local-typedefs]
+         typedef char T_must_be_placeholder[ I == is_placeholder<T>::value? 1: -1 ];
+                      ^
+Finished building: ../src/Trees.cpp
+ 
+Building target: CuteTests
+Invoking: GCC C++ Linker
+g++  -o "CuteTests"  ./src/Test.o ./src/Trees.o   
+Finished building target: CuteTests
+ 
+19:33:52 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+19:33:53 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(const string&) const’:
+../FileSystem.cpp:37:27: error: conversion from ‘std::string* {aka std::basic_string<char>*}’ to non-scalar type ‘std::string {aka std::basic_string<char>}’ requested
+  string r = new string(tmp);
+                           ^
+make: *** [FileSystem.o] Error 1
+19:34:26 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+19:34:27 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+19:34:28 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:35:02 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+19:35:03 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+19:35:03 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:35:08 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+19:35:09 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+19:35:09 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:43:00 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+19:43:00 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+19:43:01 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(const string&, std::string) const’:
+../FileSystem.cpp:44:8: error: redeclaration of ‘char* tmp’
+  char* tmp = new char[childName.size() + 1];
+        ^
+../FileSystem.cpp:33:8: error: ‘char* tmp’ previously declared here
+  char* tmp = new char[path.size() + 1];
+        ^
+../FileSystem.cpp:47:8: error: redeclaration of ‘char* token’
+  char* token = strtok(tmp, FILE_SEPARATOR);
+        ^
+../FileSystem.cpp:35:8: error: ‘char* token’ previously declared here
+  char* token = strtok(tmp, FILE_SEPARATOR);
+        ^
+make: *** [FileSystem.o] Error 1
+19:43:33 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+19:43:34 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+19:43:34 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:44:48 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:45:30 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:46:55 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:47:45 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+19:47:45 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+19:47:46 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:47:52 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:49:50 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:50:58 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:51:12 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:51:36 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+19:56:17 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:57:14 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:59:07 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:59:34 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+19:59:59 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:01:10 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:02:04 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:02:50 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:02:51 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:02:51 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:02:53 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:04:12 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:05:27 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:05:27 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:05:28 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(const string&, std::string) const’:
+../FileSystem.cpp:42:8: error: redeclaration of ‘char* token’
+  char* token = strtok(copiedChildName, FILE_SEPARATOR);
+        ^
+../FileSystem.cpp:30:8: error: ‘char* token’ previously declared here
+  char* token = strtok(copiedPath, FILE_SEPARATOR);
+        ^
+make: *** [FileSystem.o] Error 1
+20:05:43 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:05:43 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:05:44 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:05:54 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:05:55 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:05:55 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:06:08 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:06:09 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:06:09 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:06:12 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:07:35 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:07:36 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:07:36 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(const string&, std::string) const’:
+../FileSystem.cpp:30:43: error: cannot convert ‘const string {aka const std::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* strtok(char*, const char*)’
+  char* token = strtok(path, FILE_SEPARATOR);
+                                           ^
+make: *** [FileSystem.o] Error 1
+20:07:42 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:07:43 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:07:43 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(const string&, std::string) const’:
+../FileSystem.cpp:30:34: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+  char* token = strtok(path.c_str(), FILE_SEPARATOR);
+                                  ^
+In file included from /usr/include/c++/4.8/cstring:42:0,
+                 from ../FileSystem.cpp:9:
+/usr/include/string.h:348:14: error:   initializing argument 1 of ‘char* strtok(char*, const char*)’ [-fpermissive]
+ extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+              ^
+make: *** [FileSystem.o] Error 1
+20:08:32 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:08:33 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:08:34 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(std::string&, std::string) const’:
+../FileSystem.cpp:30:34: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+  char* token = strtok(path.c_str(), FILE_SEPARATOR);
+                                  ^
+In file included from /usr/include/c++/4.8/cstring:42:0,
+                 from ../FileSystem.cpp:9:
+/usr/include/string.h:348:14: error:   initializing argument 1 of ‘char* strtok(char*, const char*)’ [-fpermissive]
+ extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+              ^
+../FileSystem.cpp: In member function ‘virtual void FileSystem::touch(const string&, const string&)’:
+../FileSystem.cpp:169:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:169:49: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::mkdir(const string&, const string&)’:
+../FileSystem.cpp:195:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:195:48: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rm(const string&, const string&)’:
+../FileSystem.cpp:213:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:213:49: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rmdir(const string&, const string&)’:
+../FileSystem.cpp:242:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:242:48: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+make: *** [FileSystem.o] Error 1
+20:08:47 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:08:48 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:08:48 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(std::string&, std::string) const’:
+../FileSystem.cpp:30:34: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+  char* token = strtok(path.c_str(), FILE_SEPARATOR);
+                                  ^
+In file included from /usr/include/c++/4.8/cstring:42:0,
+                 from ../FileSystem.cpp:9:
+/usr/include/string.h:348:14: error:   initializing argument 1 of ‘char* strtok(char*, const char*)’ [-fpermissive]
+ extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+              ^
+../FileSystem.cpp: In member function ‘virtual void FileSystem::touch(const string&, const string&)’:
+../FileSystem.cpp:169:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:169:49: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::mkdir(const string&, const string&)’:
+../FileSystem.cpp:195:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:195:48: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rm(const string&, const string&)’:
+../FileSystem.cpp:213:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:213:49: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rmdir(const string&, const string&)’:
+../FileSystem.cpp:242:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:242:48: note: candidate is:
+../FileSystem.cpp:18:12: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+ WalkResult FileSystem::validatePath(std::string & path,
+            ^
+../FileSystem.cpp:18:12: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+make: *** [FileSystem.o] Error 1
+20:09:43 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:09:44 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:09:44 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp:18:12: error: prototype for ‘WalkResult FileSystem::validatePath(const string&, std::string) const’ does not match any in class ‘FileSystem’
+ WalkResult FileSystem::validatePath(const std::string & path,
+            ^
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: error: candidate is: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.cpp: In member function ‘virtual void FileSystem::touch(const string&, const string&)’:
+../FileSystem.cpp:169:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:169:49: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::mkdir(const string&, const string&)’:
+../FileSystem.cpp:195:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:195:48: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rm(const string&, const string&)’:
+../FileSystem.cpp:213:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:213:49: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rmdir(const string&, const string&)’:
+../FileSystem.cpp:242:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:242:48: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+make: *** [FileSystem.o] Error 1
+20:09:59 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:10:00 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:10:00 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp:18:12: error: prototype for ‘WalkResult FileSystem::validatePath(const string&, std::string) const’ does not match any in class ‘FileSystem’
+ WalkResult FileSystem::validatePath(const std::string & path,
+            ^
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: error: candidate is: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.cpp: In member function ‘virtual void FileSystem::touch(const string&, const string&)’:
+../FileSystem.cpp:169:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:169:49: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::mkdir(const string&, const string&)’:
+../FileSystem.cpp:195:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:195:48: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rm(const string&, const string&)’:
+../FileSystem.cpp:213:49: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, filename);
+                                                 ^
+../FileSystem.cpp:213:49: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+../FileSystem.cpp: In member function ‘virtual void FileSystem::rmdir(const string&, const string&)’:
+../FileSystem.cpp:242:48: error: no matching function for call to ‘FileSystem::validatePath(const string&, const string&)’
+  WalkResult result = validatePath(path, dirname);
+                                                ^
+../FileSystem.cpp:242:48: note: candidate is:
+In file included from ../FileSystem.cpp:8:0:
+../FileSystem.h:66:14: note: WalkResult FileSystem::validatePath(std::string&, std::string) const
+   WalkResult validatePath(std::string & path, const std::string childName) const;
+              ^
+../FileSystem.h:66:14: note:   no known conversion for argument 1 from ‘const string {aka const std::basic_string<char>}’ to ‘std::string& {aka std::basic_string<char>&}’
+make: *** [FileSystem.o] Error 1
+20:10:10 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:10:10 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:10:11 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:10:15 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:11:21 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:11:21 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:11:22 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:12:26 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:12:26 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:12:27 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(const string&, std::string) const’:
+../FileSystem.cpp:36:8: error: redeclaration of ‘char* buff’
+  char* buff = strdup(childName.c_str());
+        ^
+../FileSystem.cpp:27:8: error: ‘char* buff’ previously declared here
+  char* buff = strdup(path.c_str());
+        ^
+make: *** [FileSystem.o] Error 1
+20:12:29 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In member function ‘WalkResult FileSystem::validatePath(const string&, std::string) const’:
+../FileSystem.cpp:36:8: error: redeclaration of ‘char* buff’
+  char* buff = strdup(childName.c_str());
+        ^
+../FileSystem.cpp:27:8: error: ‘char* buff’ previously declared here
+  char* buff = strdup(path.c_str());
+        ^
+make: *** [FileSystem.o] Error 1
+20:12:51 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:12:52 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:12:52 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:12:56 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:14:25 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:19:25 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:20:47 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:21:06 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:22:32 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:33:35 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:33:35 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:33:36 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../Tree.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Tree.d" -MT"Tree.d" -o "Tree.o" "../Tree.cpp"
+Finished building: ../Tree.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:33:38 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:37:05 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../Directory.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Directory.d" -MT"Directory.d" -o "Directory.o" "../Directory.cpp"
+Finished building: ../Directory.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:37:32 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:37:53 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+20:41:16 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:42:08 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/FileSystemTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/FileSystemTest.d" -MT"test/FileSystemTest.d" -o "test/FileSystemTest.o" "../test/FileSystemTest.cpp"
+Finished building: ../test/FileSystemTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:42:22 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/TreeTestsMain.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTestsMain.d" -MT"test/TreeTestsMain.d" -o "test/TreeTestsMain.o" "../test/TreeTestsMain.cpp"
+Finished building: ../test/TreeTestsMain.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:43:49 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../test/TreeTest.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"test/TreeTest.d" -MT"test/TreeTest.d" -o "test/TreeTest.o" "../test/TreeTest.cpp"
+Finished building: ../test/TreeTest.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+20:52:47 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+20:52:48 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+20:52:48 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+21:17:08 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+21:17:09 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+21:17:09 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../Tree.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Tree.d" -MT"Tree.d" -o "Tree.o" "../Tree.cpp"
+Finished building: ../Tree.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+21:17:26 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+21:17:26 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+21:17:27 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+21:17:59 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+21:17:59 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+21:18:00 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+../FileSystem.cpp: In destructor ‘virtual FileSystem::~FileSystem()’:
+../FileSystem.cpp:159:29: error: only constructors take member initializers
+ FileSystem::~FileSystem() : ~Tree() {
+                             ^
+../FileSystem.cpp:159:29: error: expected identifier before ‘~’ token
+../FileSystem.cpp:159:29: error: expected ‘{’ before ‘~’ token
+../FileSystem.cpp: At global scope:
+../FileSystem.cpp:159:35: error: declaration of ‘~Tree’ as non-member
+ FileSystem::~FileSystem() : ~Tree() {
+                                   ^
+make: *** [FileSystem.o] Error 1
+21:20:16 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+21:20:17 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+21:20:17 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FileSystem.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FileSystem.d" -MT"FileSystem.d" -o "FileSystem.o" "../FileSystem.cpp"
+Finished building: ../FileSystem.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+21:53:46 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../IntNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"IntNode.d" -MT"IntNode.d" -o "IntNode.o" "../IntNode.cpp"
+Finished building: ../IntNode.cpp
+ 
+Building file: ../Node.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Node.d" -MT"Node.d" -o "Node.o" "../Node.cpp"
+Finished building: ../Node.cpp
+ 
+Building file: ../Tree.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Tree.d" -MT"Tree.d" -o "Tree.o" "../Tree.cpp"
+Finished building: ../Tree.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+22:10:29 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:10:30 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:10:30 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../IntNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"IntNode.d" -MT"IntNode.d" -o "IntNode.o" "../IntNode.cpp"
+Finished building: ../IntNode.cpp
+ 
+Building file: ../Node.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Node.d" -MT"Node.d" -o "Node.o" "../Node.cpp"
+Finished building: ../Node.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+22:40:01 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:40:02 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:40:02 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../FsNode.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"FsNode.d" -MT"FsNode.d" -o "FsNode.o" "../FsNode.cpp"
+Finished building: ../FsNode.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+22:42:46 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:42:47 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:42:47 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../Directory.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Directory.d" -MT"Directory.d" -o "Directory.o" "../Directory.cpp"
+In file included from ../Directory.h:12:0,
+                 from ../Directory.cpp:9:
+../FSNode.h: In member function ‘virtual std::string Directory::AsString() const’:
+../FSNode.h:21:20: error: ‘const string FsNode::name’ is private
+  const std::string name;
+                    ^
+../Directory.cpp:40:25: error: within this context
+  ss << "Directory('" << name << "')";
+                         ^
+make: *** [Directory.o] Error 1
+22:44:11 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:44:12 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:44:12 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../Directory.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"Directory.d" -MT"Directory.d" -o "Directory.o" "../Directory.cpp"
+Finished building: ../Directory.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+22:50:20 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:50:21 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:50:21 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+../File.cpp:35:27: error: no ‘Node* File::getFirstChild()’ member function declared in class ‘File’
+ Node* File::getFirstChild() {
+                           ^
+../File.cpp:39:36: error: no ‘void File::setFirstChild(Node*)’ member function declared in class ‘File’
+ void File::setFirstChild(Node* node) {
+                                    ^
+make: *** [File.o] Error 1
+22:53:18 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:53:19 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:53:19 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+In file included from ../File.cpp:11:0:
+../File.h:56:16: error: invalid covariant return type for ‘virtual Node* File::getFirstChild() const’
+  virtual Node* getFirstChild() const;
+                ^
+In file included from ../File.h:12:0,
+                 from ../File.cpp:11:
+../FSNode.h:57:18: error:   overriding ‘virtual FsNode* FsNode::getFirstChild() const’
+  virtual FsNode* getFirstChild() const;
+                  ^
+../File.cpp:35:7: error: prototype for ‘Node* File::getFirstChild()’ does not match any in class ‘File’
+ Node* File::getFirstChild() {
+       ^
+In file included from ../File.cpp:11:0:
+../File.h:56:16: error: candidate is: virtual Node* File::getFirstChild() const
+  virtual Node* getFirstChild() const;
+                ^
+make: *** [File.o] Error 1
+22:53:33 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:53:34 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:53:34 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+In file included from ../File.cpp:11:0:
+../File.h:56:10: error: ‘Fsnode’ does not name a type
+  virtual Fsnode* getFirstChild() const;
+          ^
+../File.cpp:35:27: error: no ‘Node* File::getFirstChild()’ member function declared in class ‘File’
+ Node* File::getFirstChild() {
+                           ^
+make: *** [File.o] Error 1
+22:53:46 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:53:47 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:53:47 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+In file included from ../File.cpp:11:0:
+../File.h:56:10: error: ‘Fsnode’ does not name a type
+  virtual Fsnode* getFirstChild() const;
+          ^
+../File.cpp:35:29: error: no ‘FsNode* File::getFirstChild()’ member function declared in class ‘File’
+ FsNode* File::getFirstChild() {
+                             ^
+../File.cpp:39:6: error: prototype for ‘void File::setFirstChild(FsNode*)’ does not match any in class ‘File’
+ void File::setFirstChild(FsNode* node) {
+      ^
+In file included from ../File.cpp:11:0:
+../File.h:64:15: error: candidate is: virtual void File::setFirstChild(Node*)
+  virtual void setFirstChild(Node* firstChild);
+               ^
+make: *** [File.o] Error 1
+22:54:02 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:54:02 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:54:03 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+In file included from ../File.cpp:11:0:
+../File.h:56:10: error: ‘Fsnode’ does not name a type
+  virtual Fsnode* getFirstChild() const;
+          ^
+../File.cpp:35:31: error: no ‘FsNode* File::getFirstChild() const’ member function declared in class ‘File’
+ FsNode* File::getFirstChild() const {
+                               ^
+../File.cpp:39:6: error: prototype for ‘void File::setFirstChild(FsNode*) const’ does not match any in class ‘File’
+ void File::setFirstChild(FsNode* node) const {
+      ^
+In file included from ../File.cpp:11:0:
+../File.h:64:15: error: candidate is: virtual void File::setFirstChild(Node*)
+  virtual void setFirstChild(Node* firstChild);
+               ^
+make: *** [File.o] Error 1
+22:54:10 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:54:11 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:54:11 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+In file included from ../File.cpp:11:0:
+../File.h:56:10: error: ‘Fsnode’ does not name a type
+  virtual Fsnode* getFirstChild() const;
+          ^
+../File.h:64:29: error: ‘Fsnode’ has not been declared
+  virtual void setFirstChild(Fsnode* firstChild) const ;
+                             ^
+../File.cpp:35:31: error: no ‘FsNode* File::getFirstChild() const’ member function declared in class ‘File’
+ FsNode* File::getFirstChild() const {
+                               ^
+../File.cpp:39:6: error: prototype for ‘void File::setFirstChild(FsNode*) const’ does not match any in class ‘File’
+ void File::setFirstChild(FsNode* node) const {
+      ^
+In file included from ../File.cpp:11:0:
+../File.h:64:15: error: candidate is: virtual void File::setFirstChild(int*) const
+  virtual void setFirstChild(Fsnode* firstChild) const ;
+               ^
+make: *** [File.o] Error 1
+22:54:21 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:54:22 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:54:22 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+Finished building: ../File.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+22:54:39 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:54:40 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:54:40 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.
+22:55:08 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+Building file: ../File.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/boost" -I"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/resources/cute" -O0 -g3 -Wall -c -fmessage-length=0 `pkg-config --cflags gtk+-2.0` -I../MiniLib -MMD -MP -MF"File.d" -MT"File.d" -o "File.o" "../File.cpp"
+Finished building: ../File.cpp
+ 
+Building target: Tree
+Invoking: GCC C++ Linker
+g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Tree"  ./test/FileSystemTest.o ./test/TreeTest.o ./test/TreeTestsMain.o  ./Directory.o ./File.o ./FileSystem.o ./FsNode.o ./IntNode.o ./Node.o ./Tree.o   -lML
+Finished building target: Tree
+ 
+22:57:33 **** Incremental Build of configuration Debug for project CuteTests ****
+make all 
+make: Nothing to be done for `all'.
+22:57:33 **** Incremental Build of configuration Debug for project MiniLib ****
+make all 
+make: Nothing to be done for `all'.
+22:57:34 **** Incremental Build of configuration Debug for project Tree ****
+make all 
+make: Nothing to be done for `all'.

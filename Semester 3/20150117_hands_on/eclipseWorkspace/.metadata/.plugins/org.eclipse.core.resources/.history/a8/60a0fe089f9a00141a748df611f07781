@@ -1,0 +1,60 @@
+/*
+ * FSNode.h
+ *
+ *  Created on: Dec 27, 2014
+ *      Author: cchet
+ */
+
+#ifndef FSNODE_H_
+#define FSNODE_H_
+
+#include "Node.h"
+
+#define FS_NODE_CLASS "FsNode"
+
+class FsNode: public Node {
+protected:
+	const std::string name;
+
+public:
+	////////////////////////////////////////////////////////////
+	// Constructor and Destructor                             //
+	////////////////////////////////////////////////////////////
+	/**
+	 * This class is not allowed to be instantiated via an empty constructor
+	 */
+	FsNode() = delete;
+
+	/**
+	 * Constructs an instance with a name
+	 */
+	FsNode(const std::string name);
+
+	/**
+	 * Copy constructor which performs a deep copy
+	 */
+	FsNode(const FsNode & other);
+
+	/**
+	 * Destructor which does nothing.
+	 * Deletion is performed via Node constructor
+	 */
+	virtual ~FsNode();
+
+	////////////////////////////////////////////////////////////
+	// Getter and Setter                                      //
+	////////////////////////////////////////////////////////////
+	virtual FsNode* getFirstChild() const;
+
+	virtual FsNode* getNextSibling() const;
+
+	////////////////////////////////////////////////////////////
+	// Utils                                                  //
+	////////////////////////////////////////////////////////////
+	virtual std::string AsString();
+
+	virtual FsNode* clone() const;
+
+	virtual std::string getName() const;
+};
+#endif /* FSNODE_H_ */

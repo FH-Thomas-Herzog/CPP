@@ -1,0 +1,45 @@
+/*
+ * Directory.cpp
+ * This is the implementation of the Directory specification
+ *  Created on: Jan 11, 2015
+ *      Author: cchet
+ */
+#include <sstream>
+#include "Directory.h"
+
+using namespace std;
+using namespace ML;
+
+////////////////////////////////////////////////////////////
+// Constructor and Destructor                             //
+////////////////////////////////////////////////////////////
+Directory::Directory(const string & name) :
+		FsNode(name) {
+	Register(DIRECTORY_CLASS, FS_NODE_CLASS);
+}
+
+Directory::Directory(const Directory & other) :
+		FsNode::FsNode(other) {
+	/* avoid multiple registration */
+	Register(DIRECTORY_CLASS, FS_NODE_CLASS);
+}
+
+Directory::~Directory() {
+}
+
+////////////////////////////////////////////////////////////
+// Utils                                                  //
+////////////////////////////////////////////////////////////
+Directory* Directory::clone() const {
+	return new Directory(*this);
+}
+
+string Directory::AsString() const {
+	stringstream ss;
+	ss << "Directory('" << name << "')";
+	return ss.str();
+}
+
+void Directory::print(ostream & os) const {
+	os << AsString();
+}
