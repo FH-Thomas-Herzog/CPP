@@ -15,7 +15,10 @@
 #include "../File.h"
 #include "../FSNode.h"
 
-cute::suite make_suite_FileSystemTests();
+void make_suite_FileSystemTests(cute::suite* s);
+
+/* Cleans the singletons instance nicely */
+void cleanup_tests();
 
 ////////////////////////////////////////////////////////////
 // mkdir tests                                            //

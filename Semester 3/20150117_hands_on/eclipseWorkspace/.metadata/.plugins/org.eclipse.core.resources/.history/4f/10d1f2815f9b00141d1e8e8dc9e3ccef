@@ -1,0 +1,38 @@
+/*
+ * FsErrorHandler.cpp
+ *
+ *  Created on: Jan 13, 2015
+ *      Author: cchet
+ */
+#include <string>
+#include "FsErrorHandler.h"
+
+using namespace std;
+using namespace ML;
+
+FsErrorHandler::~FsErrorHandler() {
+	createdFlag = false;
+	instance = nullptr;
+} /* FsErrorHandler::~FsErrorHandler */
+
+FsErrorHandler::FsErrorHandler* getInstance() {
+	if (!createdFlag) {
+		instance = new FsErrorHandler();
+		createdFlag = true;
+		return instance;
+	} else {
+		return instance;
+	}
+}
+
+string FsErrorHandler::getMessage(const FsErrorType & type) {
+	try {
+		return errorMessages.at(type);
+	} catch (std::out_of_range & e) {
+		std::stringstream ss;
+		ss << "Key not managed by this handler !!!" << std::endl << e.what()
+				<< std::endl << std::flush;
+		return ss.str();
+	}
+}
+

@@ -15,7 +15,7 @@
 #include "../Node.h"
 #include "../IntNode.h"
 
-cute::suite make_suite_TreeTests();
+void make_suite_TreeTests(cute::suite* s);
 
 ////////////////////////////////////////////////////////////
 // insertChild                                            //

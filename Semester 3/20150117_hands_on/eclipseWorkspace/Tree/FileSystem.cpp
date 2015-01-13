@@ -1,17 +1,20 @@
 /*
  * FileSystem.cpp
+ * The implementation of the FileSystem specification.
  *
  *  Created on: Dec 27, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
-
 #include "FileSystem.h"
 #include <cstring>
 
 using namespace std;
 using namespace ML;
 
-/* No singleton present at startup */
+/**
+ * No singleton present at startup.
+ * Only one single instance needed for the
+ */
 bool FsErrorHandler::createdFlag = false;
 FsErrorHandler* FsErrorHandler::instance = nullptr;
 
@@ -23,7 +26,7 @@ WalkResult FileSystem::validatePath(const std::string & path,
 
 	result.lastVisitedNode = nullptr;
 
-	/* add copied full path to vector in reverse */
+	/* split path and put into vector for later path walking */
 	char* buff = strdup(path.c_str());
 	char* token = strtok(buff, FILE_SEPARATOR);
 	while (token != nullptr) {
@@ -31,7 +34,7 @@ WalkResult FileSystem::validatePath(const std::string & path,
 		token = strtok(nullptr, FILE_SEPARATOR);
 	}
 
-	/* append child parts to fullPath */
+	/* add childname path information if present */
 	delete[] buff;
 	buff = nullptr;
 	buff = strdup(childName.c_str());
@@ -44,7 +47,7 @@ WalkResult FileSystem::validatePath(const std::string & path,
 		prevToken = token;
 		token = strtok(nullptr, FILE_SEPARATOR);
 	}
-	/* set child name */
+	/* set actual child name which is always the previous token from the last token */
 	result.childNodeName = string(prevToken);
 
 	/* root path always valid because points to root node */
@@ -53,9 +56,10 @@ WalkResult FileSystem::validatePath(const std::string & path,
 		return result;
 	}
 
-	/* walk the path and validate if all of the node exist */
+	/* walk the path and validate if all of the nodes of the calculated path exist */
 	walkPath(node, fullPath, result);
 
+	/* cleanup buffer */
 	delete[] buff;
 
 	return result;
@@ -63,13 +67,15 @@ WalkResult FileSystem::validatePath(const std::string & path,
 
 void FileSystem::walkPath(const FsNode* currentNode, vector<string> & fullPath,
 		WalkResult & result) const {
+	/* recursive anchor. only proceed if no error and path information left in vector */
 	if ((result.error == FsErrorType::NONE) && (!fullPath.empty())) {
 		string part = fullPath.back();
 		fullPath.pop_back();
 
+		/* try to get child from current node */
 		FsNode* node = getChildByName(currentNode, part);
 
-		/* partial location found */
+		/* child node found  */
 		if (node != nullptr) {
 			result.lastVisitedNode = node;
 			/* Found but no directory */
@@ -81,7 +87,7 @@ void FileSystem::walkPath(const FsNode* currentNode, vector<string> & fullPath,
 				walkPath(node, fullPath, result);
 			}
 		}
-		/* path invalid */
+		/* child node not found means path part invalid */
 		else {
 			result.error = FsErrorType::INVALID_PATH;
 		}
@@ -105,7 +111,7 @@ FsNode* FileSystem::getChildByName(const FsNode* node,
 void FileSystem::deleteFsNode(FsNode* parent, FsNode* child) {
 	FsNode* prev = nullptr;
 	FsNode* node = parent->getFirstChild();
-	/* get previous from child sibling */
+	/* find previous from to delete node */
 	while ((node != nullptr) && (node != child)) {
 		prev = node;
 		node = node->getNextSibling();
@@ -114,12 +120,14 @@ void FileSystem::deleteFsNode(FsNode* parent, FsNode* child) {
 	if (prev == nullptr) {
 		parent->setFirstChild(node->getNextSibling());
 	}
-	/* remove child safely */
+	/* remove child nicely */
 	else {
 		prev->setNextSibling(node->getNextSibling());
 	}
+	/* remove reference otherwise would be deleted via cascade */
+	node->setNextSibling(nullptr);
 	/* delete child */
-	delete child;
+	delete node;
 } /* FileSystem::deleteFsNode */
 
 void FileSystem::deleteSubTree(FsNode* node) {
@@ -134,7 +142,7 @@ void FileSystem::setRoot(Directory* node) {
 } /* FileSystem::setRoot */
 
 void FileSystem::insertChild(Directory* parent, FsNode* child) {
-	/* delegate to parent child class */
+	/* delegate to parent class */
 	Tree::insertChild(parent, child);
 } /* FileSystem::insertChild */
 
@@ -157,11 +165,11 @@ FileSystem::FileSystem(const FileSystem & other) :
 } /* FileSystem::FileSystem */
 
 FileSystem::~FileSystem() {
-}
+} /* FileSystem::~FileSystem */
 
 void FileSystem::touch(const string & path, const string & filename) {
 	WalkResult result = validatePath(path, filename);
-	/* Error occured */
+	/* Error occurred */
 	if (result.error != FsErrorType::NONE) {
 		string lastNodeName =
 				(result.lastVisitedNode != nullptr) ?
@@ -170,7 +178,7 @@ void FileSystem::touch(const string & path, const string & filename) {
 				<< " (last visited node: " << lastNodeName << ")" << endl
 				<< flush;
 	}
-	/* if file exists */
+	/* file exists */
 	else if (getChildByName(result.lastVisitedNode, result.childNodeName)
 			!= nullptr) {
 		cout << "Touch existing file '" << result.childNodeName << "'" << endl
@@ -187,7 +195,7 @@ void FileSystem::touch(const string & path, const string & filename) {
 
 void FileSystem::mkdir(const string & path, const string & dirname) {
 	WalkResult result = validatePath(path, dirname);
-	/* Path invalid */
+	/* Error occurred */
 	if (result.error != FsErrorType::NONE) {
 		string lastNodeName =
 				(result.lastVisitedNode != nullptr) ?
@@ -195,7 +203,9 @@ void FileSystem::mkdir(const string & path, const string & dirname) {
 		cout << FsErrorHandler::getInstance()->getMessage(result.error)
 				<< " (last visited node: " << lastNodeName << ")" << endl
 				<< flush;
-	} else {
+	}
+	/* create new directory */
+	else {
 		insertChild(dynamic_cast<Directory*>(result.lastVisitedNode),
 				new Directory(result.childNodeName));
 		cout << "directory created '" << result.childNodeName << "'" << endl
@@ -208,11 +218,13 @@ void FileSystem::rm(const string & path, const string & filename) {
 	FsNode* node;
 	FsNode* parent;
 
-	/* Path invalid */
+	/* Error occurred */
 	if (result.error != FsErrorType::NONE) {
 		cout << FsErrorHandler::getInstance()->getMessage(result.error) << endl
 				<< flush;
-	} else {
+	}
+	/* try to remove child node */
+	else {
 		parent = result.lastVisitedNode; //result.walkedNodes.back();
 		node = getChildByName(parent, result.childNodeName);
 		/* node not found */
@@ -225,7 +237,7 @@ void FileSystem::rm(const string & path, const string & filename) {
 			cout << "is not a file '" << result.childNodeName << "'" << endl
 					<< flush;
 		}
-		/* delete file by removing from tree and heap */
+		/* delete file */
 		else {
 			deleteFsNode(parent, node);
 			cout << "file deleted '" << filename << "'" << endl << flush;
@@ -238,11 +250,13 @@ void FileSystem::rmdir(const string & path, const string & dirname) {
 	FsNode* node;
 	FsNode* parent;
 
-	/* Path invalid */
+	/* Error occurred */
 	if (result.error != FsErrorType::NONE) {
 		cout << FsErrorHandler::getInstance()->getMessage(result.error) << endl
 				<< flush;
-	} else {
+	}
+	/* try to remove directory */
+	else {
 		parent = result.lastVisitedNode; //result.walkedNodes.back();
 		node = getChildByName(parent, result.childNodeName);
 		/* node not found */
@@ -250,19 +264,20 @@ void FileSystem::rmdir(const string & path, const string & dirname) {
 			cout << "directory not found '" << result.childNodeName << "'"
 					<< endl << flush;
 		}
-		/* node not a file */
+		/* node not a directory */
 		else if (!node->Class().compare(DIRECTORY_CLASS) == 0) {
 			cout << "is not a directory '" << result.childNodeName << "'"
 					<< endl << flush;
 		}
-		/* checl if directory is empty */
+		/* directory is not empty */
 		else if (node->getFirstChild() != nullptr) {
 			cout << "directory is not empty" << endl << flush;
 		}
-		/* delete file by removing from tree and heap */
+		/* delete directory */
 		else {
 			deleteFsNode(parent, node);
-			cout << "directory deleted '" << dirname << "'" << endl << flush;
+			cout << "directory deleted '" << result.childNodeName << "'" << endl
+					<< flush;
 		}
 	}
 } /* FileSystem::rmdir */

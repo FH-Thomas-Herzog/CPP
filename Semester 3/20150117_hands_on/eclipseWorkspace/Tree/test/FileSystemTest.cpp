@@ -10,34 +10,38 @@
 using namespace std;
 using namespace ML;
 
-cute::suite make_suite_FileSystemTests() {
-	cute::suite s;
-	s.push_back(CUTE(test_mkdir_invalid_path));
-	s.push_back(CUTE(test_mkdir_path_contain_files));
-	s.push_back(CUTE(test_mkdir_valid));
 
-	s.push_back(CUTE(test_touch_invalid_path));
-	s.push_back(CUTE(test_touch_path_contain_files));
-	s.push_back(CUTE(test_touch_valid_new));
-	s.push_back(CUTE(test_touch_valid_existing));
+void make_suite_FileSystemTests(cute::suite* s) {
+	(*s).push_back(CUTE(test_mkdir_invalid_path));
+	(*s).push_back(CUTE(test_mkdir_path_contain_files));
+	(*s).push_back(CUTE(test_mkdir_valid));
 
-	s.push_back(CUTE(test_rm_invalid_path));
-	s.push_back(CUTE(test_rm_path_contain_files));
-	s.push_back(CUTE(test_rm_not_found));
-	s.push_back(CUTE(test_rm_directory));
-	s.push_back(CUTE(test_rm_valid));
+	(*s).push_back(CUTE(test_touch_invalid_path));
+	(*s).push_back(CUTE(test_touch_path_contain_files));
+	(*s).push_back(CUTE(test_touch_valid_new));
+	(*s).push_back(CUTE(test_touch_valid_existing));
 
-	s.push_back(CUTE(test_rmdir_invalid_path));
-	s.push_back(CUTE(test_rmdir_path_contain_files));
-	s.push_back(CUTE(test_rmdir_not_found));
-	s.push_back(CUTE(test_rmdir_file));
-	s.push_back(CUTE(test_rmdir_valid));
+	(*s).push_back(CUTE(test_rm_invalid_path));
+	(*s).push_back(CUTE(test_rm_path_contain_files));
+	(*s).push_back(CUTE(test_rm_not_found));
+	(*s).push_back(CUTE(test_rm_directory));
+	(*s).push_back(CUTE(test_rm_valid));
 
-	s.push_back(CUTE(test_ls));
+	(*s).push_back(CUTE(test_rmdir_invalid_path));
+	(*s).push_back(CUTE(test_rmdir_path_contain_files));
+	(*s).push_back(CUTE(test_rmdir_not_found));
+	(*s).push_back(CUTE(test_rmdir_file));
+	(*s).push_back(CUTE(test_rmdir_valid));
 
-	s.push_back(CUTE(test_complex_example));
+	(*s).push_back(CUTE(test_ls));
 
-	return s;
+	(*s).push_back(CUTE(test_complex_example));
+
+	(*s).push_back(CUTE(cleanup_tests));
+}
+
+void cleanup_tests() {
+	FsErrorHandler::destroyInstance();
 }
 
 ////////////////////////////////////////////////////////////
@@ -55,7 +59,17 @@ void test_mkdir_invalid_path() {
 }
 
 void test_mkdir_path_contain_files() {
+	FileSystem* fs = new FileSystem();
+	fs->mkdir("", "home");
+	fs->mkdir("home", "cchet");
+	fs->mkdir("home/cchet", "Documents");
+	fs->touch("home/cchet", "f1");
 
+	fs->mkdir("home/cchet/f1/Documents", "docs");
+
+	delete fs;
+
+	WriteMetaInfo(cout);
 }
 
 void test_mkdir_valid() {

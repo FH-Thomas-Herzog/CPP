@@ -21,7 +21,7 @@
 class Tree: public ML::Object {
 
 private:
-	Node* root;
+	Node* root = nullptr;
 
 	int size;
 	////////////////////////////////////////////////////////////
@@ -185,7 +185,7 @@ public:
 	friend std::ostream& operator<<(std::ostream & os, const Tree & tree);
 
 	/**
-	 * Assigns the tree to the current Tree instance by referencing the same root node which holds the tree.
+	 * Assigns the tree to the current Tree instance by performing a deep copy.
 	 *
 	 * @param
 	 * 		other: the tree to be assigned

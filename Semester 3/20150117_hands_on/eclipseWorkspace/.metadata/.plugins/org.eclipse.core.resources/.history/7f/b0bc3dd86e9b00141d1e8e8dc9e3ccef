@@ -1,0 +1,28 @@
+#include "cute.h"
+#include "ide_listener.h"
+#include "xml_listener.h"
+#include "cute_runner.h"
+#include "TreeTests.h"
+#include "FileSystemTest.h"
+
+using namespace cute;
+
+static void runSuite(int argc, char const *argv[]) {
+	suite s1;
+	suite s2;
+
+	xml_file_opener xmlfile(argc, argv);
+	xml_listener<ide_listener<> > lis(xmlfile.out);
+
+	s1 = make_suite_TreeTests();
+
+	s2 = bmake_suite_FileSystemTests();
+	s1.insert(s1.end(), s2.begin(), s2.end());
+
+	makeRunner(lis, argc, argv)(s1, "AllTests");
+}
+
+int main(int argc, char const *argv[]) {
+	runSuite(argc, argv);
+}
+

@@ -12,11 +12,9 @@ static void runSuite(int argc, char const *argv[]) {
 	xml_file_opener xmlfile(argc, argv);
 	xml_listener<ide_listener<> > lis(xmlfile.out);
 
-	s = make_suite_TreeTests();
-	makeRunner(lis, argc, argv)(s, "TreeTests");
-
-	//s = make_suite_FileSystemTests();
-	//makeRunner(lis, argc, argv)(s, "FileSystemTests");
+	make_suite_TreeTests(&s);
+	make_suite_FileSystemTests(&s);
+	makeRunner(lis, argc, argv)(s, "AllTests");
 }
 
 int main(int argc, char const *argv[]) {
