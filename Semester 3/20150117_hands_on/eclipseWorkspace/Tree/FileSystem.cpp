@@ -26,6 +26,12 @@ WalkResult FileSystem::validatePath(const std::string & path,
 
 	result.lastVisitedNode = nullptr;
 
+	/* child name is not supposed to be empty */
+	if (childName.empty()) {
+		result.error = FsErrorType::INVALID_CHILD;
+		return result;
+	}
+
 	/* split path and put into vector for later path walking */
 	char* buff = strdup(path.c_str());
 	char* token = strtok(buff, FILE_SEPARATOR);

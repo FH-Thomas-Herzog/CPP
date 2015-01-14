@@ -1,21 +1,5 @@
 <testsuites>
-	<testsuite name="AllTests" tests="36">
-		<testcase classname="AllTests" name="test_insertChild_null_parent"/>
-		<testcase classname="AllTests" name="test_insertChild_null_child"/>
-		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
-		<testcase classname="AllTests" name="test_clear"/>
-		<testcase classname="AllTests" name="test_deleteElements"/>
-		<testcase classname="AllTests" name="test_insertChild_null_child"/>
-		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
-		<testcase classname="AllTests" name="test_deleteElements"/>
-		<testcase classname="AllTests" name="test_clear"/>
-		<testcase classname="AllTests" name="test_deleteSubtree_child"/>
-		<testcase classname="AllTests" name="test_deleteSubtree_root"/>
-		<testcase classname="AllTests" name="test_deleteSubtree_sibling"/>
-		<testcase classname="AllTests" name="test_tree_example"/>
-		<testcase classname="AllTests" name="test_print_example"/>
-		<testcase classname="AllTests" name="test_copy_constructor"/>
-		<testcase classname="AllTests" name="test_assign_operator"/>
+	<testsuite name="AllTests" tests="20">
 		<testcase classname="AllTests" name="test_mkdir_invalid_path"/>
 		<testcase classname="AllTests" name="test_mkdir_path_contain_files"/>
 		<testcase classname="AllTests" name="test_mkdir_valid"/>

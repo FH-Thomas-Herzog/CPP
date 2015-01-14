@@ -310,7 +310,7 @@ void Tree::print(ostream & os) const {
 		vector<Node*>::iterator parentIterator = it->second.begin();
 		while (parentIterator != it->second.end()) {
 			os << "Parent: " << **parentIterator << endl;
-			os << "Nodes: ";
+			os << "        ";
 			node = (*parentIterator)->getFirstChild();
 			while (node != nullptr) {
 				os << *node;
@@ -320,6 +320,7 @@ void Tree::print(ostream & os) const {
 				node = node->getNextSibling();
 			} /* while */
 			parentIterator++;
+			cout << endl;
 		} /* while */
 
 		os << endl << flush;

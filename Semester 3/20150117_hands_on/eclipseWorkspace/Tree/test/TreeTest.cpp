@@ -1,3 +1,10 @@
+/*
+ * TreeTest.h
+ * This is the implementation of the tree tests.
+ *
+ *  Created on: Dec 23, 2014
+ *      Author: Thomas Herzog
+ */
 #include "TreeTests.h"
 #include "MetaInfo.h"
 
@@ -10,7 +17,6 @@ void make_suite_TreeTests(cute::suite* s) {
 	(*s).push_back(CUTE(test_insertChild_unmanaged_parent));
 	(*s).push_back(CUTE(test_clear));
 	(*s).push_back(CUTE(test_deleteElements));
-	(*s).push_back(CUTE(test_insertChild_null_child));
 	(*s).push_back(CUTE(test_insertChild_unmanaged_parent));
 	(*s).push_back(CUTE(test_deleteElements));
 	(*s).push_back(CUTE(test_clear));
@@ -68,6 +74,7 @@ void test_clear() {
 	tree->clear();
 
 	ASSERT_EQUAL(1, tree->getSize());
+
 	delete root;
 	delete tree;
 }
@@ -84,6 +91,7 @@ void test_deleteElements() {
 	tree->deleteElements();
 
 	ASSERT_EQUAL(1, tree->getSize());
+
 	delete tree;
 }
 
@@ -101,6 +109,7 @@ void test_deleteSubtree_root() {
 	ASSERT_EQUAL(1, tree->getSize());
 	delete tree;
 }
+
 void test_deleteSubtree_child() {
 	Tree* tree = new Tree((*new Node()));
 	Node* l1 = new Node();
@@ -153,6 +162,8 @@ void test_tree_example() {
 	tree->insertChild(n3, new IntNode(9));
 	tree->insertChild(n3, new IntNode(10));
 
+	cout << *tree << endl << flush;
+
 	delete tree;
 }
 
@@ -161,11 +172,11 @@ void test_print_example() {
 	Node* root = new IntNode(1);
 	Tree* tree = new Tree(*root);
 
-	tree->insertChild(tree->getRoot(), new IntNode(4));
-	Node* n3 = new IntNode(3);
-	tree->insertChild(tree->getRoot(), n3);
 	Node* n2 = new IntNode(2);
 	tree->insertChild(tree->getRoot(), n2);
+	Node* n3 = new IntNode(3);
+	tree->insertChild(tree->getRoot(), n3);
+	tree->insertChild(tree->getRoot(), new IntNode(4));
 
 	tree->insertChild(n2, new IntNode(5));
 	tree->insertChild(n2, new IntNode(6));
@@ -210,40 +221,38 @@ void test_copy_constructor() {
 	cout << copied;
 
 	tree.deleteElements();
+	copied.deleteElements();
 }
 
 void test_assign_operator() {
-	Node* root = new IntNode(1);
-	Tree* tree = new Tree(*root);
+	Tree tree(new IntNode(1));
 
-	tree->insertChild(tree->getRoot(), new IntNode(4));
+	tree.insertChild(tree.getRoot(), new IntNode(4));
 	Node* n3 = new IntNode(3);
-	tree->insertChild(tree->getRoot(), n3);
+	tree.insertChild(tree.getRoot(), n3);
 	Node* n2 = new IntNode(2);
-	tree->insertChild(tree->getRoot(), n2);
+	tree.insertChild(tree.getRoot(), n2);
 
-	tree->insertChild(n2, new IntNode(5));
-	tree->insertChild(n2, new IntNode(6));
+	tree.insertChild(n2, new IntNode(5));
+	tree.insertChild(n2, new IntNode(6));
 
-	tree->insertChild(n3, new IntNode(7));
-	tree->insertChild(n3, new IntNode(8));
-	tree->insertChild(n3, new IntNode(9));
-	tree->insertChild(n3, new IntNode(10));
-
-	cout << "Unmodified Original tree: " << endl;
-	cout << *tree << endl << endl;
+	tree.insertChild(n3, new IntNode(7));
+	tree.insertChild(n3, new IntNode(8));
+	tree.insertChild(n3, new IntNode(9));
+	tree.insertChild(n3, new IntNode(10));
 
 	cout << "Copying the original tree by performing a copy via operator="
 			<< endl;
 	/* need to first declare otherwise copy constructor would be invoked */
 	Tree referenced;
 	/* Copy via assign operator */
-	referenced = *tree;
+	referenced = tree;
 
-	cout << "Adding new node on referenced tree" << endl << endl;
-	referenced.insertChild(referenced.getRoot(), new IntNode(-1));
-	cout << "Original tree:" << endl << *tree << endl << endl;
-	cout << "Referenced tree: " << endl << referenced << endl << flush;
+	cout << "Original tree:" << endl << tree << endl << flush;
+	cout
+			<< "Copied tree: (Deep copy no references are shared between instances)"
+			<< endl << tree << endl << flush;
 
-	delete tree;
+	tree.deleteElements();
+	referenced.deleteElements();
 }

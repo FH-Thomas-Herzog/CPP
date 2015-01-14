@@ -1,6 +1,6 @@
-23:32:29 **** Incremental Build of configuration Debug for project MiniLib ****
+22:57:33 **** Incremental Build of configuration Debug for project MiniLib ****
 make all 
 make: Nothing to be done for `all'.
 
-23:32:29 Build Finished (took 123ms)
+22:57:33 Build Finished (took 62ms)
 

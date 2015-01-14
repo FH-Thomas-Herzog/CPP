@@ -1,15 +1,15 @@
 /*
  * FileSystemTest.cpp
+ * This is the implementation of the file system tests specification
  *
  *  Created on: Dec 27, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 #include "FileSystemTest.h"
 #include "MetaInfo.h"
 
 using namespace std;
 using namespace ML;
-
 
 void make_suite_FileSystemTests(cute::suite* s) {
 	(*s).push_back(CUTE(test_mkdir_invalid_path));
@@ -54,8 +54,6 @@ void test_mkdir_invalid_path() {
 	cout << *fs << endl;
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_mkdir_path_contain_files() {
@@ -68,8 +66,6 @@ void test_mkdir_path_contain_files() {
 	fs->mkdir("home/cchet/f1/Documents", "docs");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_mkdir_valid() {
@@ -84,8 +80,6 @@ void test_mkdir_valid() {
 	cout << *fs << endl;
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 ////////////////////////////////////////////////////////////
@@ -99,8 +93,6 @@ void test_touch_invalid_path() {
 	cout << *fs << endl;
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_touch_path_contain_files() {
@@ -114,31 +106,23 @@ void test_touch_path_contain_files() {
 	cout << *fs << endl;
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_touch_valid_new() {
-
 	FileSystem* fs = new FileSystem();
 	fs->touch("", "f1");
 	fs->touch("", "f2");
 	fs->touch("", "f3");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_touch_valid_existing() {
-
 	FileSystem* fs = new FileSystem();
 	fs->touch("", "f1");
 	fs->touch("", "f1");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 ////////////////////////////////////////////////////////////
 // rm tests                                               //
@@ -152,8 +136,6 @@ void test_rm_invalid_path() {
 	cout << *fs << endl << flush;
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_rm_path_contain_files() {
@@ -167,8 +149,6 @@ void test_rm_path_contain_files() {
 	fs->rm("home/cchet/f1/Documents", "f2");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_rm_not_found() {
@@ -180,8 +160,6 @@ void test_rm_not_found() {
 	fs->rm("home/cchet", "f2");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_rm_directory() {
@@ -193,8 +171,6 @@ void test_rm_directory() {
 	fs->rm("home", "cchet");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_rm_valid() {
@@ -207,8 +183,6 @@ void test_rm_valid() {
 	cout << *fs << endl << flush;
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 ////////////////////////////////////////////////////////////
@@ -224,8 +198,6 @@ void test_rmdir_invalid_path() {
 	fs->rmdir("home/other/Documents", "Receipts");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_rmdir_path_contain_files() {
@@ -239,8 +211,6 @@ void test_rmdir_path_contain_files() {
 	fs->rmdir("home/cchet/f1/Documents", "Receipts");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_rmdir_not_found() {
@@ -253,9 +223,6 @@ void test_rmdir_not_found() {
 	fs->rmdir("home/cchet/Documents", "blabla");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
-
 }
 
 void test_rmdir_file() {
@@ -269,8 +236,6 @@ void test_rmdir_file() {
 	fs->rmdir("home/cchet/", "f1");
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 void test_rmdir_valid() {
@@ -288,8 +253,6 @@ void test_rmdir_valid() {
 	cout << *fs << endl << flush;
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }
 
 ////////////////////////////////////////////////////////////
@@ -306,6 +269,8 @@ void test_ls() {
 	fs->touch("home/cchet", "f4");
 
 	fs->ls();
+
+	delete fs;
 }
 
 ////////////////////////////////////////////////////////////
@@ -329,6 +294,4 @@ void test_complex_example() {
 	fs->ls();
 
 	delete fs;
-
-	WriteMetaInfo(cout);
 }

@@ -3,4 +3,4 @@
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.postmortemLaunchType=org.eclipse.cdt.dsf.gdb.launch.coreCLaunch,debug,;
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.remoteApplicationLaunchType=org.eclipse.rse.remotecdt.dsf.debug,debug,;
 eclipse.preferences.version=1
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="TREE.GETrOOT()"/>\n<expression enabled\="true" text\="node-&gt;getNextSibling()"/>\n<expression enabled\="true" text\="parent"/>\n<expression enabled\="true" text\="node"/>\n</watchExpressions>\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="__lhs.size()"/>\n<expression enabled\="true" text\="__rhs.size()"/>\n<expression enabled\="true" text\="__rhs.length()"/>\n<expression enabled\="true" text\="__lhs.length()"/>\n<expression enabled\="true" text\="__lhs.c_str()"/>\n<expression enabled\="true" text\="__rhs.c_str()"/>\n</watchExpressions>\n

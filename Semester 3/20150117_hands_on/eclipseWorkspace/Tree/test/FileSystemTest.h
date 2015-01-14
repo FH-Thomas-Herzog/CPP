@@ -1,8 +1,9 @@
 /*
  * FileSystemTest.h
+ * This is the specification file system tests.
  *
  *  Created on: Dec 27, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef FILESYSTEMTEST_H_
@@ -15,6 +16,13 @@
 #include "../File.h"
 #include "../FSNode.h"
 
+/**
+ * This function puts the test function of this specification into
+ * the given test suite which gets invoked by the test handler
+ *
+ * @param
+ * 		s: the pointer to the suite where to add the test function references (is a vector)
+ */
 void make_suite_FileSystemTests(cute::suite* s);
 
 /* Cleans the singletons instance nicely */

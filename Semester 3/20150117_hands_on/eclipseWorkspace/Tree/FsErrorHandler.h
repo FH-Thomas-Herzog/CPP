@@ -31,7 +31,9 @@ enum class FsErrorType {
 	/* directory is not empty and therefore cannot be deleted */
 	DIR_NOT_EMPTY = 5,
 	/* not found directory/file */
-	NODE_NOT_FOUND = 6
+	NODE_NOT_FOUND = 6,
+	/* Child name is invalid */
+	INVALID_CHILD = 7
 };
 
 /**
@@ -82,6 +84,9 @@ private:
 				std::pair<FsErrorType, std::string>(
 						FsErrorType::PATH_CONTAIN_FILES,
 						"Cannot walk path which contains files"));
+		errorMessages.insert(
+				std::pair<FsErrorType, std::string>(FsErrorType::INVALID_CHILD,
+						"Child name is invalid"));
 	}
 
 public:

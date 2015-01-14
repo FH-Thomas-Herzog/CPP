@@ -1,3 +1,11 @@
+/*
+ * TreeTestsMain.cpp
+ * This is the implementation which creates the test suite and runs all of the implemented tests.
+ *
+ *  Created on: Dec 23, 2014
+ *      Author: Thomas Herzog
+ */
+
 #include "cute.h"
 #include "ide_listener.h"
 #include "xml_listener.h"

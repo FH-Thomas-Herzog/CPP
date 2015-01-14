@@ -1,10 +1,10 @@
 /*
  * TreeTests.h
+ * This is the specification for the tree tests.
  *
  *  Created on: Dec 23, 2014
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
-
 #ifndef TREETESTS_H_
 #define TREETESTS_H_
 
@@ -15,6 +15,13 @@
 #include "../Node.h"
 #include "../IntNode.h"
 
+/**
+ * This function puts he test function of this specification into
+ * the given test suite which gets invoked by the test handler
+ *
+ * @param
+ * 		s: the pointer to the suite where to add the test function references (is a vector)
+ */
 void make_suite_TreeTests(cute::suite* s);
 
 ////////////////////////////////////////////////////////////
