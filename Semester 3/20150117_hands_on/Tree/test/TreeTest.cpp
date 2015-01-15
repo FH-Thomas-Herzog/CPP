@@ -52,15 +52,28 @@ void test_insertChild_null_child() {
 }
 
 void test_insertChild_unmanaged_parent() {
-	Tree* tree = new Tree((*new Node()));
-	Node* parent = new Node();
-	Node* child = new Node();
-	tree->insertChild(parent, child);
+	Node* root = new Node();
+	Tree* tree = new Tree(*root);
+	Node* unmanaged = new Node();
+	Node* newChild = new Node();
 
-	ASSERT_EQUAL(1, tree->getSize());
+	tree->insertChild(tree->getRoot(), new Node());
+	Node* n3 = new Node();
+	tree->insertChild(tree->getRoot(), n3);
+	Node* n2 = new Node();
+	tree->insertChild(tree->getRoot(), n2);
 
-	delete parent;
-	delete child;
+	tree->insertChild(n2, new Node());
+	tree->insertChild(n2, new Node());
+
+	Node* n4 = new Node();
+	tree->insertChild(n3, new Node());
+	tree->insertChild(n3, new Node());
+	tree->insertChild(n3, n4);
+	tree->insertChild(unmanaged, newChild);
+
+	delete unmanaged;
+	delete newChild;
 	delete tree;
 }
 

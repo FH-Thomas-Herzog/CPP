@@ -3,33 +3,13 @@
 		<testcase classname="AllTests" name="test_insertChild_null_parent"/>
 		<testcase classname="AllTests" name="test_insertChild_null_child"/>
 		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
-		<testcase classname="AllTests" name="test_clear">
-			<failure message="../test/TreeTest.cpp:76 test_clear: 0 == tree->getSize() expected:	0	but was:	1	">
-test_clear: 0 == tree->getSize() expected:	0	but was:	1	
-			</failure>
-		</testcase>
-		<testcase classname="AllTests" name="test_deleteElements">
-			<failure message="../test/TreeTest.cpp:93 test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	">
-test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	
-			</failure>
-		</testcase>
+		<testcase classname="AllTests" name="test_clear"/>
+		<testcase classname="AllTests" name="test_deleteElements"/>
 		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
-		<testcase classname="AllTests" name="test_deleteElements">
-			<failure message="../test/TreeTest.cpp:93 test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	">
-test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	
-			</failure>
-		</testcase>
-		<testcase classname="AllTests" name="test_clear">
-			<failure message="../test/TreeTest.cpp:76 test_clear: 0 == tree->getSize() expected:	0	but was:	1	">
-test_clear: 0 == tree->getSize() expected:	0	but was:	1	
-			</failure>
-		</testcase>
+		<testcase classname="AllTests" name="test_deleteElements"/>
+		<testcase classname="AllTests" name="test_clear"/>
 		<testcase classname="AllTests" name="test_deleteSubtree_child"/>
-		<testcase classname="AllTests" name="test_deleteSubtree_root">
-			<failure message="../test/TreeTest.cpp:109 test_deleteSubtree_root: 0 == tree->getSize() expected:	0	but was:	1	">
-test_deleteSubtree_root: 0 == tree->getSize() expected:	0	but was:	1	
-			</failure>
-		</testcase>
+		<testcase classname="AllTests" name="test_deleteSubtree_root"/>
 		<testcase classname="AllTests" name="test_deleteSubtree_sibling"/>
 		<testcase classname="AllTests" name="test_tree_example"/>
 		<testcase classname="AllTests" name="test_print_example"/>
