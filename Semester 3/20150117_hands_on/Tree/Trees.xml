@@ -1,0 +1,59 @@
+<testsuites>
+	<testsuite name="AllTests" tests="35">
+		<testcase classname="AllTests" name="test_insertChild_null_parent"/>
+		<testcase classname="AllTests" name="test_insertChild_null_child"/>
+		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
+		<testcase classname="AllTests" name="test_clear">
+			<failure message="../test/TreeTest.cpp:76 test_clear: 0 == tree->getSize() expected:	0	but was:	1	">
+test_clear: 0 == tree->getSize() expected:	0	but was:	1	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="test_deleteElements">
+			<failure message="../test/TreeTest.cpp:93 test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	">
+test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
+		<testcase classname="AllTests" name="test_deleteElements">
+			<failure message="../test/TreeTest.cpp:93 test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	">
+test_deleteElements: 0 == tree->getSize() expected:	0	but was:	1	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="test_clear">
+			<failure message="../test/TreeTest.cpp:76 test_clear: 0 == tree->getSize() expected:	0	but was:	1	">
+test_clear: 0 == tree->getSize() expected:	0	but was:	1	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="test_deleteSubtree_child"/>
+		<testcase classname="AllTests" name="test_deleteSubtree_root">
+			<failure message="../test/TreeTest.cpp:109 test_deleteSubtree_root: 0 == tree->getSize() expected:	0	but was:	1	">
+test_deleteSubtree_root: 0 == tree->getSize() expected:	0	but was:	1	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="test_deleteSubtree_sibling"/>
+		<testcase classname="AllTests" name="test_tree_example"/>
+		<testcase classname="AllTests" name="test_print_example"/>
+		<testcase classname="AllTests" name="test_copy_constructor"/>
+		<testcase classname="AllTests" name="test_assign_operator"/>
+		<testcase classname="AllTests" name="test_mkdir_invalid_path"/>
+		<testcase classname="AllTests" name="test_mkdir_path_contain_files"/>
+		<testcase classname="AllTests" name="test_mkdir_valid"/>
+		<testcase classname="AllTests" name="test_touch_invalid_path"/>
+		<testcase classname="AllTests" name="test_touch_path_contain_files"/>
+		<testcase classname="AllTests" name="test_touch_valid_new"/>
+		<testcase classname="AllTests" name="test_touch_valid_existing"/>
+		<testcase classname="AllTests" name="test_rm_invalid_path"/>
+		<testcase classname="AllTests" name="test_rm_path_contain_files"/>
+		<testcase classname="AllTests" name="test_rm_not_found"/>
+		<testcase classname="AllTests" name="test_rm_directory"/>
+		<testcase classname="AllTests" name="test_rm_valid"/>
+		<testcase classname="AllTests" name="test_rmdir_invalid_path"/>
+		<testcase classname="AllTests" name="test_rmdir_path_contain_files"/>
+		<testcase classname="AllTests" name="test_rmdir_not_found"/>
+		<testcase classname="AllTests" name="test_rmdir_file"/>
+		<testcase classname="AllTests" name="test_rmdir_valid"/>
+		<testcase classname="AllTests" name="test_ls"/>
+		<testcase classname="AllTests" name="test_complex_example"/>
+		<testcase classname="AllTests" name="cleanup_tests"/>
+	</testsuite>
+</testsuites>

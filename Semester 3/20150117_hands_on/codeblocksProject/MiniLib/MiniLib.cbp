@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MiniLib" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ML" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ML" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`pkg-config --cflags gtk+-2.0`" />
+		</Compiler>
+		<Unit filename="MLApplication.cpp" />
+		<Unit filename="MLApplication.h" />
+		<Unit filename="MLCollection.cpp" />
+		<Unit filename="MLCollection.h" />
+		<Unit filename="MLObject.cpp" />
+		<Unit filename="MLObject.h" />
+		<Unit filename="MLString.cpp" />
+		<Unit filename="MLString.h" />
+		<Unit filename="MLVector.cpp" />
+		<Unit filename="MLVector.h" />
+		<Unit filename="MLWindow.cpp" />
+		<Unit filename="MLWindow.h" />
+		<Unit filename="MetaInfo.cpp" />
+		<Unit filename="MetaInfo.h" />
+		<Unit filename="OSBridge.h" />
+		<Unit filename="OSBridge2Gtk.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

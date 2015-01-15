@@ -1,0 +1,81 @@
+# depslib dependency file v1.0
+1417544826 source:/mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MetaInfo.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"MLObject.h"
+	"MetaInfo.h"
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLObject.h
+	<iostream>
+	<string>
+	"MetaInfo.h"
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MetaInfo.h
+	<iostream>
+	<string>
+
+1417544826 source:/mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLApplication.cpp
+	<cstdlib>
+	<memory>
+	"MetaInfo.h"
+	"MLApplication.h"
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLApplication.h
+	<string>
+	"OSBridge.h"
+	"MLObject.h"
+	"MLVector.h"
+	"MLWindow.h"
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/OSBridge.h
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLVector.h
+	"MLObject.h"
+	"MLCollection.h"
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLCollection.h
+	<iosfwd>
+	"MLObject.h"
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLWindow.h
+	<string>
+	"OSBridge.h"
+	"MLObject.h"
+
+1417544826 source:/mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLCollection.cpp
+	<sstream>
+	<memory>
+	"MLCollection.h"
+
+1417544826 source:/mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLObject.cpp
+	<iostream>
+	<new>
+	"MetaInfo.h"
+	"MLObject.h"
+
+1417544826 source:/mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLString.cpp
+	<iostream>
+	<sstream>
+	"MetaInfo.h"
+	"MLString.h"
+
+1417544826 /mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLString.h
+	<iosfwd>
+	<string>
+	"MLObject.h"
+
+1417544826 source:/mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLVector.cpp
+	<cassert>
+	<cstdlib>
+	<cstring>
+	<iostream>
+	"MetaInfo.h"
+	"MLString.h"
+	"MLVector.h"
+
+1417544826 source:/mnt/hgfs/C/Users/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/MLWindow.cpp
+	"MLApplication.h"
+	"MLWindow.h"
+
