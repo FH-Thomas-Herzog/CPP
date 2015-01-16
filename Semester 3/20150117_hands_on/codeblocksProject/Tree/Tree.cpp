@@ -44,26 +44,24 @@ static void buildLeveledMap(Node* node, int level,
 	} /* if */
 } /* Tree::buildLeveledMap */
 
-bool Tree::isManagedNode(const Node* node) const {
-	bool childResult = false;
-	bool siblingResult = false;
-	Node* child;
-	Node* next;
-
-	if ((node != nullptr) && (!(childResult = (root == node)))) {
-		child = root->getFirstChild();
-		while ((child != nullptr) && (!siblingResult)
-				&& (!(childResult = (child == node)))) {
-			siblingResult = false;
-			next = child->getNextSibling();
-			while ((next != nullptr) && ((!(siblingResult = (next == node))))) {
-				next = next->getNextSibling();
+bool Tree::isManagedNode(const Node* node, const Node* searchNode) const {
+	bool isManaged = false;
+	/* recursion anchor */
+	if (node != nullptr) {
+		isManaged = (node == searchNode);
+		if (!isManaged) {
+			Node* tmp = node->getFirstChild();
+			while ((tmp != nullptr) && (!isManaged)) {
+				isManaged = (tmp == searchNode);
+				if (tmp->getFirstChild() != nullptr) {
+					isManaged = isManagedNode(tmp, searchNode);
+				} /* if */
+				tmp = tmp->getNextSibling();
 			} /* while */
-			child = child->getFirstChild();
 		} /* if */
 	} /* if */
 
-	return childResult || siblingResult;
+	return isManaged;
 } /* Tree::isManagedNode */
 
 int Tree::countNodes(const Node* node) const {
@@ -193,8 +191,7 @@ void Tree::insertChild(Node* parent, Node* child) {
 
 	/* Check for nullptr nodes */
 	if ((parent == nullptr) || (child == nullptr)) {
-		cout << "Parent and child are not allowed to be null" << endl
-				<< flush;
+		cout << "Parent and child are not allowed to be null" << endl << flush;
 		return;
 	} /* if */
 
@@ -209,7 +206,7 @@ void Tree::insertChild(Node* parent, Node* child) {
 	} /* if */
 
 	/* Check if parent node is managed by this tree */
-	if (!isManagedNode(parent)) {
+	if (!isManagedNode(root, parent)) {
 		cout << "Parent is not managed by this tree" << endl << flush;
 		return;
 	} /* if */
@@ -233,7 +230,7 @@ void Tree::deleteSubTree(Node* node) {
 	Node* tmp = nullptr;
 
 	/* Error if instance is not managed */
-	if (!isManagedNode(node)) {
+	if (!isManagedNode(root, node)) {
 		cout << "Cannot delete unmanaged subtree !!! node: " << node->AsString()
 				<< endl << flush;
 	} else {
@@ -274,7 +271,7 @@ void Tree::deleteElements() {
 
 void Tree::clear() {
 	root = nullptr;
-	size = 1;
+	size = 0;
 } /* Tree::clear */
 
 ////////////////////////////////////////////////////////////

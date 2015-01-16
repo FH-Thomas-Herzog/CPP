@@ -1,9 +1,0 @@
-<testsuites>
-	<testsuite name="Trees" tests="1">
-		<testcase classname="Trees" name="thisIsATreesTest">
-			<failure message="../src/Trees.cpp:5 thisIsATreesTest: start writing tests">
-thisIsATreesTest: start writing tests
-			</failure>
-		</testcase>
-	</testsuite>
-</testsuites>

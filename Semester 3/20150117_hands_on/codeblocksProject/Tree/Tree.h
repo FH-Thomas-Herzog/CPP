@@ -32,11 +32,13 @@ private:
 	 * This is done by comparing the pointer addresses.
 	 *
 	 * @param
-	 * 		parent: the node to be checked if managed by this tree.
+	 * 		parent: The node to start the search from.
+	 * @param
+	 * 		searchNode: the node to be searched
 	 * @return
 	 * 		true if the node is managed, false otherwise
 	 */
-	bool isManagedNode(const Node* node) const;
+	bool isManagedNode(const Node* node, const Node* searchNode) const;
 
 	/**
 	 * Counts the nodes of this subtree including the given parent node.
