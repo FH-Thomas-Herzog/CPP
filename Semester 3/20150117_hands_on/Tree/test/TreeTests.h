@@ -33,6 +33,8 @@ void test_insertChild_null_child();
 
 void test_insertChild_unmanaged_parent();
 
+void test_insertChild_unmanaged_child();
+
 ////////////////////////////////////////////////////////////
 // clear                                                  //
 ////////////////////////////////////////////////////////////

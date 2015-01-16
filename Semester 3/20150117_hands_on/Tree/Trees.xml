@@ -3,9 +3,9 @@
 		<testcase classname="AllTests" name="test_insertChild_null_parent"/>
 		<testcase classname="AllTests" name="test_insertChild_null_child"/>
 		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
+		<testcase classname="AllTests" name="test_insertChild_unmanaged_child"/>
 		<testcase classname="AllTests" name="test_clear"/>
 		<testcase classname="AllTests" name="test_deleteElements"/>
-		<testcase classname="AllTests" name="test_insertChild_unmanaged_parent"/>
 		<testcase classname="AllTests" name="test_deleteElements"/>
 		<testcase classname="AllTests" name="test_clear"/>
 		<testcase classname="AllTests" name="test_deleteSubtree_child"/>

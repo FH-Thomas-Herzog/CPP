@@ -15,9 +15,9 @@ void make_suite_TreeTests(cute::suite* s) {
 	(*s).push_back(CUTE(test_insertChild_null_parent));
 	(*s).push_back(CUTE(test_insertChild_null_child));
 	(*s).push_back(CUTE(test_insertChild_unmanaged_parent));
+	(*s).push_back(CUTE(test_insertChild_unmanaged_child));
 	(*s).push_back(CUTE(test_clear));
 	(*s).push_back(CUTE(test_deleteElements));
-	(*s).push_back(CUTE(test_insertChild_unmanaged_parent));
 	(*s).push_back(CUTE(test_deleteElements));
 	(*s).push_back(CUTE(test_clear));
 	(*s).push_back(CUTE(test_deleteSubtree_child));
@@ -73,6 +73,30 @@ void test_insertChild_unmanaged_parent() {
 	tree->insertChild(unmanaged, newChild);
 
 	delete unmanaged;
+	delete newChild;
+	delete tree;
+}
+
+void test_insertChild_unmanaged_child(){
+	Node* root = new Node();
+	Tree* tree = new Tree(*root);
+	Node* newChild = new Node();
+
+	tree->insertChild(tree->getRoot(), new Node());
+	Node* n3 = new Node();
+	tree->insertChild(tree->getRoot(), n3);
+	Node* n2 = new Node();
+	tree->insertChild(tree->getRoot(), n2);
+
+	tree->insertChild(n2, new Node());
+	tree->insertChild(n2, new Node());
+
+	Node* n4 = new Node();
+	tree->insertChild(n3, new Node());
+	tree->insertChild(n3, new Node());
+	tree->insertChild(n3, n4);
+	tree->insertChild(n3, n4);
+
 	delete newChild;
 	delete tree;
 }

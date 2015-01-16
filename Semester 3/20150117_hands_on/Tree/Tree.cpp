@@ -93,7 +93,7 @@ Node* Tree::getParentNode(Node* subTreeRoot, const Node* node) const {
 		} /* while */
 		if (result == nullptr) {
 			result = getParentNode(subTreeRoot->getFirstChild(), node);
-		}
+		} /* if */
 	} /* if */
 
 	return result;
@@ -140,14 +140,14 @@ Tree::Tree(const Tree & other) :
 		size(other.getSize()) {
 	if (other.getRoot() != nullptr) {
 		root = other.getRoot()->clone();
-	}
+	} /* if */
 	Register(TREE_CLASS, OBJECT_CLASS);
 } /* Tree::Tree */
 
 Tree::~Tree() {
 	if (root != nullptr) {
 		delete root;
-	}
+	} /* if */
 } /* Tree::~Tree */
 
 ////////////////////////////////////////////////////////////
@@ -163,14 +163,13 @@ void Tree::setRoot(Node* node) {
 		cout
 				<< "root node must not be null and must not have next sibling set !!!"
 				<< endl;
-		return;
 	}
 	/* if current root node is not null delete it */
 	else if (root != nullptr) {
 		deleteElements();
-	}
-	/* set new root node */
-	clear();
+		/* clear tree */
+		clear();
+	} /* if */
 
 } /* Tree::setRoot */
 
@@ -188,41 +187,37 @@ void Tree::insertChild(Node* parent, Node* child) {
 				<< "Cannot add child on empty tree !!! At least the root node must be defined !!!"
 				<< endl << flush;
 	}
-
 	/* Check for nullptr nodes */
-	if ((parent == nullptr) || (child == nullptr)) {
+	else if ((parent == nullptr) || (child == nullptr)) {
 		cout << "Parent and child are not allowed to be null" << endl << flush;
-		return;
-	} /* if */
-
-	/* Check for recursions */
-	if (parent == child) {
+	}
+	/* Check for cyclic references */
+	else if (parent == child) {
 		cout << "Parent and child are not allowed to point to the same node !!!"
 				<< endl;
 		cout << "parent: " << parent->AsString() << endl;
 		cout << "child: " << child->AsString() << endl;
 		cout << endl << flush;
-		return;
-	} /* if */
-
+	}
 	/* Check if parent node is managed by this tree */
-	if (!isManagedNode(root, parent)) {
+	else if (!isManagedNode(root, parent)) {
 		cout << "Parent is not managed by this tree" << endl << flush;
-		return;
-	} /* if */
-
+	}
+	/* Check if child already managed by this tree */
+	else if (isManagedNode(root, child)) {
+		cout << "Child already managed by this tree" << endl << flush;
+	}
 	/* set as first child if no first child present */
-	if (parent->getFirstChild() == nullptr) {
+	else if (parent->getFirstChild() == nullptr) {
 		parent->setFirstChild(child);
+		size++;
 	}
 	/* insert as new first child and move current first child to next sibling of new first child */
 	else {
 		child->setNextSibling(parent->getFirstChild());
 		parent->setFirstChild(child);
+		size++;
 	} /* if */
-
-	size++;
-
 } /* Tree::insertChild */
 
 void Tree::deleteSubTree(Node* node) {
@@ -338,9 +333,9 @@ Tree & Tree::operator=(const Tree & other) {
 		/* delete current root */
 		if (root != nullptr) {
 			delete root;
-		}
+		} /* if */
 		root = other.getRoot()->clone();
 		size = other.getSize();
-	}
+	} /* if */
 	return *this;
 } /* Tree::operator= */
