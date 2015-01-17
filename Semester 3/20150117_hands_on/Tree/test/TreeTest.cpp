@@ -231,6 +231,7 @@ void test_print_example() {
 void test_copy_constructor() {
 
 	Tree tree(new IntNode(1));
+	Tree tr(tree);
 
 	tree.insertChild(tree.getRoot(), new IntNode(4));
 	Node* n3 = new IntNode(3);

@@ -44,7 +44,7 @@ all: Trees
 Trees: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/2014-15_minilib/eclipseWorkspace/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Trees" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150117_lab/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Trees" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
