@@ -11,30 +11,30 @@ using namespace cute;
 using namespace ML;
 using namespace std;
 
-suite makeSuite() {
+suite makeSetTestSuite() {
 	suite setTestSuite;
-	setTestSuite.push_back(CUTE(test_add_multpile_values));
-	setTestSuite.push_back(CUTE(test_append_multpile_values));
-	setTestSuite.push_back(CUTE(test_prepend_multpile_values));
+	setTestSuite.push_back(CUTE(test_set_add_multpile_values));
+	setTestSuite.push_back(CUTE(test_set_append_multpile_values));
+	setTestSuite.push_back(CUTE(test_set_prepend_multpile_values));
 
-	setTestSuite.push_back(CUTE(test_remove_not_found));
-	setTestSuite.push_back(CUTE(test_remove_empty));
-	setTestSuite.push_back(CUTE(test_remove));
+	setTestSuite.push_back(CUTE(test_set_remove_not_found));
+	setTestSuite.push_back(CUTE(test_set_remove_empty));
+	setTestSuite.push_back(CUTE(test_set_remove));
 
-	setTestSuite.push_back(CUTE(test_intersect_null_source));
-	setTestSuite.push_back(CUTE(test_intersect_empty_source));
-	setTestSuite.push_back(CUTE(test_intersect_empty_result));
-	setTestSuite.push_back(CUTE(test_intersect));
+	setTestSuite.push_back(CUTE(test_set_intersect_null_source));
+	setTestSuite.push_back(CUTE(test_set_intersect_empty_source));
+	setTestSuite.push_back(CUTE(test_set_intersect_empty_result));
+	setTestSuite.push_back(CUTE(test_set_intersect));
 
-	setTestSuite.push_back(CUTE(test_union_null_source));
-	setTestSuite.push_back(CUTE(test_union_empty_source));
-	setTestSuite.push_back(CUTE(test_union_duplicates));
-	setTestSuite.push_back(CUTE(test_union));
+	setTestSuite.push_back(CUTE(test_set_union_null_source));
+	setTestSuite.push_back(CUTE(test_set_union_empty_source));
+	setTestSuite.push_back(CUTE(test_set_union_duplicates));
+	setTestSuite.push_back(CUTE(test_set_union));
 
-	setTestSuite.push_back(CUTE(test_complement_null_source));
-	setTestSuite.push_back(CUTE(test_complement_empty_source));
-	setTestSuite.push_back(CUTE(test_complement_duplicates));
-	setTestSuite.push_back(CUTE(test_complement));
+	setTestSuite.push_back(CUTE(test_set_complement_null_source));
+	setTestSuite.push_back(CUTE(test_set_complement_empty_source));
+	setTestSuite.push_back(CUTE(test_set_complement_duplicates));
+	setTestSuite.push_back(CUTE(test_set_complement));
 
 	return setTestSuite;
 }
@@ -42,7 +42,7 @@ suite makeSuite() {
 // #########################################################
 // Add, Append, Prepend tests
 // #########################################################
-void test_add_multpile_values() {
+void test_set_add_multpile_values() {
 	Set* set = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -70,7 +70,7 @@ void test_add_multpile_values() {
 	WriteMetaInfo();
 }
 
-void test_append_multpile_values() {
+void test_set_append_multpile_values() {
 	Set* set = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -98,7 +98,7 @@ void test_append_multpile_values() {
 	WriteMetaInfo();
 }
 
-void test_prepend_multpile_values() {
+void test_set_prepend_multpile_values() {
 	Set* set = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -129,7 +129,7 @@ void test_prepend_multpile_values() {
 // #########################################################
 // Remove tests
 // #########################################################
-void test_remove_not_found() {
+void test_set_remove_not_found() {
 	Set* set = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -154,7 +154,7 @@ void test_remove_not_found() {
 	WriteMetaInfo();
 }
 
-void test_remove_empty() {
+void test_set_remove_empty() {
 	Set* set = new Set();
 	String* val3 = new String("value 3");
 
@@ -172,7 +172,7 @@ void test_remove_empty() {
 	WriteMetaInfo();
 }
 
-void test_remove() {
+void test_set_remove() {
 	Set* set = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -198,7 +198,7 @@ void test_remove() {
 // #########################################################
 // Intersect
 // #########################################################
-void test_intersect_null_source() {
+void test_set_intersect_null_source() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -216,7 +216,7 @@ void test_intersect_null_source() {
 	WriteMetaInfo();
 }
 
-void test_intersect_empty_source() {
+void test_set_intersect_empty_source() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -237,7 +237,7 @@ void test_intersect_empty_source() {
 	WriteMetaInfo();
 }
 
-void test_intersect_empty_result() {
+void test_set_intersect_empty_result() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -270,7 +270,7 @@ void test_intersect_empty_result() {
 	WriteMetaInfo();
 }
 
-void test_intersect() {
+void test_set_intersect() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -306,7 +306,7 @@ void test_intersect() {
 // #########################################################
 // union tests
 // #########################################################
-void test_union_null_source() {
+void test_set_union_null_source() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -328,7 +328,7 @@ void test_union_null_source() {
 	WriteMetaInfo();
 }
 
-void test_union_empty_source() {
+void test_set_union_empty_source() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -354,7 +354,7 @@ void test_union_empty_source() {
 	WriteMetaInfo();
 }
 
-void test_union_duplicates() {
+void test_set_union_duplicates() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -386,7 +386,7 @@ void test_union_duplicates() {
 	WriteMetaInfo();
 }
 
-void test_union() {
+void test_set_union() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -422,7 +422,7 @@ void test_union() {
 // #########################################################
 // complement tests
 // #########################################################
-void test_complement_null_source() {
+void test_set_complement_null_source() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -444,7 +444,7 @@ void test_complement_null_source() {
 	WriteMetaInfo();
 }
 
-void test_complement_empty_source() {
+void test_set_complement_empty_source() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -469,7 +469,7 @@ void test_complement_empty_source() {
 	WriteMetaInfo();
 }
 
-void test_complement_duplicates() {
+void test_set_complement_duplicates() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -501,7 +501,7 @@ void test_complement_duplicates() {
 	WriteMetaInfo();
 }
 
-void test_complement() {
+void test_set_complement() {
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");

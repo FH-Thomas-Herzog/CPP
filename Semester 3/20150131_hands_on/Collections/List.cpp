@@ -14,7 +14,7 @@ using namespace std;
 List::List() :
 		size(0) {
 	Register("List", "Collection");
-	Node* node = createWrapperInstance(nullptr, nullptr, nullptr);
+	Node* node = new Node();
 	node->next = node;
 	node->prev = node;
 	anchor = node;
@@ -96,7 +96,7 @@ Node* List::createWrapperInstance(ML::Object* object, Node* prev,
 	return new Node(object, prev, next);
 }
 
-ostream& operator<<(ostream & os, const List & list) {
+void List::Print(ostream & os, const List & list) const {
 	os << "-----------------" << endl <<  "List(" << list.Size() << "):" << endl
 			<< "-----------------" << endl;
 	Node* node = list.anchor->next;
@@ -107,6 +107,10 @@ ostream& operator<<(ostream & os, const List & list) {
 		}
 		node = node->next;
 	}
+} /* Print */
+
+ostream& operator<<(ostream & os, const List & list) {
+	list.Print(os, list);
 	return os;
 } /* operator<< */
 

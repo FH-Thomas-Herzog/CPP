@@ -76,6 +76,11 @@ class Bag: public Set {
 		 */
 		virtual void Complement(Bag* bag);
 
+		// #########################################################
+		// operator
+		// #########################################################
+		friend std::ostream & operator<<(std::ostream & os, const Bag & bag);
+
 		/**
 		 * @see List::createWrapperInstance(Object* object, Node* prev, Node* next)
 		 */

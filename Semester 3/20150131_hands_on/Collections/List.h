@@ -131,6 +131,8 @@ class List: public ML::Collection {
 		 */
 		ML::Iterator* NewIterator() const;
 
+		void Print(std::ostream & os, const List & list) const;
+
 		// #########################################################
 		// Getter and setter
 		// #########################################################

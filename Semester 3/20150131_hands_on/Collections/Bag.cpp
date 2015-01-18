@@ -30,24 +30,26 @@ void Bag::Add(Object* object) {
 void Bag::Append(Object* object) {
 	BagNode* node = Find(object);
 	/* no duplicates, so parent can handle */
-	if (object == nullptr) {
-		Append(object);
+	if (node == nullptr) {
+		Set::Append(object);
 	}
 	/* increase count */
 	else {
 		node->count++;
+		size++;
 	} /* if */
 } /* Bag::Append */
 
 void Bag::Prepend(Object* object) {
 	BagNode* node = Find(object);
 	/* no duplicates, so parent can handle */
-	if (object == nullptr) {
-		Prepend(object);
+	if (node == nullptr) {
+		Set::Prepend(object);
 	}
 	/* increase count */
 	else {
 		node->count++;
+		size++;
 	} /* if */
 } /* Bag::Prepend */
 
@@ -56,6 +58,7 @@ Object* Bag::Remove(Object* object) {
 	/* if node found and has duplicates */
 	if ((node != nullptr) && (node->count > 1)) {
 		node->count--;
+		size--;
 		return object;
 	}
 	/* else delegate to parent class */
@@ -69,7 +72,7 @@ void Bag::Intersect(Bag* bag) {
 } /* Bag::Intersect */
 
 void Bag::Union(Bag* bag) {
-	if (bag != nullptr) {
+	if (bag == nullptr) {
 		cout << "Given Bag is not allowed to be null !!!" << endl << flush;
 	} else if (bag->Size() > 0) {
 		Iterator* it = bag->NewIterator();
@@ -98,3 +101,8 @@ BagNode* Bag::createWrapperInstance(Object* object, BagNode* prev,
 		BagNode* next) const {
 	return new BagNode(object, prev, next);
 } /* Bag::createWrapperInstance */
+
+ostream& operator<<(ostream & os, const Bag & bag) {
+	bag.Print(os, bag);
+	return os;
+} /* operator<< */
