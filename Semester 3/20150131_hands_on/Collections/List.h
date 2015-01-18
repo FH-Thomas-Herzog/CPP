@@ -38,19 +38,6 @@ class List: public ML::Collection {
 		 */
 		virtual Node* Find(ML::Object* object) const;
 
-		/**
-		 * Creates the wrapper instance for the given value
-		 *
-		 * @param:
-		 * 		object: the value to be wrapped
-		 * @param:
-		 * 		prev: the reference to the previous node
-		 * @param:
-		 * 		next: the reference to the next node
-		 */
-		virtual Node* createWrapperInstance(ML::Object* object, Node* prev,
-				Node* next) const;
-
 	public:
 		// #########################################################
 		// Constructor and destructor

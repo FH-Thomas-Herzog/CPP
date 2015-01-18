@@ -25,7 +25,7 @@ class BagNode: public Node {
 		/**
 		 * Constructor which delegates to the parent class and sets count initially to 1.
 		 */
-		BagNode(ML::Object* val = nullptr, Node* prev = nullptr, Node* next =
+		explicit BagNode(ML::Object* val = nullptr, Node* prev = nullptr, Node* next =
 				nullptr);
 
 		/**

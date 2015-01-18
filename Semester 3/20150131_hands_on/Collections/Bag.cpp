@@ -31,26 +31,32 @@ void Bag::Append(Object* object) {
 	BagNode* node = Find(object);
 	/* no duplicates, so parent can handle */
 	if (node == nullptr) {
-		Set::Append(object);
+		BagNode* newNode = new BagNode(object, anchor->next->prev,
+				anchor->next);
+		anchor->next = newNode;
+		newNode->next->prev = newNode;
 	}
 	/* increase count */
 	else {
 		node->count++;
-		size++;
 	} /* if */
+	size++;
 } /* Bag::Append */
 
 void Bag::Prepend(Object* object) {
 	BagNode* node = Find(object);
 	/* no duplicates, so parent can handle */
 	if (node == nullptr) {
-		Set::Prepend(object);
+		BagNode* newNode = new BagNode(object, anchor->prev,
+				anchor->prev->next);
+		anchor->prev = newNode;
+		newNode->prev->next = newNode;
 	}
 	/* increase count */
 	else {
 		node->count++;
-		size++;
 	} /* if */
+	size++;
 } /* Bag::Prepend */
 
 Object* Bag::Remove(Object* object) {
@@ -96,11 +102,6 @@ void Bag::Union(Bag* bag) {
 void Bag::Complement(Bag* bag) {
 	Set::Complement(bag);
 } /* Bag::Complement */
-
-BagNode* Bag::createWrapperInstance(Object* object, BagNode* prev,
-		BagNode* next) const {
-	return new BagNode(object, prev, next);
-} /* Bag::createWrapperInstance */
 
 ostream& operator<<(ostream & os, const Bag & bag) {
 	bag.Print(os, bag);

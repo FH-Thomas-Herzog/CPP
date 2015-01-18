@@ -13,6 +13,7 @@
 
 class Bag: public Set {
 	protected:
+
 		BagNode* Find(ML::Object* object) const;
 
 	public:
@@ -81,11 +82,6 @@ class Bag: public Set {
 		// #########################################################
 		friend std::ostream & operator<<(std::ostream & os, const Bag & bag);
 
-		/**
-		 * @see List::createWrapperInstance(Object* object, Node* prev, Node* next)
-		 */
-		virtual BagNode* createWrapperInstance(ML::Object* object,
-				BagNode* prev, BagNode* next) const;
 };
 
 #endif /* BAG_H_ */

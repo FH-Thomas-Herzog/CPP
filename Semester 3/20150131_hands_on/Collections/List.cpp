@@ -76,7 +76,7 @@ Node* List::Find(Object* object) const {
 }
 
 void List::Prepend(Object* object) {
-	Node* newNode = createWrapperInstance(object, anchor->next->prev,
+	Node* newNode = new Node(object, anchor->next->prev,
 			anchor->next);
 	anchor->next = newNode;
 	newNode->next->prev = newNode;
@@ -84,16 +84,11 @@ void List::Prepend(Object* object) {
 }
 
 void List::Append(Object* object) {
-	Node* newNode = createWrapperInstance(object, anchor->prev,
+	Node* newNode = new Node(object, anchor->prev,
 			anchor->prev->next);
 	anchor->prev = newNode;
 	newNode->prev->next = newNode;
 	size++;
-}
-
-Node* List::createWrapperInstance(ML::Object* object, Node* prev,
-		Node* next) const {
-	return new Node(object, prev, next);
 }
 
 void List::Print(ostream & os, const List & list) const {
@@ -102,10 +97,10 @@ void List::Print(ostream & os, const List & list) const {
 	Node* node = list.anchor->next;
 	while (node != list.anchor) {
 		os << node->AsString();
+		node = node->next;
 		if (node != list.anchor) {
 			os << ", ";
 		}
-		node = node->next;
 	}
 } /* Print */
 
