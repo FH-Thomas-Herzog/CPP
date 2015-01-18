@@ -26,6 +26,16 @@ suite makeSuite() {
 	setTestSuite.push_back(CUTE(test_intersect_empty_result));
 	setTestSuite.push_back(CUTE(test_intersect));
 
+	setTestSuite.push_back(CUTE(test_union_null_source));
+	setTestSuite.push_back(CUTE(test_union_empty_source));
+	setTestSuite.push_back(CUTE(test_union_duplicates));
+	setTestSuite.push_back(CUTE(test_union));
+
+	setTestSuite.push_back(CUTE(test_complement_null_source));
+	setTestSuite.push_back(CUTE(test_complement_empty_source));
+	setTestSuite.push_back(CUTE(test_complement_duplicates));
+	setTestSuite.push_back(CUTE(test_complement));
+
 	return setTestSuite;
 }
 
@@ -245,7 +255,8 @@ void test_intersect_empty_result() {
 
 	target->Intersect(source);
 
-	cout << "After Intersect Target:" << endl << *target << endl << endl << flush;
+	cout << "After Intersect Target:" << endl << *target << endl << endl
+			<< flush;
 
 	ASSERT_EQUAL(0, target->Size());
 
@@ -260,7 +271,6 @@ void test_intersect_empty_result() {
 }
 
 void test_intersect() {
-
 	Set* target = new Set();
 	String* val1 = new String("value 1");
 	String* val2 = new String("value 2");
@@ -278,9 +288,240 @@ void test_intersect() {
 
 	target->Intersect(source);
 
-	cout << "AFter intersect Target:" << endl << *target << endl << endl << flush;
+	cout << "AFter intersect Target:" << endl << *target << endl << endl
+			<< flush;
 
 	ASSERT_EQUAL(1, target->Size());
+
+	delete target;
+	delete source;
+	delete val1;
+	delete val2;
+	delete val3;
+	delete val4;
+
+	WriteMetaInfo();
+}
+
+// #########################################################
+// union tests
+// #########################################################
+void test_union_null_source() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+
+	target->Union(nullptr);
+
+	cout << "After union Target:" << endl << *target << endl << endl << flush;
+
+	ASSERT_EQUAL(2, target->Size());
+
+	delete target;
+	delete val1;
+	delete val2;
+
+	WriteMetaInfo();
+}
+
+void test_union_empty_source() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	Set* source = new Set();
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+	cout << "Source:" << endl << *source << endl << endl << flush;
+
+	target->Union(source);
+
+	cout << "After union Target:" << endl << *target << endl << endl << flush;
+
+	ASSERT_EQUAL(2, target->Size());
+
+	delete target;
+	delete source;
+	delete val1;
+	delete val2;
+
+	WriteMetaInfo();
+}
+
+void test_union_duplicates() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	Set* source = new Set();
+	String* val3 = new String("value 1");
+	String* val4 = new String("value 2");
+	source->Add(val3);
+	source->Add(val4);
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+	cout << "Source:" << endl << *source << endl << endl << flush;
+
+	target->Union(source);
+
+	cout << "After union Target:" << endl << *target << endl << endl << flush;
+
+	ASSERT_EQUAL(2, target->Size());
+
+	delete target;
+	delete source;
+	delete val1;
+	delete val2;
+	delete val3;
+	delete val4;
+
+	WriteMetaInfo();
+}
+
+void test_union() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	Set* source = new Set();
+	String* val3 = new String("value 3");
+	String* val4 = new String("value 4");
+	source->Add(val3);
+	source->Add(val4);
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+	cout << "Source:" << endl << *source << endl << endl << flush;
+
+	target->Union(source);
+
+	cout << "After intersect Target:" << endl << *target << endl << endl
+			<< flush;
+
+	ASSERT_EQUAL(4, target->Size());
+
+	delete target;
+	delete source;
+	delete val1;
+	delete val2;
+	delete val3;
+	delete val4;
+
+	WriteMetaInfo();
+}
+
+// #########################################################
+// complement tests
+// #########################################################
+void test_complement_null_source() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+
+	target->Complement(nullptr);
+
+	cout << "After union Target:" << endl << *target << endl << endl << flush;
+
+	ASSERT_EQUAL(2, target->Size());
+
+	delete target;
+	delete val1;
+	delete val2;
+
+	WriteMetaInfo();
+}
+
+void test_complement_empty_source() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	Set* source = new Set();
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+
+	target->Complement(source);
+
+	cout << "After union Target:" << endl << *target << endl << endl << flush;
+
+	ASSERT_EQUAL(2, target->Size());
+
+	delete target;
+	delete source;
+	delete val1;
+	delete val2;
+
+	WriteMetaInfo();
+}
+
+void test_complement_duplicates() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	Set* source = new Set();
+	String* val3 = new String("value 1");
+	String* val4 = new String("value 2");
+	source->Add(val3);
+	source->Add(val4);
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+	cout << "Source:" << endl << *source << endl << endl << flush;
+
+	target->Complement(source);
+
+	cout << "After union Target:" << endl << *target << endl << endl << flush;
+
+	ASSERT_EQUAL(0, target->Size());
+
+	delete target;
+	delete source;
+	delete val1;
+	delete val2;
+	delete val3;
+	delete val4;
+
+	WriteMetaInfo();
+}
+
+void test_complement() {
+	Set* target = new Set();
+	String* val1 = new String("value 1");
+	String* val2 = new String("value 2");
+	target->Add(val1);
+	target->Add(val2);
+
+	Set* source = new Set();
+	String* val3 = new String("value 3");
+	String* val4 = new String("value 4");
+	source->Add(val3);
+	source->Add(val4);
+
+	cout << "Target:" << endl << *target << endl << endl << flush;
+	cout << "Source:" << endl << *source << endl << endl << flush;
+
+	target->Complement(source);
+
+	cout << "After union Target:" << endl << *target << endl << endl << flush;
+
+	ASSERT_EQUAL(2, target->Size());
 
 	delete target;
 	delete source;

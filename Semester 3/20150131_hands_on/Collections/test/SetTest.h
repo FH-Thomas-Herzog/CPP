@@ -33,7 +33,7 @@ void test_remove_empty();
 void test_remove();
 
 // #########################################################
-// Intersect
+// Intersect tests
 // #########################################################
 void test_intersect_null_source();
 
@@ -42,5 +42,27 @@ void test_intersect_empty_source();
 void test_intersect_empty_result();
 
 void test_intersect();
+
+// #########################################################
+// union tests
+// #########################################################
+void test_union_null_source();
+
+void test_union_empty_source();
+
+void test_union_duplicates();
+
+void test_union();
+
+// #########################################################
+// complement tests
+// #########################################################
+void test_complement_null_source();
+
+void test_complement_empty_source();
+
+void test_complement_duplicates();
+
+void test_complement();
 
 #endif /* SETTEST_H_ */
