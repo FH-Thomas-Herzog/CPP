@@ -99,9 +99,11 @@ class Bag: public Set {
 		 * Special handling for Bag container, since since a set is not allowed to contain duplicates but a bag does
 		 * we need to handle this intersection differently.
 		 *
-		 * 1. Nodes in this bag with less duplicates will be removed completely.
-		 * 2. Nodes in this bag with more duplicates will delete the too much duplicates
-		 * 	  E.g.: ThisNode(5), SourceNode(2) -> ThisNode(3)
+		 * 1. If a node exists in the source and target and the target node has more duplicates defined,
+		 *    then the target node will define the sum: targetNode.count - sourceNode.count;
+		 * 2. If a node exists in the source and target node and the target node has less duplicates defined,
+		 *    then the node will be removed completely
+		 * 3. If a target node does not exist in the source then this node remains as it is
 		 */
 		virtual void Complement(Bag* bag);
 
