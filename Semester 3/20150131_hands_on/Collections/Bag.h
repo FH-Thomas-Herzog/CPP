@@ -77,10 +77,10 @@ class Bag: public Set {
 		 * Special handling for Bag container, since a set is not allowed to contain duplicates but a bag does
 		 * we need to handle this intersection differently.
 		 *
-		 * 1. If source as a node with 4 duplicates but this bag has only 3 duplicates
-		 *    then the resulting bag will contain this node with remaining 3 duplicates.
-		 * 2. If this bag has a node with 6 duplicates and source node has only 3 duplicates,
-		 *    then the resulting bag node will have 3 duplicates.
+		 * 1. If a target node does not exist in the source will be removed completely.
+		 * 2. If a target node has less duplicates defined than the target node will remain as it is.
+		 * 3. If a target node has more duplicates defined as the source node than the target node will define the source node defined duplicate count.
+		 *
 		 */
 		virtual void Intersect(Bag* bag);
 
@@ -88,9 +88,10 @@ class Bag: public Set {
 		 * Special handling for Bag container, since since a set is not allowed to contain duplicates but a bag does
 		 * we need to handle this intersection differently.
 		 *
-		 * 1. All source occurring nodes but not present in this container will be added with all duplicates.
-		 * 2. All nodes of this bag which have less duplicates will append the missing duplicates.
-		 * 3. All nodes of this bag with less duplicates will remain as they are.
+		 * 1. If a node exists in the source but not the target then this node will be appended to this container with the
+		 *    current set duplicate count of the source node
+		 * 2. If a target node has lees duplicates as a source node increases the duplicate counter to face the source node duplicate count.
+		 * 3. If a target node has more duplicates defined as the source node will not be modified.
 		 */
 		virtual void Union(Bag* bag);
 

@@ -85,21 +85,19 @@ void Bag::Intersect(Bag* bag) {
 		BagNode* bagNode = nullptr;
 		BagNode* thisNode = nullptr;
 		while (obj != nullptr) {
+			thisNode = Find(obj);
 			/* node not present in source bag */
 			if ((bagNode = bag->Find(obj)) == nullptr) {
-				thisNode = Find(obj);
-				/* remove all nodes event duplicates */
-				for (int i = 0; i < thisNode->count; i++) {
-					Remove(obj);
-				} /* for */
+				/* remove all nodes with duplicates */
+				size -= (thisNode->count - 1);
+				Remove(obj);
 			}
 			/* append as much as common */
-			else {
-				thisNode = Find(obj);
-				/* append missing duplicates */
-				while (thisNode->count > bagNode->count) {
-					Remove(obj);
-				} /* while */
+			else if (thisNode->count > bagNode->count) {
+				/* remove too much duplicates */
+				int diff = (thisNode->count - bagNode->count);
+				thisNode->count = (thisNode->count - diff);
+				size -= diff;
 			}/* if */
 			obj = it->Next();
 		} /* while */
@@ -115,14 +113,22 @@ void Bag::Union(Bag* bag) {
 		Iterator* it = bag->NewIterator();
 		Object* obj = it->Next();
 		BagNode* bagNode = nullptr;
+		BagNode* thisNode = nullptr;
 		while (obj != nullptr) {
+			bagNode = bag->Find(obj);
 			/* node found in this bag */
-			if (Find(obj) == nullptr) {
-				bagNode = bag->Find(obj);
-				for (int i = 0; i < bagNode->count; ++i) {
-					Append(obj);
-				} /* for */
-			} /* if */
+			if ((thisNode = Find(obj)) == nullptr) {
+				Append(obj);
+				Find(obj)->count += (bagNode->count - 1);
+				size += (bagNode->count - 1);
+				/* for */
+			}
+			else if (thisNode->count < bagNode->count) {
+				int diff = (bagNode->count - thisNode->count);
+				size+=diff;
+				thisNode->count+=diff;
+			}
+			/* if */
 			obj = it->Next();
 		} /* while */
 
@@ -143,15 +149,14 @@ void Bag::Complement(Bag* bag) {
 				bagNode = bag->Find(obj);
 				/* Only remove to much duplicates */
 				if (thisNode->count > bagNode->count) {
-					for (int i = 0; i < bagNode->count; ++i) {
-						Remove(obj);
-					} /* for */
+					thisNode-=bagNode->count;
+					size-=bagNode->count;
 				}
 				/* if source has more then this bag remove all */
 				else if (bagNode->count >= thisNode->count) {
-					for (int i = 0; i < thisNode->count; ++i) {
-						Remove(obj);
-					} /* for */
+					size-=(thisNode->count - 1);
+					thisNode->count = 1;
+					Remove(obj);
 				}/* if */
 			}
 			obj = it->Next();

@@ -464,7 +464,7 @@ void test_bag_union() {
 	cout << "After Union Source: " << endl << *source << endl << endl << flush;
 	cout << "After Union Target: " << endl << *target << endl << flush;
 
-	ASSERT_EQUAL(8, target->Size());
+	ASSERT_EQUAL(10, target->Size());
 	ASSERT_EQUAL(7, source->Size());
 
 	delete target;
