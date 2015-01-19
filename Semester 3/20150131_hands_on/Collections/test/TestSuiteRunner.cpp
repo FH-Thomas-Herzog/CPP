@@ -1,8 +1,9 @@
 /*
  * main.cpp
+ * This is the main for all of the test suites.
  *
  *  Created on: Jan 17, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 #include "SetTest.h"
 #include "BagTest.h"

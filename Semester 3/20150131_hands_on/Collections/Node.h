@@ -1,8 +1,9 @@
 /*
  * Node.h
+ * This is the specification of the container Node.
  *
  *  Created on: Jan 17, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef NODE_H_
@@ -48,7 +49,7 @@ class Node: public ML::Object {
 
 		/**
 		 * This destructor does nothing because values are managed by this node for container usage only.
-		 * The lifecycle is managed by the caller not the node or container
+		 * The lifecycle of the values is managed by the caller not the node or the container
 		 */
 		virtual ~Node();
 
@@ -57,6 +58,9 @@ class Node: public ML::Object {
 		// #########################################################
 		/**
 		 * Returns a string representation of this node and its value.
+		 *
+		 * @return:
+		 * 		the string representation of this node
 		 */
 		virtual std::string AsString() const;
 };

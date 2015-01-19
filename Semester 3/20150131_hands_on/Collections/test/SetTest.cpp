@@ -1,8 +1,9 @@
 /*
  * SetTest.cpp
+ * This is the implementation  of the Set Test specification.
  *
  *  Created on: Jan 18, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 #include "SetTest.h"
 #include "MLString.h"

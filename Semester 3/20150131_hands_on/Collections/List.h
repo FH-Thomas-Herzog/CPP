@@ -1,8 +1,9 @@
 /*
  * List.h
+ * This is the implementation of the List container specification.
  *
  *  Created on: Jan 17, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef LIST_H_
@@ -15,6 +16,8 @@
 
 /**
  * This is a list container which allows to manage nodes in a double connected list with anchor structure.
+ * This structure was chosen because we want to avoid special cases.
+ * No it is simple to append and prepend values since it is always the same an null values cannot occur.
  */
 class List: public ML::Collection {
 
@@ -32,7 +35,7 @@ class List: public ML::Collection {
 		 * Finds a value in this list.
 		 *
 		 * @param:
-		 * 		object: the node which wraps this value
+		 * 		object: the value wrapped by a managed node
 		 * @return:
 		 * 		the found node, nullptr otherwise
 		 */
@@ -44,6 +47,7 @@ class List: public ML::Collection {
 		// #########################################################
 		/**
 		 * This constructor creates an anchor element needed by the double connected list with anchor element.
+		 * This anchor is initialized properly.
 		 */
 		List();
 
@@ -66,15 +70,15 @@ class List: public ML::Collection {
 		virtual void Add(ML::Object* object);
 
 		/**
-		 * Prepends a value to the list by wrapping it into a node instance.
+		 * Prepends a value to the start of the list by wrapping it into a node instance.
 		 *
 		 * @param
-		 * 		object: the object to be prepended to the list via  wrapping node instance
+		 * 		object: the object to be prepended to the list via a wrapping node instance
 		 */
 		virtual void Prepend(ML::Object* object);
 
 		/**
-		 * Appends a value to the list by wrapping it into a node instance.
+		 * Appends a value to the end of the list by wrapping it into a node instance.
 		 *
 		 * @param
 		 * 		object: the object to be appended to the list via  wrapping node instance
@@ -88,7 +92,7 @@ class List: public ML::Collection {
 		 * @param:
 		 * 		object: the item to be removed from the list
 		 * @return:
-		 * 		the removed object. Nullptr if the object is not managed by this list
+		 * 		the removed object, nullptr if the object is not managed by this list
 		 */
 		ML::Object* Remove(ML::Object* object);
 
@@ -96,6 +100,7 @@ class List: public ML::Collection {
 		 * Clears the list by removing all nodes from the list.
 		 * The node instances will be deleted but not the wrapped values.
 		 * The caller is responsible for the lifecycle of the managed values.
+		 * The anchor will remain as it is.
 		 */
 		void Clear();
 
@@ -106,7 +111,7 @@ class List: public ML::Collection {
 		 * Answers the question if the given value is managed by this list.
 		 *
 		 * @param:
-		 * 		object: the value to be checkes if managed by this list.
+		 * 		object: the value to be checked if managed by this list.
 		 * @return:
 		 * 		true if the value is managed by this list, false otherwise
 		 */
@@ -115,22 +120,44 @@ class List: public ML::Collection {
 		/**
 		 * Creates a new iterator which allows to iterate over the list
 		 * starting from the first node.
+		 *
+		 * @return:
+		 * 		the iterator for this list
 		 */
 		ML::Iterator* NewIterator() const;
 
-		void Print(std::ostream & os, const List & list) const;
+		/**
+		 * Prints this list and its managed nodes to the ostream instance.
+		 *
+		 * @param:
+		 * 		ostream: the ostream to append the resulting print on
+		 */
+		void Print(std::ostream & os) const;
 
 		// #########################################################
 		// Getter and setter
 		// #########################################################
 		/**
 		 * Returns the current size of this list = node count
+		 *
+		 * @return:
+		 * 		the current node count
 		 */
 		int Size() const;
 
 		// #########################################################
 		// operator
 		// #########################################################
+		/**
+		 * operator for this implementation which calls the Print Method on the given list.
+		 *
+		 * @param:
+		 * 		ostream: the ostream to append result print on
+		 * @param:
+		 * 		list: the list to print out
+		 * @return:
+		 * 		the ostream with appended print result
+		 */
 		friend std::ostream & operator<<(std::ostream & os, const List & list);
 };
 
@@ -141,6 +168,9 @@ class ListIterator: public ML::Iterator {
 
 		/**
 		 * Crates a new iterator for a list.
+		 *
+		 * @return:
+		 * 		the iterator instance for this list
 		 */
 		friend ML::Iterator* List::NewIterator() const;
 
@@ -173,7 +203,7 @@ class ListIterator: public ML::Iterator {
 		// Destructor
 		// #########################################################
 		/**
-		 * Destructor which does nothing because nodes values are managed by caller.
+		 * Destructor which does nothing because nodes values are managed by the list only.
 		 */
 		~ListIterator();
 

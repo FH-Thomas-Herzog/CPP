@@ -1,8 +1,9 @@
 /*
  * SetTest.h
+ * This is the Set Test specification.
  *
  *  Created on: Jan 18, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef SETTEST_H_

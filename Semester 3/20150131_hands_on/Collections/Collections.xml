@@ -30,11 +30,11 @@
 		<testcase classname="AllTests" name="test_bag_intersect"/>
 		<testcase classname="AllTests" name="test_bag_union_null_source"/>
 		<testcase classname="AllTests" name="test_bag_union_empty_source"/>
-		<testcase classname="AllTests" name="test_bag_union_duplicates"/>
+		<testcase classname="AllTests" name="test_bag_union_nothing_todo"/>
 		<testcase classname="AllTests" name="test_bag_union"/>
 		<testcase classname="AllTests" name="test_bag_complement_null_source"/>
 		<testcase classname="AllTests" name="test_bag_complement_empty_source"/>
-		<testcase classname="AllTests" name="test_bag_complement_duplicates"/>
+		<testcase classname="AllTests" name="test_bag_complement_empty_result"/>
 		<testcase classname="AllTests" name="test_bag_complement"/>
 	</testsuite>
 </testsuites>

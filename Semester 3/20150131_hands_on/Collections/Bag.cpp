@@ -1,8 +1,9 @@
 /*
  * Bag.cpp
+ * This is the implementation of the bag container specification.
  *
  *  Created on: Jan 18, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 #include "Bag.h"
 
@@ -29,14 +30,14 @@ void Bag::Add(Object* object) {
 
 void Bag::Append(Object* object) {
 	BagNode* node = Find(object);
-	/* no duplicates, so parent can handle */
+	/* no duplicates, normal append */
 	if (node == nullptr) {
-		BagNode* newNode = new BagNode(object, anchor->next->prev,
-				anchor->next);
-		anchor->next = newNode;
-		newNode->next->prev = newNode;
+		BagNode* newNode = new BagNode(object, anchor->prev,
+				anchor->prev->next);
+		anchor->prev = newNode;
+		newNode->prev->next = newNode;
 	}
-	/* increase count */
+	/* else increase count of duplicates */
 	else {
 		node->count++;
 	} /* if */
@@ -45,14 +46,14 @@ void Bag::Append(Object* object) {
 
 void Bag::Prepend(Object* object) {
 	BagNode* node = Find(object);
-	/* no duplicates, so parent can handle */
+	/* no duplicates, normal prepend */
 	if (node == nullptr) {
-		BagNode* newNode = new BagNode(object, anchor->prev,
-				anchor->prev->next);
-		anchor->prev = newNode;
-		newNode->prev->next = newNode;
+		BagNode* newNode = new BagNode(object, anchor->next->prev,
+				anchor->next);
+		anchor->next = newNode;
+		newNode->next->prev = newNode;
 	}
-	/* increase count */
+	/* else increase count of duplicates */
 	else {
 		node->count++;
 	} /* if */
@@ -74,7 +75,37 @@ Object* Bag::Remove(Object* object) {
 } /* Bag::Remove */
 
 void Bag::Intersect(Bag* bag) {
-	Set::Intersect(bag);
+	if (bag == nullptr) {
+		cout << "Given set is not allowed to be null !!!" << endl << flush;
+	} else if (bag->Size() == 0) {
+		Clear();
+	} else {
+		Iterator* it = NewIterator();
+		Object* obj = it->Next();
+		BagNode* bagNode = nullptr;
+		BagNode* thisNode = nullptr;
+		while (obj != nullptr) {
+			/* node not present in source bag */
+			if ((bagNode = bag->Find(obj)) == nullptr) {
+				thisNode = Find(obj);
+				/* remove all nodes event duplicates */
+				for (int i = 0; i < thisNode->count; i++) {
+					Remove(obj);
+				} /* for */
+			}
+			/* append as much as common */
+			else {
+				thisNode = Find(obj);
+				/* append missing duplicates */
+				while (thisNode->count > bagNode->count) {
+					Remove(obj);
+				} /* while */
+			}/* if */
+			obj = it->Next();
+		} /* while */
+
+		delete it;
+	} /* if */
 } /* Bag::Intersect */
 
 void Bag::Union(Bag* bag) {
@@ -83,12 +114,12 @@ void Bag::Union(Bag* bag) {
 	} else if (bag->Size() > 0) {
 		Iterator* it = bag->NewIterator();
 		Object* obj = it->Next();
-		BagNode* node = nullptr;
+		BagNode* bagNode = nullptr;
 		while (obj != nullptr) {
 			/* node found in this bag */
-			if ((node = Find(it->Next())) == nullptr) {
-				Append(obj);
-				for (int i = 1; i < node->count; ++i) {
+			if (Find(obj) == nullptr) {
+				bagNode = bag->Find(obj);
+				for (int i = 0; i < bagNode->count; ++i) {
 					Append(obj);
 				} /* for */
 			} /* if */
@@ -100,10 +131,37 @@ void Bag::Union(Bag* bag) {
 } /* Bag::Union */
 
 void Bag::Complement(Bag* bag) {
-	Set::Complement(bag);
+	if (bag == nullptr) {
+		cout << "Given set is not allowed to be null !!!" << endl << flush;
+	} else if (bag->Size() > 0) {
+		Iterator* it = bag->NewIterator();
+		Object* obj = it->Next();
+		BagNode* thisNode = nullptr;
+		BagNode* bagNode = nullptr;
+		while (obj != nullptr) {
+			if ((thisNode = Find(obj)) != nullptr) {
+				bagNode = bag->Find(obj);
+				/* Only remove to much duplicates */
+				if (thisNode->count > bagNode->count) {
+					for (int i = 0; i < bagNode->count; ++i) {
+						Remove(obj);
+					} /* for */
+				}
+				/* if source has more then this bag remove all */
+				else if (bagNode->count >= thisNode->count) {
+					for (int i = 0; i < thisNode->count; ++i) {
+						Remove(obj);
+					} /* for */
+				}/* if */
+			}
+			obj = it->Next();
+		} /* while */
+
+		delete it;
+	} /* if */
 } /* Bag::Complement */
 
 ostream& operator<<(ostream & os, const Bag & bag) {
-	bag.Print(os, bag);
+	bag.Print(os);
 	return os;
 } /* operator<< */

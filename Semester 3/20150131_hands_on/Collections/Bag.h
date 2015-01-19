@@ -1,8 +1,9 @@
 /*
  * Bag.h
+ * This is the Bag container specification.
  *
  *  Created on: Jan 18, 2015
- *      Author: cchet
+ *      Author: Thomas Herzog
  */
 
 #ifndef BAG_H_
@@ -11,9 +12,19 @@
 #include "Set.h"
 #include "BagNode.h"
 
+/**
+ * This class realizes a bag container and inherits from the Set class which provides the proper implementation.
+ * Since this container will not contain duplicates nodes (duplicates count on BagNode only), we can inherit from Set
+ * and not from List.
+ * There is no need to create own nodes for the duplicates since the duplicates will not provide more information
+ * as the unique instance would do.
+ */
 class Bag: public Set {
 	protected:
-
+		/**
+		 * Overwritten for type safety.
+		 * @see: Node* Set::Find(Object* obj)
+		 */
 		BagNode* Find(ML::Object* object) const;
 
 	public:
@@ -63,23 +74,44 @@ class Bag: public Set {
 		// overwritten for type safety and bag behavior .utils
 		// #########################################################
 		/**
-		 * @see Set::Intersect(Set* set)
+		 * Special handling for Bag container, since a set is not allowed to contain duplicates but a bag does
+		 * we need to handle this intersection differently.
+		 *
+		 * 1. If source as a node with 4 duplicates but this bag has only 3 duplicates
+		 *    then the resulting bag will contain this node with remaining 3 duplicates.
+		 * 2. If this bag has a node with 6 duplicates and source node has only 3 duplicates,
+		 *    then the resulting bag node will have 3 duplicates.
 		 */
 		virtual void Intersect(Bag* bag);
 
 		/**
-		 * @see Set::Intersect(Set* set)
+		 * Special handling for Bag container, since since a set is not allowed to contain duplicates but a bag does
+		 * we need to handle this intersection differently.
+		 *
+		 * 1. All source occurring nodes but not present in this container will be added with all duplicates.
+		 * 2. All nodes of this bag which have less duplicates will append the missing duplicates.
+		 * 3. All nodes of this bag with less duplicates will remain as they are.
 		 */
 		virtual void Union(Bag* bag);
 
 		/**
-		 * @see Set::Intersect(Set* set)
+		 * Special handling for Bag container, since since a set is not allowed to contain duplicates but a bag does
+		 * we need to handle this intersection differently.
+		 *
+		 * 1. Nodes in this bag with less duplicates will be removed completely.
+		 * 2. Nodes in this bag with more duplicates will delete the too much duplicates
+		 * 	  E.g.: ThisNode(5), SourceNode(2) -> ThisNode(3)
 		 */
 		virtual void Complement(Bag* bag);
 
 		// #########################################################
 		// operator
 		// #########################################################
+		/**
+		 * The operator which prints this bag instance.
+		 * The already in List implemented Method Print will be reused since there is no difference in the printed result.
+		 * The nodes will provide their own AsString method and therefore the nodes will be printed properly.
+		 */
 		friend std::ostream & operator<<(std::ostream & os, const Bag & bag);
 
 };
