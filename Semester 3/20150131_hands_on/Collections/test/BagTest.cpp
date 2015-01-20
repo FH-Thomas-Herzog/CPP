@@ -67,8 +67,6 @@ void test_bag_add_multpile_values() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_bag_append_multpile_values() {
@@ -95,8 +93,6 @@ void test_bag_append_multpile_values() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_bag_prepend_multpile_values() {
@@ -123,8 +119,6 @@ void test_bag_prepend_multpile_values() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -149,8 +143,6 @@ void test_bag_remove_not_found() {
 	delete val1;
 	delete val2;
 	delete val3;
-
-	WriteMetaInfo();
 }
 
 void test_bag_remove_empty() {
@@ -165,8 +157,6 @@ void test_bag_remove_empty() {
 
 	delete bag;
 	delete val1;
-
-	WriteMetaInfo();
 }
 
 void test_bag_remove() {
@@ -199,8 +189,6 @@ void test_bag_remove() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -229,8 +217,6 @@ void test_bag_intersect_null_source() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_bag_intersect_empty_source() {
@@ -262,8 +248,6 @@ void test_bag_intersect_empty_source() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_bag_intersect_empty_result() {
@@ -294,8 +278,6 @@ void test_bag_intersect_empty_result() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_bag_intersect() {
@@ -338,9 +320,6 @@ void test_bag_intersect() {
 	delete val3;
 	delete val4;
 	delete val5;
-
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -363,8 +342,6 @@ void test_bag_union_null_source() {
 	delete target;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_bag_union_empty_source() {
@@ -390,8 +367,6 @@ void test_bag_union_empty_source() {
 	delete source;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 
@@ -429,8 +404,6 @@ void test_bag_union_nothing_todo() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_bag_union() {
@@ -474,8 +447,6 @@ void test_bag_union() {
 	delete val3;
 	delete val4;
 	delete val5;
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -498,8 +469,6 @@ void test_bag_complement_null_source() {
 	delete target;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_bag_complement_empty_source() {
@@ -525,8 +494,6 @@ void test_bag_complement_empty_source() {
 	delete source;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_bag_complement_empty_result() {
@@ -559,8 +526,6 @@ void test_bag_complement_empty_result() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_bag_complement() {
@@ -601,6 +566,4 @@ void test_bag_complement() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }

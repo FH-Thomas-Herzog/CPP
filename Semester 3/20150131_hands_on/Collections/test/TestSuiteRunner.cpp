@@ -25,6 +25,9 @@ static void runSuite(int argc, char const *argv[]) {
 	setTestSuite.insert(setTestSuite.end(), bagTestSuite.begin(),
 			bagTestSuite.end());
 	makeRunner(lis, argc, argv)(setTestSuite, "AllTests");
+
+
+	WriteMetaInfo();
 }
 
 int main(int argc, char const *argv[]) {

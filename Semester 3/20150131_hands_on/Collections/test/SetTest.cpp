@@ -67,8 +67,6 @@ void test_set_add_multpile_values() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_set_append_multpile_values() {
@@ -95,8 +93,6 @@ void test_set_append_multpile_values() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_set_prepend_multpile_values() {
@@ -123,8 +119,6 @@ void test_set_prepend_multpile_values() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -151,8 +145,6 @@ void test_set_remove_not_found() {
 	delete val1;
 	delete val2;
 	delete val3;
-
-	WriteMetaInfo();
 }
 
 void test_set_remove_empty() {
@@ -169,8 +161,6 @@ void test_set_remove_empty() {
 
 	delete set;
 	delete val3;
-
-	WriteMetaInfo();
 }
 
 void test_set_remove() {
@@ -192,8 +182,6 @@ void test_set_remove() {
 	delete set;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -213,8 +201,6 @@ void test_set_intersect_null_source() {
 	delete target;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_set_intersect_empty_source() {
@@ -234,8 +220,6 @@ void test_set_intersect_empty_source() {
 	delete source;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_set_intersect_empty_result() {
@@ -267,8 +251,6 @@ void test_set_intersect_empty_result() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_set_intersect() {
@@ -300,8 +282,6 @@ void test_set_intersect() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -325,8 +305,6 @@ void test_set_union_null_source() {
 	delete target;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_set_union_empty_source() {
@@ -351,8 +329,6 @@ void test_set_union_empty_source() {
 	delete source;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_set_union_duplicates() {
@@ -383,8 +359,6 @@ void test_set_union_duplicates() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_set_union() {
@@ -416,8 +390,6 @@ void test_set_union() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 // #########################################################
@@ -441,8 +413,6 @@ void test_set_complement_null_source() {
 	delete target;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_set_complement_empty_source() {
@@ -466,8 +436,6 @@ void test_set_complement_empty_source() {
 	delete source;
 	delete val1;
 	delete val2;
-
-	WriteMetaInfo();
 }
 
 void test_set_complement_duplicates() {
@@ -498,8 +466,6 @@ void test_set_complement_duplicates() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
 
 void test_set_complement() {
@@ -530,6 +496,4 @@ void test_set_complement() {
 	delete val2;
 	delete val3;
 	delete val4;
-
-	WriteMetaInfo();
 }
