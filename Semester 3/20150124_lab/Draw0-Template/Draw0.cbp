@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Draw0" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Draw0" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Draw0" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug V2">
+				<Option output="bin/Debug/Draw0" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DV2" />
+				</Compiler>
+			</Target>
+			<Target title="Copy of Debug V2 with Selection">
+				<Option output="bin/Debug/Draw0" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DV2" />
+					<Add option="-DWITH_SELECTION" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-pedantic" />
+			<Add option="-std=c++11" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="$(MINILIB)/include" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add library="ML" />
+			<Add library="gtk-x11-2.0" />
+			<Add library="gdk-x11-2.0" />
+			<Add library="atk-1.0" />
+			<Add library="gio-2.0" />
+			<Add library="pangoft2-1.0" />
+			<Add library="pangocairo-1.0" />
+			<Add library="gdk_pixbuf-2.0" />
+			<Add library="cairo" />
+			<Add library="pango-1.0" />
+			<Add library="fontconfig" />
+			<Add library="gobject-2.0" />
+			<Add library="glib-2.0" />
+			<Add library="freetype" />
+			<Add directory="$(MINILIB)/bin/Debug" />
+		</Linker>
+		<Unit filename="include/DrawApp.h" />
+		<Unit filename="include/DrawWin.h" />
+		<Unit filename="include/Line.h" />
+		<Unit filename="include/Oval.h" />
+		<Unit filename="include/Rectangle.h" />
+		<Unit filename="include/Shape.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/DrawApp.cpp" />
+		<Unit filename="src/DrawWin.cpp" />
+		<Unit filename="src/Line.cpp" />
+		<Unit filename="src/Oval.cpp" />
+		<Unit filename="src/Rectangle.cpp" />
+		<Unit filename="src/Shape.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

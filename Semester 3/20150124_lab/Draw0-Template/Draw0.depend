@@ -1,0 +1,128 @@
+# depslib dependency file v1.0
+1421958658 source:/mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/main.cpp
+	<iostream>
+	<MLApplication.h>
+	"DrawApp.h"
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLVector.h
+	"MLObject.h"
+	"MLCollection.h"
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLObject.h
+	<iostream>
+	<string>
+	"MetaInfo.h"
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MetaInfo.h
+	<iostream>
+	<string>
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLCollection.h
+	<iosfwd>
+	"MLObject.h"
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLString.h
+	<iosfwd>
+	<string>
+	"MLObject.h"
+
+1421958848 source:/mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/src/DrawApp.cpp
+	"DrawApp.h"
+	"DrawWin.h"
+	<MLString.h>
+
+1421958848 /mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/include/DrawApp.h
+	<MLApplication.h>
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLApplication.h
+	<string>
+	"OSBridge.h"
+	"MLObject.h"
+	"MLVector.h"
+	"MLWindow.h"
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/OSBridge.h
+
+1417792697 /mnt/hgfs/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLWindow.h
+	<string>
+	"OSBridge.h"
+	"MLObject.h"
+
+1421994168 /mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/include/DrawWin.h
+	<MLWindow.h>
+	<MLVector.h>
+	"DrawApp.h"
+	"Shape.h"
+
+1421996047 source:/mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/src/DrawWin.cpp
+	<cassert>
+	"DrawWin.h"
+	"DrawApp.h"
+	"Shape.h"
+	"Line.h"
+	"Rectangle.h"
+	"Oval.h"
+	<iostream>
+
+1421958658 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLApplication.h
+	<string>
+	"OSBridge.h"
+	"MLObject.h"
+	"MLVector.h"
+	"MLWindow.h"
+
+1421996783 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/OSBridge.h
+
+1421958658 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLObject.h
+	<iostream>
+	<string>
+	"MetaInfo.h"
+
+1421958658 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MetaInfo.h
+	<iostream>
+	<string>
+
+1421958658 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLVector.h
+	"MLObject.h"
+	"MLCollection.h"
+
+1421958658 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLCollection.h
+	<iosfwd>
+	"MLObject.h"
+
+1421958658 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLWindow.h
+	<string>
+	"OSBridge.h"
+	"MLObject.h"
+
+1421958658 /home/erik/swo3/sessions/s08 c++3, minilb 1/codeblocks/MiniLib/include/MLString.h
+	<iosfwd>
+	<string>
+	"MLObject.h"
+
+1421996297 /mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/include/Shape.h
+	<OSBridge.h>
+	<MLWindow.h>
+	<MLObject.h>
+
+1421994984 /mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/include/Line.h
+	"Shape.h"
+
+1421995857 /mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/include/Rectangle.h
+	<Shape.h>
+
+1421995917 /mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/include/Oval.h
+	<Shape.h>
+
+1421996111 source:/mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/src/Line.cpp
+	"Line.h"
+
+1421996330 source:/mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/src/Oval.cpp
+	"Oval.h"
+
+1421996635 source:/mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/src/Rectangle.cpp
+	"Rectangle.h"
+
+1421996754 source:/mnt/hgfs/swo3/sessions/s10 minilib3, draw/codeblocks/Draw0/src/Shape.cpp
+	"Shape.h"
+

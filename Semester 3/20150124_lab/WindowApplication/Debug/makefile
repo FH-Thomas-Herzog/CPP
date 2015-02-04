@@ -8,7 +8,6 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include test/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -38,19 +37,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: Collections
+all: WindowApplication
 
 # Tool invocations
-Collections: $(OBJS) $(USER_OBJS)
+WindowApplication: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150124_lab/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "Collections" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"/mnt/hgfs/cchet/Documents/Git Repositories/Github/FH-Hagenberg/CPP/Semester 3/20150124_lab/MiniLib/Debug" `pkg-config --libs gtk+-2.0` -o "WindowApplication" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) Collections
+	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) WindowApplication
 	-@echo ' '
 
 .PHONY: all clean dependents
