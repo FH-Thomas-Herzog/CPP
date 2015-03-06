@@ -12,8 +12,8 @@ using namespace std;
 // #####################################################################
 // T9 Exception implementation
 // #####################################################################
-InvalidCharException::InvalidCharException(
-		const string errorFunction, const char errorChar) :
+InvalidCharException::InvalidCharException(const string errorFunction,
+		const char errorChar) :
 		errorOperation(errorFunction), errorChar(errorChar) {
 }
 
@@ -24,8 +24,8 @@ const char* InvalidCharException::what() const throw () {
 	return ss.str().c_str();
 }
 
-InvalidDigitException::InvalidDigitException(
-		const string errorFunction, const int errorDigit) :
+InvalidDigitException::InvalidDigitException(const string errorFunction,
+		const int errorDigit) :
 		errorOperation(errorFunction), errorDigit(errorDigit) {
 }
 
@@ -36,9 +36,8 @@ const char* InvalidDigitException::what() const throw () {
 	return ss.str().c_str();
 }
 
-InvalidConversionException::InvalidConversionException(
-		const string cause, const string errorOperation,
-		const string errorString) :
+InvalidConversionException::InvalidConversionException(const string cause,
+		const string errorOperation, const string errorString) :
 		cause(cause), errorOperation(errorOperation), errorString(errorString) {
 }
 
@@ -51,7 +50,7 @@ const char* InvalidConversionException::what() const throw () {
 }
 
 // #####################################################################
-// Handler implementation
+// T9 Handler implementation
 // #####################################################################
 void T9Converter::initT9Map() {
 	mapping[2].insert('a');
@@ -96,13 +95,14 @@ void T9Converter::initInvalidDigitsSet() {
 
 T9Converter::T9Converter() {
 	initT9Map();
+	initInvalidDigitsSet();
 }
 
 T9Converter::~T9Converter() {
 }
 
 int T9Converter::char2Digit(const char c) const throw (InvalidCharException) {
-	int t9Value = -1;
+	int t9Value(-1);
 	for_each(mapping.begin(), mapping.end(),
 			([&c, &t9Value](pair<int, set<char>> mapPair) {
 				if(t9Value == -1) {
@@ -117,7 +117,8 @@ int T9Converter::char2Digit(const char c) const throw (InvalidCharException) {
 	return t9Value;
 }
 
-int T9Converter::word2Number(const string word) const throw (InvalidCharException) {
+int T9Converter::word2Number(const string word) const
+		throw (InvalidCharException) {
 	stringstream ss("");
 	try {
 		for_each(word.begin(), word.end(), [&ss, this](char c) {
@@ -131,19 +132,28 @@ int T9Converter::word2Number(const string word) const throw (InvalidCharExceptio
 	return atoi(ss.str().c_str());
 }
 
-char T9Converter::int2Char(const int digit) const throw(InvalidCharException) {
+set<char> T9Converter::digit2CharSet(const int digit) const
+		throw (InvalidCharException) {
 	// Validate if given parameter is single digit
-	if((digit < 0) && (digit > 9)) {
-		throw InvalidDigitException("char T9Converter::int2Char(const int digit) const throw(InvalidCharException)", digit);
+	if ((digit < 0) && (digit > 9)) {
+		throw InvalidDigitException(
+				"char T9Converter::int2Char(const int digit) const throw(InvalidCharException)",
+				digit);
 	}
 	// Validate if parameter is supported digit
 	auto it = find(invalidDigits.begin(), invalidDigits.end(), digit);
-	if(it != invalidDigits.end()) {
-		throw InvalidDigitException("char T9Converter::int2Char(const int digit) const throw(InvalidCharException)", digit);
+	if (it != invalidDigits.end()) {
+		throw InvalidDigitException(
+				"char T9Converter::int2Char(const int digit) const throw(InvalidCharException)",
+				digit);
 	}
-	// TODO: Implement retrieval of the corresponding words !!!!
+
+	return mapping.at(digit);
 }
 set<std::string> T9Converter::number2Word(const int) const
-				throw (InvalidConversionException) {
+		throw (InvalidConversionException) {
+	set<string> results;
 	// TODO: Implement retrieval of corresponding words !!!!!
+	// TODO: Uer next_permutation of the STL
+	return results;
 }

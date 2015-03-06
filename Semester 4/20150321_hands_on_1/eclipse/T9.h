@@ -125,7 +125,7 @@ class T9Converter {
 		 * @throws:
 		 * 		InvalidCharException if the given digit is one of the unsupported digits.
 		 */
-		char int2Char(const int digit) const throw (InvalidCharException);
+		std::set<char> digit2CharSet(const int digit) const throw (InvalidCharException);
 
 		/**
 		 * Converts a T9 number to all of the possible string which are provided in the backed directory.
