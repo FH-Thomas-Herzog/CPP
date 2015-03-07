@@ -18,9 +18,13 @@ int main(int argc, char** argv) {
 		cout << "a=" << handler.char2Digit('a') << endl;
 		cout << "z=" << handler.char2Digit('z') << endl;
 		cout << "z=" << handler.word2Number("kiss") << endl;
-		set<char> result = handler.digit2CharSet(2);
-		for_each(result.begin(), result.end(), ([](char c) {
-			cout << c << "-";
+//		set<char> result = handler.digit2CharSet(2);
+//		for_each(result.begin(), result.end(), ([](char c) {
+//			cout << c << "-";
+//		}));
+		set<string> resultString = handler.number2Word(3356446);
+		for_each(resultString.begin(), resultString.end(), ([](string s) {
+			cout << s << endl;
 		}));
 	} catch (InvalidConversionException e) {
 		cout << "error";

@@ -6,6 +6,7 @@
  */
 #include "T9.h"
 #include <algorithm>
+#include <list>
 
 using namespace std;
 
@@ -135,25 +136,59 @@ int T9Converter::word2Number(const string word) const
 set<char> T9Converter::digit2CharSet(const int digit) const
 		throw (InvalidCharException) {
 	// Validate if given parameter is single digit
-	if ((digit < 0) && (digit > 9)) {
+	if ((digit < 0) || (digit > 9)) {
 		throw InvalidDigitException(
-				"char T9Converter::int2Char(const int digit) const throw(InvalidCharException)",
+				"set<char> T9Converter::digit2CharSet(const int digit) const throw(InvalidCharException)",
 				digit);
 	}
 	// Validate if parameter is supported digit
 	auto it = find(invalidDigits.begin(), invalidDigits.end(), digit);
 	if (it != invalidDigits.end()) {
 		throw InvalidDigitException(
-				"char T9Converter::int2Char(const int digit) const throw(InvalidCharException)",
+				"set<char> T9Converter::digit2CharSet(const int digit) const throw(InvalidCharException)",
 				digit);
 	}
 
 	return mapping.at(digit);
 }
-set<std::string> T9Converter::number2Word(const int) const
+set<string> T9Converter::number2Word(const int t9Value) const
 		throw (InvalidConversionException) {
-	set<string> results;
-	// TODO: Implement retrieval of corresponding words !!!!!
-	// TODO: Uer next_permutation of the STL
-	return results;
+	set<string> result;
+	list<set<char>> usedCharacterList;
+	stringstream ss;
+	ss << t9Value << '\0';
+	string t9ValueString = ss.str();
+
+	// Get character sets for given number
+	for_each(t9ValueString.begin(), t9ValueString.end(),
+			([&usedCharacterList, this](char c) {
+				if(c != '\0') {
+					usedCharacterList.push_back(digit2CharSet(((int)c) - 48));
+				}}));
+	// Iterate over the resulting character sets
+	for_each(usedCharacterList.begin(), usedCharacterList.end(),
+			([&result](const set<char> characters) {
+				set<string> tmp;
+				// Iterate over each character of the character set
+				for_each(characters.begin(), characters.end(), ([&result, &tmp](const char c) {
+									stringstream ss;
+									// First time add characters directly to result set
+									if(result.empty()) {
+										ss << c;
+										tmp.insert(ss.str());
+									}
+									// Each other iteration append each character to each string contained in the result set
+									else {
+										for_each(result.begin(), result.end(), ([&tmp, &c](const string exisitng) {
+															stringstream ss;
+															ss << exisitng << c;
+															tmp.insert(ss.str());
+														}));
+									}
+								}));
+				// Append newly created strings to result set
+				result.insert(tmp.begin(), tmp.end());
+			}));
+
+	return result;
 }
