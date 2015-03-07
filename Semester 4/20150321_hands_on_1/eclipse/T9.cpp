@@ -154,9 +154,10 @@ set<char> T9Converter::digit2CharSet(const int digit) const
 set<string> T9Converter::number2Word(const int t9Value) const
 		throw (InvalidConversionException) {
 	set<string> result;
+	set<string> resultTmp;
 	list<set<char>> usedCharacterList;
 	stringstream ss;
-	ss << t9Value << '\0';
+	ss << t9Value;
 	string t9ValueString = ss.str();
 
 	// Get character sets for given number
@@ -167,19 +168,19 @@ set<string> T9Converter::number2Word(const int t9Value) const
 				}}));
 	// Iterate over the resulting character sets
 	for_each(usedCharacterList.begin(), usedCharacterList.end(),
-			([&result](const set<char> characters) {
+			([&result, &resultTmp, &t9ValueString](const set<char> characters) {
 				set<string> tmp;
 				// Iterate over each character of the character set
-				for_each(characters.begin(), characters.end(), ([&result, &tmp](const char c) {
+				for_each(characters.begin(), characters.end(), ([&resultTmp, &tmp](const char c) {
 									stringstream ss;
 									// First time add characters directly to result set
-									if(result.empty()) {
+									if(resultTmp.empty()) {
 										ss << c;
 										tmp.insert(ss.str());
 									}
 									// Each other iteration append each character to each string contained in the result set
 									else {
-										for_each(result.begin(), result.end(), ([&tmp, &c](const string exisitng) {
+										for_each(resultTmp.begin(), resultTmp.end(), ([&tmp, &c](const string exisitng) {
 															stringstream ss;
 															ss << exisitng << c;
 															tmp.insert(ss.str());
@@ -187,7 +188,12 @@ set<string> T9Converter::number2Word(const int t9Value) const
 									}
 								}));
 				// Append newly created strings to result set
-				result.insert(tmp.begin(), tmp.end());
+				for_each(tmp.begin(), tmp.end(), ([&result, &resultTmp, &t9ValueString](const string s) {
+									if(s.length() == t9ValueString.length()) {
+										result.insert(s);
+									}
+									resultTmp.insert(s);
+								}));
 			}));
 
 	return result;

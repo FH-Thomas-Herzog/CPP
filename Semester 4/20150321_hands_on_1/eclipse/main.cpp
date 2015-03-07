@@ -14,6 +14,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
 	T9Converter handler;
+	int i = 1;
 	try {
 		cout << "a=" << handler.char2Digit('a') << endl;
 		cout << "z=" << handler.char2Digit('z') << endl;
@@ -22,9 +23,10 @@ int main(int argc, char** argv) {
 //		for_each(result.begin(), result.end(), ([](char c) {
 //			cout << c << "-";
 //		}));
-		set<string> resultString = handler.number2Word(3356446);
-		for_each(resultString.begin(), resultString.end(), ([](string s) {
-			cout << s << endl;
+		set<string> resultString = handler.number2Word(5477);
+		for_each(resultString.begin(), resultString.end(), ([&i](string s) {
+			cout << i << ": " << s << endl;
+			i++;
 		}));
 	} catch (InvalidConversionException e) {
 		cout << "error";
