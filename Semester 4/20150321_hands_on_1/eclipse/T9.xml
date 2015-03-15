@@ -1,0 +1,22 @@
+<testsuites>
+	<testsuite name="AllTests" tests="14">
+		<testcase classname="AllTests" name="initTests"/>
+		<testcase classname="AllTests" name="test_w2n_invalid_char"/>
+		<testcase classname="AllTests" name="test_w2n">
+			<failure message="../tests/T9Tests.cpp:86 test_w2n: T9_LONG_STRING == result expected:	428787266537	but was:	28787266537	">
+test_w2n: T9_LONG_STRING == result expected:	428787266537	but was:	28787266537	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="test_n2s_invalid_digit"/>
+		<testcase classname="AllTests" name="test_n2s"/>
+		<testcase classname="AllTests" name="test_n2w_invalid_digit"/>
+		<testcase classname="AllTests" name="test_n2w"/>
+		<testcase classname="AllTests" name="test_n2wl_invalid_digit"/>
+		<testcase classname="AllTests" name="test_n2wl"/>
+		<testcase classname="AllTests" name="test_n2pw_invalid_digit"/>
+		<testcase classname="AllTests" name="test_n2pw"/>
+		<testcase classname="AllTests" name="test_n2psw_invalid_digit"/>
+		<testcase classname="AllTests" name="test_n2psw"/>
+		<testcase classname="AllTests" name="cleanupTests"/>
+	</testsuite>
+</testsuites>
