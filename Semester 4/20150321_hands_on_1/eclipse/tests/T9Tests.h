@@ -10,7 +10,7 @@
 #define T9TESTS_H_
 
 #include "cute.h"
-#include "../T9.h"
+#include "../T9Converter.h"
 
 /**
  * prepares the suite by collection the test functions

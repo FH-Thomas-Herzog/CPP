@@ -13,8 +13,8 @@ static void runSuite(int argc, char const *argv[]) {
 
 	setTestSuite = buildSuite();
 	makeRunner(lis, argc, argv)(setTestSuite, "AllTests");
-}
+} /* runSuite */
 
 int main(int argc, char const *argv[]) {
 	runSuite(argc, argv);
-}
+} /* main */
