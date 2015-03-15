@@ -1,0 +1,305 @@
+
+#beginning AllTests 14
+
+#starting initTests
+Initializing T9Converter instance...
+finished
+
+#success initTests OK
+
+#starting test_w2n_invalid_char
+
+word2Number("?")
+word2Number("#")
+word2Number(".")
+
+#success test_w2n_invalid_char OK
+
+#starting test_w2n
+
+word2Number("kiss")
+result: 5477
+
+
+#success test_w2n OK
+
+#starting test_n2s_invalid_digit
+
+number2Strings(0)
+Invalid digit detected
+
+number2Strings(1)
+Invalid digit detected
+
+#success test_n2s_invalid_digit OK
+
+#starting test_n2s
+
+number2Strings("5477")
+Resulting words: 144
+>khrq
+>jips
+>khpp
+>kipp
+>lgqp
+>jisp
+>lgsq
+>liss
+>jgps
+>lirs
+>khsr
+>lhrp
+>jiqp
+>jgrp
+>lgsr
+>kirs
+>lisp
+>liqq
+>lhss
+>jirr
+>jhqp
+>jgss
+>kgsr
+>khqp
+>kisp
+>jgrs
+>jhsq
+>kgqp
+>jgqp
+>liqr
+>lgpq
+>lgrp
+>kiqp
+>jirq
+>kgrq
+>jgsp
+>lhps
+>jhrr
+>lhqr
+>khpr
+>jipq
+>jhps
+>kipr
+>lgqr
+>kiqs
+>lirq
+>kgps
+>lipp
+>lhpp
+>jiqr
+>khrr
+>khpq
+>jiss
+>lgsp
+>kirq
+>lisr
+>jgpp
+>jhqr
+>kgsp
+>khsq
+>lhrs
+>kisr
+>jgrq
+>kgqr
+>kirr
+>liqp
+>lhsp
+>lgrr
+>jirs
+>jhqq
+>kgrs
+>kgss
+>jgsr
+>khqs
+>kisq
+>kgqq
+>jhsr
+>lhqp
+>jgqs
+>jhpq
+>lgpr
+>lgrq
+>kiqq
+>kgrp
+>kgpq
+>lipr
+>lhpr
+>jhrq
+>lhqs
+>khrp
+>jipr
+>khps
+>jhpr
+>kipq
+>lgqq
+>jisq
+>lirr
+>jgpr
+>kgpr
+>lipq
+>khss
+>lhrq
+>jiqq
+>khrs
+>jisr
+>lgss
+>kirp
+>lisq
+>jgpq
+>lhsr
+>jhqs
+>kgsq
+>khsp
+>lhrr
+>khqq
+>jgrr
+>kiss
+>kgqs
+>jhsp
+>jgqq
+>liqs
+>lhsq
+>lgpp
+>jirp
+>lgrs
+>kgrr
+>jgsq
+>khqr
+>jhrs
+>jhss
+>lhqq
+>jgqr
+>jipp
+>jhpp
+>kips
+>lgqs
+>lgps
+>kiqr
+>lirp
+>lips
+>kgpp
+>lhpq
+>jhrp
+>jiqs
+
+#success test_n2s OK
+
+#starting test_n2w_invalid_digit
+
+number2Words(54771)
+
+number2Words(54770)
+
+#success test_n2w_invalid_digit OK
+
+#starting test_n2w
+
+number2Words("42556")
+Resulting words: 2
+>hallo
+>gallo
+
+#success test_n2w OK
+
+#starting test_n2wl_invalid_digit
+
+number2WordsByLength(54771)
+
+number2WordsByLength(54770)
+
+#success test_n2wl_invalid_digit OK
+
+#starting test_n2wl
+
+number2WordsByLength("42556")
+Resulting words: 2
+>hallo
+>gallo
+
+#success test_n2wl OK
+
+#starting test_n2pw_invalid_digit
+
+numberPrefix2Words(54771)
+
+numberPrefix2Words(54770)
+
+#success test_n2pw_invalid_digit OK
+
+#starting test_n2pw
+
+numberPrefix2Words("42556")
+Resulting words: 25
+>gallmannsweil
+>gallmücke
+>gallomanie
+>gallmersgarten
+>gallonenweise
+>galloway
+>gallophob
+>gallophil
+>halloween
+>gallone
+>hallore
+>gallowitz
+>gallophobie
+>gallneukirchen
+>gallopamil
+>galloromanisch
+>gallmannsegg
+>gallophilie
+>gallomane
+>gallon
+>gallmilbe
+>hallo
+>hallodri
+>gallonen
+>gallo
+
+#success test_n2pw OK
+
+#starting test_n2psw_invalid_digit
+
+numberPrefix2sortedWords(54771)
+
+numberPrefix2sortedWords(54770)
+
+#success test_n2psw_invalid_digit OK
+
+#starting test_n2psw
+
+numberPrefix2sortedWords("42556")
+Resulting words: 25
+>gallmannsweil
+>gallmücke
+>gallomanie
+>gallmersgarten
+>gallonenweise
+>galloway
+>gallophob
+>gallophil
+>halloween
+>gallone
+>hallore
+>gallowitz
+>gallophobie
+>gallneukirchen
+>gallopamil
+>galloromanisch
+>gallmannsegg
+>gallophilie
+>gallomane
+>gallon
+>gallmilbe
+>hallo
+>hallodri
+>gallonen
+>gallo
+
+#success test_n2psw OK
+
+#starting cleanupTests
+
+#success cleanupTests OK
+
+#ending AllTests
