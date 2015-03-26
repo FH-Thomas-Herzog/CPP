@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1426712274 source:/mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/main.cpp
+	<iostream>
+	<set>
+	<iterator>
+	<algorithm>
+	<memory>
+	"person.h"
+	"student.h"
+	"scoped_ptr.hpp"
+	"counted_ptr.hpp"
+
+1426683305 source:/mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/src/person.cpp
+	"person.h"
+	<iostream>
+	<string>
+
+1426682663 /mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/include/person.h
+	<iostream>
+	<string>
+
+1426683280 source:/mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/src/student.cpp
+	<string>
+	<iostream>
+	"student.h"
+
+1426682681 /mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/include/student.h
+	<string>
+	<iostream>
+	<person.h>
+
+1426685196 /mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/include/scoped_ptr.hpp
+
+1426705764 /mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/include/ext_counted_ptr.hpp
+
+1426712296 /mnt/hgfs/D/workspace/epitzer/documents/teaching/swe4/sessions/ue2 - smart pointers/SS 2015/codeblocks/smart pointers/smart pointers/include/counted_ptr.hpp
+

@@ -45,8 +45,8 @@
 		<Unit filename="T9Converter.cpp" />
 		<Unit filename="T9Converter.h" />
 		<Unit filename="testSuiteRunner.cpp" />
-		<Unit filename="test/T9Tests.cpp" />
-		<Unit filename="test/T9Tests.h" />
+		<Unit filename="tests/T9Tests.cpp" />
+		<Unit filename="tests/T9Tests.h" />
 		<Unit filename="framework/boost/boost/assert.hpp" />
 		<Unit filename="framework/boost/boost/bind.hpp" />
 		<Unit filename="framework/boost/boost/bind/arg.hpp" />
