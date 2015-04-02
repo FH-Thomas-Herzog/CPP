@@ -1,0 +1,262 @@
+==17037== Memcheck, a memory error detector
+==17037== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==17037== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==17037== Command: ./MyHashtable
+==17037== 
+--17037-- Valgrind options:
+--17037--    -v
+--17037-- Contents of /proc/version:
+--17037--   Linux version 3.13.0-48-generic (buildd@orlo) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #80-Ubuntu SMP Thu Mar 12 11:16:15 UTC 2015
+--17037-- Arch and hwcaps: AMD64, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--17037-- Page sizes: currently 4096, max supported 4096
+--17037-- Valgrind library directory: /usr/lib/valgrind
+--17037-- Reading syms from /mnt/hgfs/swo/sem04/uebung2/MyHashtable/bin/Debug/MyHashtable
+--17037-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--17037--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--17037--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--17037--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--17037--   .. CRC is valid
+--17037-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--17037--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--17037--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--17037--    object doesn't have a symbol table
+--17037--    object doesn't have a dynamic symbol table
+--17037-- Scheduler: using generic scheduler lock implementation.
+--17037-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==17037== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-17037-by-kapplmueller-on-???
+==17037== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-17037-by-kapplmueller-on-???
+==17037== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-17037-by-kapplmueller-on-???
+==17037== 
+==17037== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==17037== don't want to do, unless you know exactly what you're doing,
+==17037== or are doing some strange experiment):
+==17037==   /usr/lib/valgrind/../../bin/vgdb --pid=17037 ...command...
+==17037== 
+==17037== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==17037==   /path/to/gdb ./MyHashtable
+==17037== and then give GDB the following command
+==17037==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=17037
+==17037== --pid is optional if only one valgrind process is running
+==17037== 
+--17037-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--17037-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--17037--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--17037--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--17037--    object doesn't have a symbol table
+--17037-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--17037--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--17037--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--17037--    object doesn't have a symbol table
+==17037== WARNING: new redirection conflicts with existing -- ignoring it
+--17037--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--17037--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--17037-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--17037-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--17037-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--17037-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+--17037--   Considering /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19 ..
+--17037--   .. CRC mismatch (computed a220b90a wanted 886349ba)
+--17037--    object doesn't have a symbol table
+--17037-- Reading syms from /lib/x86_64-linux-gnu/libm-2.19.so
+--17037--   Considering /lib/x86_64-linux-gnu/libm-2.19.so ..
+--17037--   .. CRC mismatch (computed a46ef660 wanted 767bfa33)
+--17037--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.19.so ..
+--17037--   .. CRC is valid
+--17037-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--17037--   Considering /lib/x86_64-linux-gnu/libgcc_s.so.1 ..
+--17037--   .. CRC mismatch (computed ea519b66 wanted 0c00ddb3)
+--17037--    object doesn't have a symbol table
+--17037-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--17037--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--17037--   .. CRC mismatch (computed dc620abc wanted 148cbd6e)
+--17037--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--17037--   .. CRC is valid
+--17037-- REDIR: 0x56e3d60 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--17037-- REDIR: 0x56e6050 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--17037-- REDIR: 0x56e3530 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--17037-- REDIR: 0x56e17c0 (rindex) redirected to 0x4c2da30 (rindex)
+--17037-- REDIR: 0x56dfac0 (strlen) redirected to 0x4c2e0e0 (strlen)
+--17037-- REDIR: 0x56e2fa0 (__GI_memcmp) redirected to 0x4c30b80 (__GI_memcmp)
+--17037-- REDIR: 0x56de070 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--17037-- REDIR: 0x5797200 (__strcmp_ssse3) redirected to 0x4c2f1b0 (strcmp)
+--17037-- REDIR: 0x4e95f10 (operator new(unsigned long)) redirected to 0x4c2b070 (operator new(unsigned long))
+--17037-- REDIR: 0x4e94260 (operator delete(void*)) redirected to 0x4c2c250 (operator delete(void*))
+--17037-- REDIR: 0x56e8730 (memcpy@@GLIBC_2.14) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--17037-- REDIR: 0x56eefd0 (__memcpy_sse2_unaligned) redirected to 0x4c2f6b0 (memcpy@@GLIBC_2.14)
+--17037-- REDIR: 0x56e2f60 (bcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--17037-- REDIR: 0x57b7060 (__memcmp_sse4_1) redirected to 0x4c30c00 (__memcmp_sse4_1)
+5
+7
+11
+13
+17
+19
+2
+5
+7
+11
+13
+17
+17
+Hello world!
+asdf
+full constructor called
+b1
+b
+e
+d
+c1
+c
+a
+a1
+e1
+hugo
+empty constructor called
+b1
+empty constructor called
+b
+empty constructor called
+e
+empty constructor called
+d
+empty constructor called
+c1
+empty constructor called
+c
+empty constructor called
+a
+empty constructor called
+a1
+empty constructor called
+e1
+empty constructor called
+fdsa
+full constructor called
+b1
+b
+e
+d
+c1
+c
+a
+a1
+e1
+hugo
+empty constructor called
+b1
+b
+e
+d
+c1
+c
+a
+a1
+e1
+empty constructor called
+full constructor called
+b1
+b
+e
+d
+c1
+c
+a
+a1
+e1
+hugo
+==17037== Invalid read of size 8
+==17037==    at 0x40319E: std::list<std::string, std::allocator<std::string> >::begin() const (stl_list.h:768)
+==17037==    by 0x402373: hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator::operator++() (hashtable_template.hpp:252)
+==17037==    by 0x4049C5: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move<false, false, std::bidirectional_iterator_tag>::__copy_m<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:304)
+==17037==    by 0x40410E: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:390)
+==17037==    by 0x403324: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a2<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:428)
+==17037==    by 0x402602: std::ostream_iterator<std::string, char, std::char_traits<char> > std::copy<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:460)
+==17037==    by 0x40183A: main (main.cpp:34)
+==17037==  Address 0x5a27bc0 is 0 bytes after a block of size 272 alloc'd
+==17037==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17037==    by 0x4050F9: __gnu_cxx::new_allocator<std::list<std::string, std::allocator<std::string> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==17037==    by 0x404B38: std::_Vector_base<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::_M_allocate(unsigned long) (in /mnt/hgfs/swo/sem04/uebung2/MyHashtable/bin/Debug/MyHashtable)
+==17037==    by 0x40482C: std::_Vector_base<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::_M_create_storage(unsigned long) (stl_vector.h:181)
+==17037==    by 0x403C2C: std::_Vector_base<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::_Vector_base(unsigned long, std::allocator<std::list<std::string, std::allocator<std::string> > > const&) (stl_vector.h:136)
+==17037==    by 0x402ABE: std::vector<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::vector(std::vector<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > > const&) (stl_vector.h:312)
+==17037==    by 0x402B91: hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator::const_iterator(std::vector<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >) (hashtable_template.hpp:202)
+==17037==    by 0x4021F2: hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::begin() const (hashtable_template.hpp:278)
+==17037==    by 0x401819: main (main.cpp:34)
+==17037== 
+==17037== Invalid read of size 8
+==17037==    at 0x4ECAA00: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char>, std::allocator<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
+==17037==    by 0x40500D: std::ostream_iterator<std::string, char, std::char_traits<char> >::operator=(std::string const&) (stream_iterator.h:198)
+==17037==    by 0x4049AD: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move<false, false, std::bidirectional_iterator_tag>::__copy_m<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:305)
+==17037==    by 0x40410E: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:390)
+==17037==    by 0x403324: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a2<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:428)
+==17037==    by 0x402602: std::ostream_iterator<std::string, char, std::char_traits<char> > std::copy<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:460)
+==17037==    by 0x40183A: main (main.cpp:34)
+==17037==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==17037== 
+==17037== 
+==17037== Process terminating with default action of signal 11 (SIGSEGV)
+==17037==  Access not within mapped region at address 0x10
+==17037==    at 0x4ECAA00: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char>, std::allocator<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
+==17037==    by 0x40500D: std::ostream_iterator<std::string, char, std::char_traits<char> >::operator=(std::string const&) (stream_iterator.h:198)
+==17037==    by 0x4049AD: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move<false, false, std::bidirectional_iterator_tag>::__copy_m<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:305)
+==17037==    by 0x40410E: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:390)
+==17037==    by 0x403324: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a2<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:428)
+==17037==    by 0x402602: std::ostream_iterator<std::string, char, std::char_traits<char> > std::copy<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:460)
+==17037==    by 0x40183A: main (main.cpp:34)
+==17037==  If you believe this happened as a result of a stack
+==17037==  overflow in your program's main thread (unlikely but
+==17037==  possible), you can try to increase the size of the
+==17037==  main thread stack using the --main-stacksize= flag.
+==17037==  The main thread stack size used in this run was 8388608.
+b1, b, e, d, c1, c, a, a1, e1, --17037-- REDIR: 0x56d9df0 (free) redirected to 0x4c2bd80 (free)
+==17037== 
+==17037== HEAP SUMMARY:
+==17037==     in use at exit: 3,686 bytes in 79 blocks
+==17037==   total heap usage: 350 allocs, 271 frees, 30,004 bytes allocated
+==17037== 
+==17037== Searching for pointers to 79 not-freed blocks
+==17037== Checked 197,912 bytes
+==17037== 
+==17037== LEAK SUMMARY:
+==17037==    definitely lost: 0 bytes in 0 blocks
+==17037==    indirectly lost: 0 bytes in 0 blocks
+==17037==      possibly lost: 238 bytes in 9 blocks
+==17037==    still reachable: 3,448 bytes in 70 blocks
+==17037==         suppressed: 0 bytes in 0 blocks
+==17037== Rerun with --leak-check=full to see details of leaked memory
+==17037== 
+==17037== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==17037== 
+==17037== 1 errors in context 1 of 2:
+==17037== Invalid read of size 8
+==17037==    at 0x4ECAA00: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char>, std::allocator<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
+==17037==    by 0x40500D: std::ostream_iterator<std::string, char, std::char_traits<char> >::operator=(std::string const&) (stream_iterator.h:198)
+==17037==    by 0x4049AD: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move<false, false, std::bidirectional_iterator_tag>::__copy_m<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:305)
+==17037==    by 0x40410E: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:390)
+==17037==    by 0x403324: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a2<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:428)
+==17037==    by 0x402602: std::ostream_iterator<std::string, char, std::char_traits<char> > std::copy<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:460)
+==17037==    by 0x40183A: main (main.cpp:34)
+==17037==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==17037== 
+==17037== 
+==17037== 1 errors in context 2 of 2:
+==17037== Invalid read of size 8
+==17037==    at 0x40319E: std::list<std::string, std::allocator<std::string> >::begin() const (stl_list.h:768)
+==17037==    by 0x402373: hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator::operator++() (hashtable_template.hpp:252)
+==17037==    by 0x4049C5: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move<false, false, std::bidirectional_iterator_tag>::__copy_m<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:304)
+==17037==    by 0x40410E: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:390)
+==17037==    by 0x403324: std::ostream_iterator<std::string, char, std::char_traits<char> > std::__copy_move_a2<false, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:428)
+==17037==    by 0x402602: std::ostream_iterator<std::string, char, std::char_traits<char> > std::copy<hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> > >(hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator, std::ostream_iterator<std::string, char, std::char_traits<char> >) (stl_algobase.h:460)
+==17037==    by 0x40183A: main (main.cpp:34)
+==17037==  Address 0x5a27bc0 is 0 bytes after a block of size 272 alloc'd
+==17037==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==17037==    by 0x4050F9: __gnu_cxx::new_allocator<std::list<std::string, std::allocator<std::string> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==17037==    by 0x404B38: std::_Vector_base<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::_M_allocate(unsigned long) (in /mnt/hgfs/swo/sem04/uebung2/MyHashtable/bin/Debug/MyHashtable)
+==17037==    by 0x40482C: std::_Vector_base<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::_M_create_storage(unsigned long) (stl_vector.h:181)
+==17037==    by 0x403C2C: std::_Vector_base<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::_Vector_base(unsigned long, std::allocator<std::list<std::string, std::allocator<std::string> > > const&) (stl_vector.h:136)
+==17037==    by 0x402ABE: std::vector<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >::vector(std::vector<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > > const&) (stl_vector.h:312)
+==17037==    by 0x402B91: hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::const_iterator::const_iterator(std::vector<std::list<std::string, std::allocator<std::string> >, std::allocator<std::list<std::string, std::allocator<std::string> > > >) (hashtable_template.hpp:202)
+==17037==    by 0x4021F2: hashtable<std::string, std::hash<std::string>, std::equal_to<std::string> >::begin() const (hashtable_template.hpp:278)
+==17037==    by 0x401819: main (main.cpp:34)
+==17037== 
+==17037== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

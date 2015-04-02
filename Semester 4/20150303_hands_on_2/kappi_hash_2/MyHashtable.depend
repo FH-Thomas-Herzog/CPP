@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1427935677 source:/mnt/hgfs/swo/sem04/uebung2/MyHashtable/main.cpp
+	"hashtable_template.hpp"
+	<iostream>
+	<algorithm>
+
+1426929508 /mnt/hgfs/swo/sem04/uebung2/MyHashtable/hashtable_template.hpp
+	<cassert>
+	<vector>
+	<list>
+	<iostream>
+	<iterator>
+	<iomanip>
+
+1427935488 /mnt/hgfs/swo/sem04/uebung2/MyHashtable/include/hashtable_template.hpp
+	<cassert>
+	<vector>
+	<list>
+	<iostream>
+	<iterator>
+	<iomanip>
+	<climits>
+	<math.h>
+	<bitset>
+
