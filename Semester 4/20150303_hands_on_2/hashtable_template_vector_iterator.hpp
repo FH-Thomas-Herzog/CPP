@@ -22,33 +22,25 @@ class hashtable;
  * Overloaded output operator
  */
 template<typename V, typename H, typename C>
-std::ostream & operator <<(std::ostream & os, const hashtable<V, H, C> &ht) {
-	int bucketCount = 1;
-	os << "Hashtable content:" << endl;
-	for_each(ht.table.begin(), ht.table.end(),
-			([&bucketCount, &os ](const list<string>& values) {
-				stringstream ss;
-				ss << "bucket " << bucketCount << ".";
-				os << ss.str() << endl;
-				int i = 0;
-				int valuesSize = values.size();
-				for_each(values.begin(), values.end(), ([&os, &valuesSize, &i](const string& value) {
-									os << value;
-									if((i+1) < valuesSize) {
-										os << " - ";
-									}
-									i++;
-								}));
-				os << endl << endl;
-				bucketCount++;
-			}));
+std::ostream & operator <<(std::ostream & os, hashtable<V, H, C> &ht) {
+	int cnt = 1;
+	auto beginIt = ht.begin();
+	auto endIt = ht.end();
+	for (auto it = ht.begin(); it != ht.end(); it++) {
+		cout << (*it) << endl << flush;
+	}
+//	for_each(beginIt, endIt,
+//			([&cnt, &ht, &os](const string value) {
+//				os << "hash-key: " << ht.calculateHashIdx(value) << " - " << value << endl;
+//			}));
+
 	return os;
 }
 
 template<typename V, typename H, typename C>
 class hashtable {
 	friend std::ostream & operator <<<V, H, C>(std::ostream & os,
-			const hashtable<V, H, C> &ht);
+			hashtable<V, H, C> &ht);
 
 public:
 	typedef V value_type;
@@ -69,10 +61,30 @@ private:
 	double maxLoadFactor;
 	double minLoadFactor;
 	const int MIN_CAPACITY = 10;
-
-	int actionsSinceLastRehash = 0;
+	int elementCount = 0;
+	vector<value_type> iteratorValues;
+	bool modified = true;
 
 	vector<list<value_type>> table;
+
+	vector<value_type>& prepareForIterator() {
+		if (modified) {
+			int i = 0;
+			iteratorValues.clear();
+			iteratorValues.resize(size());
+			for_each(table.begin(), table.end(),
+					([this, &i](const list<value_type>& l) {
+						if(!l.empty()) {
+							for_each(l.begin(), l.end(), ([this, &i](const value_type& value) {
+												iteratorValues[i] = value;
+												i++;
+											}));
+						}
+					}));
+			modified = false;
+		}
+		return iteratorValues;
+	}
 
 	int calculateHashIdx(const V& value) const {
 		return hasher(value) % currentCapacity;
@@ -80,6 +92,7 @@ private:
 
 	void clear() {
 		table.clear();
+		modified = true;
 		if (currentCapacity < MIN_CAPACITY) {
 			currentCapacity = MIN_CAPACITY;
 		}
@@ -132,9 +145,10 @@ public:
 		list<string> valueList = table[idx];
 		if (find(valueList.begin(), valueList.end(), value)
 				== valueList.end()) {
-			valueList.push_front(value);
+			table[idx].push_front(value);
+			elementCount++;
+			modified = true;
 		}
-		table[idx] = valueList;
 	}
 
 	/**
@@ -148,6 +162,7 @@ public:
 		auto it = find(valueList.begin(), valueList.end(), value);
 		if (it != valueList.end()) {
 			valueList.remove(value);
+			modified = true;
 		}
 		validateForReHash();
 	}
@@ -173,6 +188,8 @@ public:
 	 */
 	void rehash(size_t new_n_buckets) {
 		currentCapacity = new_n_buckets;
+		elementCount = 0;
+		modified = true;
 		vector<list<value_type>> oldData(table);
 		clear();
 		for_each(oldData.begin(), oldData.end(),
@@ -199,12 +216,7 @@ public:
 	 * 		the current size
 	 */
 	size_t size() const {
-		size_t size = 0;
-		for_each(table.begin(), table.end(),
-				([&size](const list<value_type> values) {
-					size += values.size();
-				}));
-		return size;
+		return elementCount;
 	}
 
 	/**
@@ -274,98 +286,90 @@ public:
 		typedef typename iterator_base::reference reference;
 		typedef typename iterator_base::value_type value_type;
 	private:
-		int idx = 0;
-		const vector<list<value_type>>& table;
-		list<string> values;
-		typename list<value_type>::const_iterator listIt;
+		vector<value_type>& values;
+		typename vector<value_type>::const_iterator it;
 	public:
-		const_iterator(const vector<list<value_type>>& table,
-				bool isEnd = false) :
-				table(table) {
+		const_iterator(hashtable<V, H, C> ht, bool isEnd = false) :
+				values(ht.prepareForIterator()) {
 			if (!isEnd) {
-				values = table.at(idx);
-				listIt = values.begin();
+				it = values.begin();
 			} else {
-				idx = (table.size() - 1);
-				values = table.at(idx);
-				listIt = values.end();
+				it = values.end();
 			}
 		}
 
-		bool operator ==(const_iterator const & rhs) const {
-			return (idx == rhs.idx) && (listIt == rhs.listIt);
+		bool operator ==(const_iterator const & hsIt) const {
+			return it == hsIt.it;
 		}
-		bool operator !=(const_iterator const & rhs) const {
-			return (idx != rhs.idx) && (listIt != rhs.listIt);
+		bool operator !=(const_iterator const & hsIt) const {
+			if (it == values.end()) {
+				if (it != hsIt.it) {
+					cout << "end not recognized";
+				}
+			}
+			return it != hsIt.it;
 		}
 
 		reference operator *() const {
-			return *listIt;
+			return *it;
 		}
 
 		pointer operator ->() const {
-			return listIt;
+			return it;
 		}
 
+		/**
+		 * Increments the iterator if elements are left. Will do nothing is no elements are left.
+		 * @return
+		 * 		this iterator instance
+		 */
 		const_iterator & operator ++() {
 			// List still has elements
-			if (listIt != values.end()) {
-				listIt++;
-			}
-			// End reached therefore start form new
-			else if (idx == (table.size() - 1)) {
-				idx = 0;
-				values = table[idx];
-				listIt = values.begin();
-			}
-			// list end reached
-			else {
-				idx++;
-				values = table[idx];
-				listIt = values.begin();
+			if (it != values.end()) {
+				it++;
+			}else {
+				cout << "no increment possible";
 			}
 			return (*this);
 		}
 
+		/**
+		 * Decrements the iterator if elements are left. Will do nothing is no elements are left.
+		 * @return
+		 * 		this iterator instance
+		 */
 		const_iterator & operator --() {
 			// List still has elements
-			if (listIt != values.begin()) {
-				listIt--;
-			}
-			// End reached therefore start form new
-			else if (idx == 0) {
-				idx = (table.size() - 1);
-				values = table[idx];
-				listIt = values.end();
-			}
-			// list end reached
-			else {
-				idx--;
-				values = table[idx];
-				listIt = values.end();
+			if (it != values.begin()) {
+				it--;
 			}
 			return (*this);
 		}
 
+		/**
+		 * @see const_iterator & operator ++()
+		 */
 		const_iterator operator ++(int) {
-			const_iterator res(*this);
 			++(*this);
-			return res;
+			return (*this);
 		}
-		const_iterator operator --(int) {
-			const_iterator res(*this);
+
+		/**
+		 * @see const_iterator & operator --()
+		 */
+		const_iterator operator --(int val) {
 			--(*this);
-			return res;
+			return (*this);
 		}
 	};
 
 	typedef const_iterator iterator;
 
-	const_iterator begin() const {
-		return const_iterator(table);
+	const_iterator begin() {
+		return const_iterator((*this));
 	}
-	const_iterator end() const {
-		return const_iterator(table, true);
+	const_iterator end() {
+		return const_iterator((*this));
 	}
 };
 

@@ -1,0 +1,17 @@
+<testsuites>
+	<testsuite name="AllTests" tests="13">
+		<testcase classname="AllTests" name="test_insert_new"/>
+		<testcase classname="AllTests" name="test_insert_duplicate"/>
+		<testcase classname="AllTests" name="test_erease_existing"/>
+		<testcase classname="AllTests" name="test_erease_not_existing"/>
+		<testcase classname="AllTests" name="test_contains_true"/>
+		<testcase classname="AllTests" name="test_contains_false"/>
+		<testcase classname="AllTests" name="test_clear_empty"/>
+		<testcase classname="AllTests" name="test_clear_full"/>
+		<testcase classname="AllTests" name="test_increase_load_factor"/>
+		<testcase classname="AllTests" name="test_decrease_load_factor"/>
+		<testcase classname="AllTests" name="test_equal_operator_same_instance"/>
+		<testcase classname="AllTests" name="test_equal_operator_different_instance_true"/>
+		<testcase classname="AllTests" name="test_equal_operator_different_instance_false"/>
+	</testsuite>
+</testsuites>

@@ -4,25 +4,23 @@
  *  Created on: Mar 27, 2015
  *      Author: cchet
  */
-#include "hashtable_template.hpp"
+#include "test/hashtableTests.hpp"
+#include "ide_listener.h"
+#include "xml_listener.h"
+#include "cute_runner.h"
 
 using namespace std;
+using namespace cute;
 
-int main(int argc, char** argv) {
-	hashtable<string, std::hash<string>, std::equal_to<string>> theTable(3);
-	theTable.insert(string("a"));
-	theTable.insert(string("b"));
-	theTable.insert(string("c"));
-	theTable.insert(string("d"));
-	theTable.insert(string("e"));
+static void runSuite(int argc, char const *argv[]) {
+	suite setTestSuite, bagTestSuite;
+	xml_file_opener xmlfile(argc, argv);
+	xml_listener<ide_listener<> > lis(xmlfile.out);
 
-	int i = 0;
-	for (auto it = theTable.begin(); it != theTable.end(); it++) {
-		cout << i << ". " << (*it) << endl;
-		i++;
-	}
+	setTestSuite = createTestSuite();
+	makeRunner(lis, argc, argv)(setTestSuite, "AllTests");
+} /* runSuite */
 
-	cout << theTable << flush << endl;
-	return 0;
-}
-
+int main(int argc, char const *argv[]) {
+	runSuite(argc, argv);
+} /* main */
